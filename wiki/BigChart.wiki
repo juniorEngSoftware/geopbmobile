@@ -1,0 +1,6 @@
+= Big Chart =
+
+*Acompanhamento da Coleta de Métricas*
+
+|| *Data* ||	*Classes Criadas* ||	*Classes Modificadas* || *Scripts bash* ||	*Scripts EA Criados* ||	*Scripts EA Modificados* || *Interfaces* ||	*Testes de Aceitação* ||	*Testes de Unidade* ||	*User Stories* ||	*Observações* ||
+||21/09/2010 (Planejamento)   || 0 || 0 || 0 || 0 || 0 || 0 || 0 || 0 || 0 || ||	
