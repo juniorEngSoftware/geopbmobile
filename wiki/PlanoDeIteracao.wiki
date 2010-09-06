@@ -48,14 +48,14 @@ US03 -
 
 *Tabela de Alocação de Atividades - Iteração 04 - (04/11/2010 – 17/11/2010) *
 
-US04 - Permitir que um cliente leia arquivos fragmentados.
+US04 -
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
 || TA4.1 || .  || C ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A4.1 ||  Verificar em quais honeycombs há partições de um arquivo e uni-las logicamente || Todos || 68 || 61 || C ||
+|| A4.1 ||   || Todos || 68 || 61 || C ||
 || A4.2 || Atualizar Tabela de Risco e TAA || Filipe || 1 || 1 || C ||
 || A4.3 || Gerar artefato Big Chart  || Filipe || 1 || 1 || C ||
 || A4.4 || Gerar script dos testes de aceitação || Caio || 5 || 12 || C ||
