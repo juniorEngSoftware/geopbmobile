@@ -1,0 +1,4 @@
+= Tabela de Riscos   =
+
+|| *Data de Identificação* || *Descrição* || *Gravidade* || *Ordem* || *Ordem Semana Passada* || *Número de Semanas na Lista* || *Responsável por Superar o Risco* || *Observações* ||
+|| 20/09/2010  || . || . || . || . || . || . || . ||
