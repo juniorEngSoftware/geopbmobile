@@ -1,4 +1,4 @@
 = Tabela de Riscos   =
 
 || *Data* || *Risco* || *Prioridade* || *Responsável* || *Status* || *Providência/Solução* ||
-|| 22/03/10 ||  || || || ||  ||
+|| 20/09/2010  ||  || || || ||  ||
