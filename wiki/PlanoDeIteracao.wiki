@@ -1,0 +1,78 @@
+= Plano das Iterações =
+
+*Tabela de Alocação de Atividades - Iteração 01 - (21/09/2010 – 15/04/2010)*
+
+US01 - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno protótipo exemplo de mapas no WindowsMobile. 
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA1.1 || Verificar  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A1.1 || Estudar  || Todos ||    2 || 2 || C ||
+|| A1.2 || Estudar || Todos || 2 || 3 || C ||
+|| A1.3 || Estudar || Kemerson || 2 || 1.5 || C ||
+|| A1.4 ||  || Todos || 2 || 2 || C ||
+|| A1.5 || Gerar relatório sobre estudo || Todos || 2 || 4 || C ||
+
+
+*Tabela de Alocação de Atividades - Iteração 02 - (05/10/2010 – 18/10/2010)*
+
+US02 - 
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA2.1 ||  . || C ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A2.1 || Atualizar || Todos || 21 || 39 || C ||
+|| A2.2 || Editar  || Todos || 22 || 29 || C ||
+|| A2.3 || Atualizar Tabela de Risco e TAA || Caio || 1 || 1 || C ||
+|| A2.4 || Gerar artefato Big Chart  || Caio || 1 || 1 || C ||
+
+
+*Tabela de Alocação de Atividades - Iteração 03 - (19/10/2010 – 03/11/2010)*
+
+US03 - 
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA3.1 || . || C ||
+     
+
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A3.1 |||| Todos || 74 || 58.3 || C ||
+|| A3.2 || Atualizar Tabela de Risco e TAA || Filipe || 1 || 1 || C ||
+|| A3.3 || Gerar artefato Big Chart  || Filipe || 1 || 1 || C ||
+|| A3.4 || Gerar script dos testes de aceitação || Caio || 5 || 2 || C ||
+
+
+*Tabela de Alocação de Atividades - Iteração 04 - (04/11/2010 – 17/11/2010) *
+
+US04 - Permitir que um cliente leia arquivos fragmentados.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA4.1 || .  || C ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A4.1 ||  Verificar em quais honeycombs há partições de um arquivo e uni-las logicamente || Todos || 68 || 61 || C ||
+|| A4.2 || Atualizar Tabela de Risco e TAA || Filipe || 1 || 1 || C ||
+|| A4.3 || Gerar artefato Big Chart  || Filipe || 1 || 1 || C ||
+|| A4.4 || Gerar script dos testes de aceitação || Caio || 5 || 12 || C ||
+
+
+*Tabela de Alocação de Atividades - Iteração 05 - (18/11/2010 – 29/11/2010) *
+
+US05 - .
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA5.1 || . || D ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A5.1 || . || Todos || 60 || || C ||
+|| A5.2 || Atualizar Tabela de Risco e TAA || Kemerson || 1 || 1 || C ||
+|| A5.3 || Gerar artefato Big Chart  || Kemerson || 1 || 1 || C ||
+|| A5.4 || Gerar script dos testes de aceitação || Filipe || 5 || || D ||
+|| A5.5 || Test Review. || Kemerson || 10 || 6 || C ||
+|| A5.6 ||  || Todos || 21 || 27 || C ||
