@@ -1,0 +1,7 @@
+= Requisitos Não Funcionais =
+
+O aplicativo GeoPBMobile deve:
+
+    * ser desenvolvido para executar no Sistema Operacional Windows Mobile 6.0 ou superior
+    * utilizar mapas do google para processamento de informações geográficas
+    * ser intuitivo, fácil de usar e prover bom desempenho.
