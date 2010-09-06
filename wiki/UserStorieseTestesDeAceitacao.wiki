@@ -1,0 +1,17 @@
+= USERSTORIES e TESTES DE ACEITAÇÃO  =
+
+*Lista de User Stories*
+
+
+*US01* - Estudar ferramentas e tecnologias que serão utilizados no projeto. Gerar pequeno protótipo exemplo de mapas no WindowsMobile. 
+
+    TA1.1 - Verificar se o relatório-resumo satisfaz as expectativa do cliente.
+
+    Estimativa inicial: 30h
+
+
+*US02* - 
+
+    TA2.1 - 
+    
+     Estimativa inicial: 45h
