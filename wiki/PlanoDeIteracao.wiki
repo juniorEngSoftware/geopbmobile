@@ -1,6 +1,6 @@
 = Plano das Iterações =
 
-*Tabela de Alocação de Atividades - Iteração 01 - (21/09/2010 – 15/04/2010)*
+*Tabela de Alocação de Atividades - Iteração 01 - (21/09/2010 – 15/10/2010)*
 
 US01 - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno protótipo exemplo de mapas no WindowsMobile. 
 
