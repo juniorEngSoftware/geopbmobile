@@ -3,15 +3,36 @@
 *Lista de User Stories*
 
 
-*US01* - Estudar ferramentas e tecnologias que serão utilizados no projeto. Gerar pequeno protótipo exemplo de mapas no Windows Mobile. 
+*US01* - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno protótipo exemplo de mapas no WindowsMobile.
 
-    TA1.1 - Verificar se .
+    TA1.1 -
 
     Estimativa inicial: 30h
 
 
-*US02* - 
+*US02* - Implementar visualização de obras públicas.
 
     TA2.1 - 
     
      Estimativa inicial: 45h
+
+
+*US03* - Implementar a denúncia via texto.
+
+    TA3.1 -
+
+    Estimativa inicial: 30h
+
+
+*US04* - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
+
+    TA4.1 -
+
+    Estimativa inicial: 30h
+
+
+*US05* - Implementar a funcionalidade de auditoria in loco.
+
+    TA5.1 -
+
+    Estimativa inicial: 30h
