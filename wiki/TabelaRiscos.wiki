@@ -1,4 +1,5 @@
 = Tabela de Riscos   =
 
 || *Data de Identificação* || *Descrição* || *Gravidade* || *Ordem* || *Ordem Semana Passada* || *Número de Semanas na Lista* || *Responsável por Superar o Risco* || *Observações* ||
-|| 02/09/2010  || Cliente bastante atarefado e, consequentemente, pouco disponível para acompanhamento do projeto. || Alta || 1 ||  ||  || . || Para superar esse risco, cliente e equipe de desenvolvimento devem encontrar pelo menos um horário em comum disponível para todos os envolvidos, possibilitando pelo menos uma reunião semanal. ||
+|| 02/09/2010  || Cliente bastante atarefado e, consequentemente, pouco disponível para acompanhamento do projeto. || Alta || 1 ||  ||  || Cliente || Para superar esse risco, cliente e equipe de desenvolvimento devem encontrar pelo menos um horário em comum disponível para todos os envolvidos, possibilitando pelo menos uma reunião semanal. ||
+|| 12/09/2010  || Pouco conhecimento com relação ao desenvolvimento para WindosMobile e na linguagem C# || Baixa || 2 ||  ||  || Kemerson e Caio ||  ||
