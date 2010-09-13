@@ -40,7 +40,7 @@ US03 -
      
 
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A3.1 |||| Todos ||  ||  ||  ||
+|| A3.1 || || Todos ||  ||  ||  ||
 || A3.2 || Atualizar Tabela de Risco e TAA || Filipe ||  ||  ||  ||
 || A3.3 || Gerar artefato Big Chart  || Filipe ||  ||  ||  ||
 || A3.4 || Gerar script dos testes de aceitação || Caio ||  ||  ||  ||
