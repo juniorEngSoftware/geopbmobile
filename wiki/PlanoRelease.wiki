@@ -15,7 +15,7 @@
 
 *Período : * 19/10/2010 – 29/11/2010
 
-*Gerente: * Kemerson
+*Gerente: * Kemerson (e Caio - Iteração 5)
 || *Iteração*  || *User Story* || *Período* ||
 || Iteração 03 || US03 || 19/10/2010 – 03/11/2010 ||
 || Iteração 04 || US04 || 04/11/2010 – 17/11/2010 ||
