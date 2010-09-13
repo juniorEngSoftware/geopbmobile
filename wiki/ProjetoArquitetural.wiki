@@ -19,19 +19,16 @@ O projeto possui os seguintes stakeholders envolvidos:
 
 ==Requisitos Arquiteturais==
 Os requisitos arquiteturais são:
- Requisitos funcionais :
 
-    * prover a visualização de obras públicas com auxílio do GPS
+Requisitos funcionais :
 
-    * prover   denúncia por parte dos cidadãos via sms
-    * prover  denúncia por parte dos cidadãos via upload de fotos
-    * prover relatório (eh isso mesmo??) para auditoria in loco dos auditores do TCE
+    * prover a visualização de obras públicas com auxílio do GPS.
+    * prover denúncia por parte dos cidadãos via sms.
+    * prover denúncia por parte dos cidadãos via upload de fotos.
+    * prover formulário para auditoria in loco dos auditores do TCE.
 
+Requisitos não-funcionais:
 
-
- Requisitos não-funcionais:
-
-    * afas
-
-
-    * sdf
+    * ser desenvolvido para executar no Sistema Operacional Windows Mobile 6.0 ou superior.
+    * utilizar mapas do google para processamento de informações geográficas.
+    * ser intuitivo, fácil de usar e prover bom desempenho. 
