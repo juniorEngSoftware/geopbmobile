@@ -9,10 +9,10 @@ US01 - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno pr
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A1.1 || Estudar  || Todos ||  ||  ||  ||
-|| A1.2 || Estudar || Todos ||  ||  ||  ||
-|| A1.3 || Estudar || Kemerson ||  ||  ||  ||
-|| A1.4 ||  || Todos ||  ||  ||  ||
+|| A1.1 || Estudo introdutório para programação para Windows Mobile  || Kemerson || 5 ||  ||  ||
+|| A1.2 || Estudar linguagem C# || Caio || 5 ||  ||  ||
+|| A1.3 || Verificar qual a melhor estratégia a seguir: Static Maps ou uso de KML em cima do Google Maps || Filipe || 10 ||  ||  ||
+|| A1.4 || Estudar API da câmera e do GPS do dispositivo móvel || Kemerson e Caio || 5 ||  ||  ||
 || A1.5 || Gerar relatório sobre estudo || Todos ||  ||  ||  ||
 
 
