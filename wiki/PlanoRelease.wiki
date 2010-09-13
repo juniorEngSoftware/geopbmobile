@@ -4,7 +4,7 @@
 
 *Período : * 21/09/2010 – 18/10/2010
 
-*Gerente: * Caio
+*Gerente: * Filipe
 || *Iteração*  || *User Story* || *Período* ||
 || Iteração 01 || US01 || 21/09/2010 – 15/10/2010 ||
 || Iteração 02 || US02 || 05/10/2010 – 18/10/2010 ||
@@ -15,7 +15,7 @@
 
 *Período : * 19/10/2010 – 29/11/2010
 
-*Gerente: * Filipe
+*Gerente: * Kemerson
 || *Iteração*  || *User Story* || *Período* ||
 || Iteração 03 || US03 || 19/10/2010 – 03/11/2010 ||
 || Iteração 04 || US04 || 04/11/2010 – 17/11/2010 ||
