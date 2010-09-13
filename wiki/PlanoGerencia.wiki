@@ -1,6 +1,6 @@
 = Plano de Gerência =
 
 || *Gerente* || *Etapa* || *Período* ||
-|| Caio Santos || Etapa de Planejamento || 16/08/2010 - 20/09/2010 ||
+|| Caio Santos || Etapa de Planejamento e Iteração 5|| 16/08/2010 - 20/09/2010 ||
 || Filipe Andrade || Release 1 || 21/09/2010 - 18/10/2010 ||
-|| Kemerson Araújo || Release 2 || 19/08/2010 - 29/11/2010 ||
+|| Kemerson Araújo || Release 2 (Iteração 3 e 4) || 19/08/2010 - 29/11/2010 ||
