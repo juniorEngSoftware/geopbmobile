@@ -1,5 +1,5 @@
 = Projeto Arquitetural =
-http://geopbmobile.googlecode.com/files/proj_arquitetural.jpg
+http://geopbmobile.googlecode.com/files/proj_arquitetural2.jpg
 
 ==Introdução==
 
@@ -33,3 +33,12 @@ Requisitos não-funcionais:
     * ser desenvolvido para executar no Sistema Operacional Windows Mobile 6.0 ou superior.
     * utilizar mapas do google para processamento de informações geográficas.
     * ser intuitivo, fácil de usar e prover bom desempenho. 
+
+==Comentários==
+
+* módulos em verde escuro: componentes do próprio dispositivo móvel
+* módulos em verde claro: componentes para interface do usuário
+* módulos em branco: componentes cliente para acessarem os respectivos servidores
+* módulos em laranja: servidores
+* módulos em cinza: banco de dados
+* módulo azul escuro: lógica e controlador do sistema
