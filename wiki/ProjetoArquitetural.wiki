@@ -36,9 +36,9 @@ Requisitos não-funcionais:
 
 ==Comentários==
 
-* módulos em verde escuro: componentes do próprio dispositivo móvel
-* módulos em verde claro: componentes para interface do usuário
-* módulos em branco: componentes cliente para acessarem os respectivos servidores
-* módulos em laranja: servidores
-* módulos em cinza: banco de dados
-* módulo azul escuro: lógica e controlador do sistema
+  * módulos em verde escuro: componentes do próprio dispositivo móvel
+  * módulos em verde claro: componentes para interface do usuário
+  * módulos em branco: componentes cliente para acessarem os respectivos servidores
+  * módulos em laranja: servidores
+  * módulos em cinza: banco de dados
+  * módulo azul escuro: lógica e controlador do sistema
