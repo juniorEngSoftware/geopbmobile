@@ -64,6 +64,7 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 || A4.2 || Implementar a anexação de vídeos na denúncia || Filipe ||  ||  ||  ||
 || A4.3 || Gerar artefato Big Chart  || Caio ||  ||  ||  ||
 || A4.4 || Atualizar Tabela de Risco e TAA || Kemerson || || || ||
+|| A4.5 || Test Review || Kemerson ||  ||  ||  ||
 
 
 *Tabela de Alocação de Atividades - Iteração 05 - (18/11/2010 – 29/11/2010) *
@@ -80,4 +81,3 @@ US05 - Implementar a funcionalidade de auditoria in loco.
 || A5.3 || Implementar o armazenamento das informações auditoradas nos servidores || Todos || || || ||
 || A5.4 || Atualizar Tabela de Risco e TAA || Kemerson ||  ||  ||  ||
 || A5.5 || Gerar artefato Big Chart  || Kemerson ||  ||  ||  ||
-|| A5.6 || Test Review || Kemerson ||  ||  ||  ||
