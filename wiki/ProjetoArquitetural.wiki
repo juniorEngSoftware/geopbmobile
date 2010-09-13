@@ -1,1 +1,48 @@
 = Projeto Arquitetural =
+
+==Introdução==
+
+Este documento consiste numa visão geral da arquitetura do projeto GeoPB mobile, descrevendo sua finalidade, funcionalidades e as várias dimensoões de um projeto arquitetural.
+
+==Finalidade do sistema==
+O monitoramento de obras públicas é uma tarefa pertencente ao Tribunal de Contas de cada estado. Entretanto, a fiscalização destas pelos cidadãos pode ajudar neste controle, para isso este necessita de um canal de comunicação e de informação ao qual possa denunciar e verificar as informações decorrentes destas obras. Buscando incorporar a utilização de dispositivos móveis equipados com GPS e câmeras digitais na fiscalização de obras públicas pelos cidadãos, neste projeto é proposto o desenvolvimento de uma aplicação para dispositivos móveis para o acompanhamento de obras públicas através de imagens de satélite e um sistema que permita que os cidadãos realizem denúncias.
+
+
+Interface do Sistema: (eh necessário??)
+A interface entre os usuários e o sistema será feita através de (browsers Web) ?????? e conterá os seguintes serviços:
+
+    * visualização de informações de obras públicas com auxílio do GPS
+    * visualização de informações de obras públicas, configuranado região?
+    * denúncia por parte dos cidadãos via sms
+    * denúncia por parte dos cidadãos via upload de fotos
+    * relatório (eh isso mesmo) para auditoria in loco
+
+
+
+Stakeholders:
+O projeto possui os seguintes stakeholders envolvidos:
+
+    * Cliente: TCE
+    * Usuários: auditores do TCE e cidadãos comuns
+    * Equipe do projeto nos papéis de desenvolvedores, testadores e gerentes.
+
+
+
+Requisitos Arquiteturais
+Os requisitos arquiteturais são:
+ Requisitos funcionais :
+
+    * prover a visualização de obras públicas com auxílio do GPS
+
+    * prover   denúncia por parte dos cidadãos via sms
+    * prover  denúncia por parte dos cidadãos via upload de fotos
+    * prover relatório (eh isso mesmo??) para auditoria in loco dos auditores do TCE
+
+
+
+ Requisitos não-funcionais:
+
+    * afas
+
+
+    * sdf
