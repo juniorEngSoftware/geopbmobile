@@ -70,9 +70,10 @@ US05 - Implementar a funcionalidade de auditoria in loco.
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A5.1 || . || Todos ||  || ||  ||
-|| A5.2 || Atualizar Tabela de Risco e TAA || Kemerson ||  ||  ||  ||
-|| A5.3 || Gerar artefato Big Chart  || Kemerson ||  ||  ||  ||
-|| A5.4 || Gerar script dos testes de aceitação || Filipe ||  || ||  ||
-|| A5.5 || Test Review. || Kemerson ||  ||  ||  ||
-|| A5.6 ||  || Todos ||  ||  ||  ||
+|| A5.1 || Implementar interface para prover auditoria || Todos || || ||  ||
+|| A5.2 || Implementar a lógica da auditoria na aplicação || Todos || || || ||
+|| A5.3 || Implementar o armazenamento das informações auditoradas nos servidores || Todos || || || ||
+|| A5.4 || Atualizar Tabela de Risco e TAA || Kemerson ||  ||  ||  ||
+|| A5.5 || Gerar artefato Big Chart  || Kemerson ||  ||  ||  ||
+|| A5.6 || Gerar script dos testes de aceitação || Filipe ||  || ||  ||
+|| A5.7 || Test Review. || Kemerson ||  ||  ||  ||
