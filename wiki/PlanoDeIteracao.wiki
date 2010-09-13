@@ -14,6 +14,8 @@ US01 - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno pr
 || A1.3 || Verificar qual a melhor estratégia a seguir: Static Maps ou uso de KML em cima do Google Maps || Filipe || 10 ||  ||  ||
 || A1.4 || Estudar API da câmera e do GPS do dispositivo móvel || Kemerson e Caio || 5 ||  ||  ||
 || A1.5 || Desenvolver alguma aplicação de exemplo, utilizando os conceitos estudados || Todos || 20 ||  ||  ||
+|| A1.6 || Gerar artefato Big Chart || Filipe || 2 || || ||
+|| A1.7 || Atualizar Tabela de Risco e TAA || Filipe || 2 || || ||
 
 
 *Tabela de Alocação de Atividades - Iteração 02 - (05/10/2010 – 18/10/2010)*
@@ -29,6 +31,8 @@ US02 - Implementar visualização de obras públicas.
 || A2.2 || Utilizar o GPS para pegar a posição atual do usuário e mostrar as obras públicas presentes naquele local || Todos ||  ||  ||  ||
 || A2.3 || Implementar forma de o usuário passar a localização de onde quer ver as obras públicas || Caio ||  ||  ||  ||
 || A2.4 || Listar informações das obras, através do acesso a um WebService já existente || Caio ||  ||  ||  ||
+|| A2.5 || Gerar artefato Big Chart || Filipe || || || ||
+|| A2.6 || Atualizar Tabela de Risco e TAA || Filipe || || || ||
 
 
 *Tabela de Alocação de Atividades - Iteração 03 - (19/10/2010 – 03/11/2010)*
@@ -43,7 +47,9 @@ US03 - Implementar a denúncia via texto.
 || A3.1 || Implementar módulo de denúncia textual || Todos ||  ||  ||  ||
 || A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe ||  ||  ||  ||
 || A3.3 || Atualizar BD com a nova denúncia || Filipe ||  ||  ||  ||
-|| A3.4 ||  || Caio ||  ||  ||  ||
+|| A3.4 || Gerar artefato Big Chart || Caio || || || ||
+|| A3.5 || Atualizar Tabela de Risco e TAA || Caio || || || ||
+|| A3.6 || Gerar scripts dos testes de aceitação || Kemerson || || || ||
 
 
 *Tabela de Alocação de Atividades - Iteração 04 - (04/11/2010 – 17/11/2010) *
@@ -57,8 +63,9 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A4.1 || Implementar a anexação de fotos na denúncia || Todos ||  ||  ||  ||
 || A4.2 || Implementar a anexação de vídeos na denúncia || Filipe ||  ||  ||  ||
-|| A4.3 || Gerar artefato Big Chart  || Filipe ||  ||  ||  ||
+|| A4.3 || Gerar artefato Big Chart  || Caio ||  ||  ||  ||
 || A4.4 || Gerar script dos testes de aceitação || Caio ||  ||  ||  ||
+|| A4.5 || Atualizar Tabela de Risco e TAA || Kemerson || || || ||
 
 
 *Tabela de Alocação de Atividades - Iteração 05 - (18/11/2010 – 29/11/2010) *
