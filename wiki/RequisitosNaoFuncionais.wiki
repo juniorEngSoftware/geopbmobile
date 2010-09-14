@@ -1,7 +1,10 @@
 = Requisitos Não Funcionais =
 
-O aplicativo GeoPBMobile deve:
+Os requisitos não funiconais para o desenvolvimento da aplicativo GeoPB Mobile são:
 
-    * ser desenvolvido para executar no Sistema Operacional Windows Mobile 6.0 ou superior
-    * utilizar mapas do google para processamento de informações geográficas
-    * ser intuitivo, fácil de usar e prover bom desempenho.
+    * A aplicação deve ser desenvolvida para executar no Sistema Operacional Windows Mobile 6.0 ou superior
+    * A aplicação deve utilizar mapas do google para processamento de informações geográficas
+    * A aplicação deve ser intuitivo, fácil de usar e prover bom desempenho.
+
+OBS.:
+   A aplicação irá executar em qualquer dispositivo móvel com Sistema Operacional Windows Mobile 6.0 ou superior. Porém, os dispositivos que não possuirem câmera digital e GPS não serão capazes de executar todas as funcionalidades providas pela aplicação.
