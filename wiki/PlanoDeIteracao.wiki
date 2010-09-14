@@ -2,10 +2,14 @@
 
 *Tabela de Alocação de Atividades - Iteração 01 - (21/09/2010 – 15/10/2010)*
 
-US01 - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno protótipo exemplo de mapas no WindowsMobile. 
+US01 - Implementar visualizaçao de obras públicas. 
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA1.1 ||  ||  ||
+|| TA1.1 || O usuário abrirá o mapa e irá visualizar as obras que estão na área visível do mapa.  ||  ||
+|| TA1.2 || O usuário realizará operações de "panning", sendo sempre mostradas as obras que estiverem na área visível. || ||
+|| TA1.3 || O usuário realizará operações de "zooming", sendo sempre mostradas as obras que estiverem na área visível. || ||
+|| TA1.4 || Quando o GPS estiver acionado, o mapa irá acompanhar a localização do usuário. || ||
+|| TA1.5 || Quando o mapa for alterado para acompanhar a localização do usuário, as obras devem ser atualizadas. || ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
@@ -20,10 +24,12 @@ US01 - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno pr
 
 *Tabela de Alocação de Atividades - Iteração 02 - (05/10/2010 – 18/10/2010)*
 
-US02 - Implementar visualização de obras públicas.
+US02 - Visualização de informações das obras. 
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA2.1 ||  ||  ||
+|| TA2.1 || O usuário irá clicar em uma obra e as informações textuais desta serão exibidas. ||  ||
+|| TA2.2 || Na janela de informações da obra, o usuário irá selecionar a aba de fotografias e as fotografias relacionadas a esta obra serão mostradas. ||  ||
+|| TA2.3 || O usuário poderá visualizar cada fotografia com detalhes podendo ampliar para ver os detalhes e passar para outra fotografia. ||  ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
