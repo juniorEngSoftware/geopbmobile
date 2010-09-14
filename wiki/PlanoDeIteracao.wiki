@@ -13,13 +13,16 @@ US01 - Implementar visualizaçao de obras públicas.
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A1.1 || Estudo introdutório para programação para Windows Mobile  || Kemerson || 5 ||  ||  ||
-|| A1.2 || Estudar linguagem C# || Caio || 5 ||  ||  ||
-|| A1.3 || Verificar qual a melhor estratégia a seguir: Static Maps ou uso de KML em cima do Google Maps || Filipe || 10 ||  ||  ||
-|| A1.4 || Estudar API da câmera e do GPS do dispositivo móvel || Kemerson e Caio || 5 ||  ||  ||
-|| A1.5 || Desenvolver alguma aplicação de exemplo, utilizando os conceitos estudados || Todos || 20 ||  ||  ||
-|| A1.6 || Gerar artefato Big Chart || Filipe || 2 || || ||
-|| A1.7 || Atualizar Tabela de Risco e TAA || Filipe || 2 || || ||
+|| A1.1 || Estudo introdutório para programação para Windows Mobile  || Kemerson e Caio || 8 ||  ||  ||
+|| A1.2 || Estudar linguagem C# || Kemerson e Caio || 8 ||  ||  ||
+|| A1.3 || Verificar qual a melhor estratégia a seguir: Static Maps, uso de KML em cima do Google Maps ou Virtual Earth Maps || Filipe || 4 ||  ||  ||
+|| A1.4 || Estudar API do GPS do dispositivo móvel || Kemerson e Caio || 4 ||  ||  ||
+|| A1.5 || Exibir um mapa com as obras. O ponto inicial é o posicionamento geográfico do usuário. || Todos || 20 ||  ||  ||
+|| A1.6 || Implementar operação de "panning". || Todos || 4 || || ||
+|| A1.7 || Implementar operação de "zooming". || Todos || 4 || || ||
+|| A1.8 || Implementar alteração do mapa de acordo com posicionamento geográfico em tempo real. || Todos || 8 || || ||
+|| A1.9 || Gerar artefato Big Chart || Filipe || 2 || || ||
+|| A1.10 || Atualizar Tabela de Risco e TAA || Filipe || 2 || || ||
 
 
 *Tabela de Alocação de Atividades - Iteração 02 - (05/10/2010 – 18/10/2010)*
@@ -33,12 +36,12 @@ US02 - Visualização de informações das obras.
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A2.1 || Navegando pelo mapa, exibir as obras presentes na região que está sendo visualizada || Todos ||  ||  ||  ||
-|| A2.2 || Utilizar o GPS para pegar a posição atual do usuário e mostrar as obras públicas presentes naquele local || Todos ||  ||  ||  ||
-|| A2.3 || Implementar forma de o usuário passar a localização de onde quer ver as obras públicas || Caio ||  ||  ||  ||
-|| A2.4 || Listar informações das obras, através do acesso a um WebService já existente || Caio ||  ||  ||  ||
-|| A2.5 || Gerar artefato Big Chart || Filipe || || || ||
-|| A2.6 || Atualizar Tabela de Risco e TAA || Filipe || || || ||
+|| A2.1 || Listar informações das obras, através do acesso a um WebService já existente. || Todos || 20 ||  ||  ||
+|| A2.2 || Visualizar as fotografias relacionadas a obra selecionada. || Todos || 8 ||  ||  ||
+|| A2.3 || Visualizar detalhes das fotografias. || Todos || 4 ||  ||  ||
+|| A2.4 || Implementar forma de o usuário passar a localização de onde quer ver as obras públicas. || Todos || 12 ||  ||  ||
+|| A2.5 || Gerar artefato Big Chart || Filipe || 2 || || ||
+|| A2.6 || Atualizar Tabela de Risco e TAA || Filipe || 2 || || ||
 
 
 *Tabela de Alocação de Atividades - Iteração 03 - (19/10/2010 – 03/11/2010)*
