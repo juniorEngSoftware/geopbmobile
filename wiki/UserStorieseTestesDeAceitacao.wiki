@@ -3,36 +3,42 @@
 *Lista de User Stories*
 
 
-*US01* - Estudar ferramentas e tecnologias que serão utilizadas. Gerar pequeno protótipo exemplo de mapas no WindowsMobile.
+*US01* - Implementar visualizaçao de obras públicas.
 
-    TA1.1 -
+    TA1.1 - O usuário abrirá o mapa e irá visualizar as obras que estão na área visível do mapa.
+    TA1.2 - O usuário realizará operações de "panning", sendo sempre mostradas as obras que estiverem na área visível. 
+    TA1.3 - O usuário realizará operações de "zooming", sendo sempre mostradas as obras que estiverem na área visível. 
+    TA1.5 - Quando o GPS estiver acionado, o mapa irá acompanhar a localização do usuário.
+    TA1.6 - Quando o mapa for alterado para acompanhar a localização do usuário, as obras devem ser atualizadas.
 
-    Estimativa inicial: 30h
+    Estimativa inicial: 45h
 
 
-*US02* - Implementar visualização de obras públicas.
+*US02* - Visualização de informações das obras.
 
-    TA2.1 - 
+    TA2.1 - O usuário irá clicar em uma obra e as informações textuais desta serão exibidas.
+    TA2.2 - Na janela de informações da obra, o usuário irá selecionar a aba de fotografias e as fotografias relacionadas a esta obra serão mostradas.
+    TA2.3 - O usuário poderá visualizar cada fotografia com detalhes podendo ampliar para ver os detalhes e passar para outra fotografia.  
     
-     Estimativa inicial: 60h
+     Estimativa inicial: 45h
 
 
-*US03* - Implementar a denúncia via texto.
+*US03* -  Implementar a Denuncia textual.
 
-    TA3.1 -
-
-    Estimativa inicial: 45h
-
-
-*US04* - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
-
-    TA4.1 -
+    Testes de Aceitação: A serem descritos pelo cliente posteriormente.
 
     Estimativa inicial: 45h
 
 
-*US05* - Implementar a funcionalidade de auditoria in loco.
+*US04* - Implementar a funcionalidade de denuncia atraves de upload de fotos.
 
-    TA5.1 -
+    Testes de Aceitação: A serem descritos pelo cliente posteriormente.
+
+    Estimativa inicial: 45h
+
+
+*US05* -  Implementar a funcionalidade para auditoria in loco.
+
+    Testes de Aceitação: A serem descritos pelo cliente posteriormente.
 
     Estimativa inicial: 45h
