@@ -18,6 +18,7 @@
     Estimativa inicial: 45h
 
 
+
 *US02* - Visualização de informações das obras.
 
     TA2.1 - O usuário irá clicar em uma obra e as informações textuais desta serão exibidas.
@@ -29,6 +30,7 @@
      Estimativa inicial: 45h
 
 
+
 *US03* -  Implementar a Denuncia textual.
 
     Testes de Aceitação: A serem descritos pelo cliente posteriormente.
@@ -36,11 +38,13 @@
     Estimativa inicial: 45h
 
 
+
 *US04* - Implementar a funcionalidade de denuncia atraves de upload de fotos.
 
     Testes de Aceitação: A serem descritos pelo cliente posteriormente.
 
     Estimativa inicial: 45h
+
 
 
 *US05* -  Implementar a funcionalidade para auditoria in loco.
