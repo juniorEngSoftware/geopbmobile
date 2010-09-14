@@ -11,9 +11,9 @@
 
     TA1.3 - O usuário realizará operações de "zooming", sendo sempre mostradas as obras que estiverem na área visível. 
 
-    TA1.5 - Quando o GPS estiver acionado, o mapa irá acompanhar a localização do usuário.
+    TA1.4 - Quando o GPS estiver acionado, o mapa irá acompanhar a localização do usuário.
 
-    TA1.6 - Quando o mapa for alterado para acompanhar a localização do usuário, as obras devem ser atualizadas.
+    TA1.5 - Quando o mapa for alterado para acompanhar a localização do usuário, as obras devem ser atualizadas.
 
     Estimativa inicial: 45h
 
