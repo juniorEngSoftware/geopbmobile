@@ -6,9 +6,13 @@
 *US01* - Implementar visualizaçao de obras públicas.
 
     TA1.1 - O usuário abrirá o mapa e irá visualizar as obras que estão na área visível do mapa.
+
     TA1.2 - O usuário realizará operações de "panning", sendo sempre mostradas as obras que estiverem na área visível. 
+
     TA1.3 - O usuário realizará operações de "zooming", sendo sempre mostradas as obras que estiverem na área visível. 
+
     TA1.5 - Quando o GPS estiver acionado, o mapa irá acompanhar a localização do usuário.
+
     TA1.6 - Quando o mapa for alterado para acompanhar a localização do usuário, as obras devem ser atualizadas.
 
     Estimativa inicial: 45h
@@ -17,7 +21,9 @@
 *US02* - Visualização de informações das obras.
 
     TA2.1 - O usuário irá clicar em uma obra e as informações textuais desta serão exibidas.
+    
     TA2.2 - Na janela de informações da obra, o usuário irá selecionar a aba de fotografias e as fotografias relacionadas a esta obra serão mostradas.
+    
     TA2.3 - O usuário poderá visualizar cada fotografia com detalhes podendo ampliar para ver os detalhes e passar para outra fotografia.  
     
      Estimativa inicial: 45h
