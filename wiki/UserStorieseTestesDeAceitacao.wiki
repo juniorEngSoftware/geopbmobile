@@ -18,7 +18,6 @@
     Estimativa inicial: 45h
 
 
-
 *US02* - Visualização de informações das obras.
 
     TA2.1 - O usuário irá clicar em uma obra e as informações textuais desta serão exibidas.
