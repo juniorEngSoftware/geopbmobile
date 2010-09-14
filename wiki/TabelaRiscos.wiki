@@ -2,5 +2,6 @@
 
 || *Data de Identificação* || *Descrição* || *Gravidade* || *Ordem* || *Ordem Semana Passada* || *Número de Semanas na Lista* || *Responsável por Superar o Risco* || *Observações* ||
 || 02/09/2010  || Cliente bastante atarefado e, consequentemente, pouco disponível para acompanhamento do projeto. || Alta || 1 ||  ||  || Cliente || Para superar esse risco, cliente e equipe de desenvolvimento devem encontrar pelo menos um horário em comum disponível para todos os envolvidos, possibilitando pelo menos uma reunião semanal. ||
-|| 12/09/2010  || Pouco conhecimento com relação ao desenvolvimento para WindosMobile e na linguagem C# || Baixa || 2 ||  ||  || Kemerson e Caio ||  ||
+|| 12/09/2010  || Pouco conhecimento com relação ao desenvolvimento para WindosMobile e na linguagem C# || Baixa || 4 ||  ||  || Kemerson e Caio ||  ||
 || 14/09/2010  || Manipulação de dados já existentes em servidores. || Baixa || 3 ||  ||  || Todos || Para superar este risco, faz-se necessário um bom estudo e entendimento do que já está implementado e armazenado nos servidores. ||
+|| 14/09/2010  || Inexistência de uma API bem definida para utilização de mapas do Google em dispositivos móveis com Windows Mobile. || Média || 2 ||  ||  || Filipe || Para superar este risco, o responsável terá que identificar qual a melhor estratégia para exibição de mapas em dispositivos móveis com Sistema Operacional Windows Mobile. ||
