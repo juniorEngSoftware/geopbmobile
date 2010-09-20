@@ -1,9 +1,8 @@
 = Projeto Arquitetural =
-http://geopbmobile.googlecode.com/files/proj_arquitetural2.jpg
 
 ==Introdução==
 
-Este documento consiste numa visão geral da arquitetura do projeto GeoPB mobile, descrevendo sua finalidade, funcionalidades e as várias dimensoões de um projeto arquitetural.
+Este documento consiste numa visão geral da arquitetura do projeto GeoPB mobile, descrevendo sua finalidade, funcionalidades e as várias dimensões de um projeto arquitetural.
 
 
 ==Finalidade do sistema==
@@ -26,19 +25,40 @@ Requisitos funcionais :
     * prover a visualização de obras públicas com auxílio do GPS.
     * prover denúncia por parte dos cidadãos via sms.
     * prover denúncia por parte dos cidadãos via upload de fotos.
-    * prover formulário para auditoria in loco dos auditores do TCE.
+    * prover formulário para auditoria _in_ _loco_ dos auditores do TCE.
 
 Requisitos não-funcionais:
 
-    * ser desenvolvido para executar no Sistema Operacional Windows Mobile 6.0 ou superior.
-    * utilizar mapas do google para processamento de informações geográficas.
+    * A aplicação deve ser desenvolvida para executar no Sistema Operacional Windows Mobile 6.0 ou superior;
+    * A aplicação deve utilizar mapas do google para processamento de informações geográficas;
+    * Utilização de sistema de controle de versões;
+    * Utilização de linguagem C# para desenvolvimento no dispositivo móvel e Java no servidor;
     * ser intuitivo, fácil de usar e prover bom desempenho. 
 
-==Comentários==
 
-  * módulos em verde escuro: componentes do próprio dispositivo móvel
-  * módulos em verde claro: componentes para interface do usuário
-  * módulos em branco: componentes cliente para acessarem os respectivos servidores
+OBS.: A aplicação irá executar em qualquer dispositivo móvel com Sistema Operacional Windows Mobile 6.0 ou superior. Os dispositivos que não possuírem câmera digital e GPS executarão o sistema, porém não serão capazes de executar todas as funcionalidades providas pela aplicação.
+
+==Visão Lógica==
+Essa seção apresenta aspectos detalhados sobre a estrutura da arquitetura do
+Sadi, tais diagramas de componentes e comentários sobre suas respectivas camadas. Dessa forma, tal seção se endereça a stakeholders tais como: desenvolvedores, testadores, mantenedores, arquiteto e o gerente de projetos.
+
+===Estrutura da Arquitetura===
+http://geopbmobile.googlecode.com/files/proj.arquitetural.jpg
+
+===Camada de Apresentação===
+
+A camada de apresentação será desenvolvida no dispositivo móvel com a linguagem de programação C#, usando APIs do GPS e google maps. Nessa camada, as obras públicas serão apresentadas através de mapas do google, podendo ter a localização geográfica configurada com o auxílio do GPS do dispositivo(se este tiver GPS disponível). Também será possível acessar a câmera digital do dispositivo (se este tiver câmera disponível), durante a "navegação" nos mapas.
+Analisando a estrutura da arquitetura, temos:
+    *módulo em verde escuro: componente do próprio dispositivo móvel (Câmera Digital);
+    *módulos em verde claro: componentes para interface do usuário;
+
+===Camada de Negócio===
+A camada de negócio está dividida no dispositivo móvel e no servidor GeoDenúncia. No dispositivo, temos a lógica e a comunicação com os servidores web: GeoPB, o qual contém as informações das obras públicas; GeoServer, o qual contém bancos de mapas; e GeoDenúncia, o qual servirá para tratar denúncias e informações de auditoria.
+Observação: os servidores GeoPB e GeoServer já estão desenvolvidos. Apenas iremos acessá-los conforme é mostrado na figura acima.
+Analisando a estrutura da arquitetura, temos:
+  * módulos em branco: componentes cliente para acessarem os respectivos servidores.
   * módulos em laranja: servidores
+
+No servidor GeoDenúncia, que será desenvolvido, teremos
   * módulos em cinza: banco de dados
   * módulo azul escuro: lógica e controlador do sistema
