@@ -3,6 +3,7 @@
 Os requisitos não funcionais para o desenvolvimento da aplicativo GeoPB Mobile são:
 
     * A aplicação deve ser desenvolvida para executar no Sistema Operacional Windows Mobile 6.0 ou superior;
+    * O dispositivo móvel no qual a aplicação irá ser executada deve possuir câmera e GPS;
     * A aplicação deve utilizar mapas do google para processamento de informações geográficas;
     * Utilização de sistema de controle de versões;
     * Utilização de linguagem C# para desenvolvimento no dispositivo móvel e Java no servidor;
