@@ -2,7 +2,7 @@
 
 ==Introdução==
 
-Este documento consiste numa visão geral da arquitetura do projeto GeoPB mobile, descrevendo sua finalidade, funcionalidades e as várias dimensões de um projeto arquitetural.
+Este documento consiste numa visão geral da arquitetura do projeto GeoPB Mobile, descrevendo sua finalidade, funcionalidades e as várias dimensões de um projeto arquitetural.
 
 
 ==Finalidade do sistema==
@@ -23,7 +23,7 @@ Os requisitos arquiteturais são:
 Requisitos funcionais :
 
     * prover a visualização de obras públicas com auxílio do GPS.
-    * prover denúncia por parte dos cidadãos via sms.
+    * prover denúncia textual por parte dos cidadãos.
     * prover denúncia por parte dos cidadãos via upload de fotos.
     * prover formulário para auditoria _in_ _loco_ dos auditores do TCE.
 
@@ -40,7 +40,7 @@ Requisitos não-funcionais:
 
 ==Visão Lógica==
 Essa seção apresenta aspectos detalhados sobre a estrutura da arquitetura do
-Sadi, tais diagramas de componentes e comentários sobre suas respectivas camadas. Dessa forma, tal seção se endereça a stakeholders tais como: desenvolvedores, testadores, mantenedores, arquiteto e o gerente de projetos.
+GeoPB Mobile, tais diagramas de componentes e comentários sobre suas respectivas camadas. Dessa forma, tal seção se endereça a stakeholders tais como: desenvolvedores, testadores, mantenedores, arquiteto e o gerente de projetos.
 
 
 ===Aspectos Arquiteturais===
