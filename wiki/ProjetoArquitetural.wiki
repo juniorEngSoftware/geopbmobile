@@ -55,8 +55,8 @@ http://geopbmobile.googlecode.com/files/proj.arquitetural.jpg
 
 A camada de apresentação será desenvolvida no dispositivo móvel com a linguagem de programação C#, usando APIs do GPS e google maps. Nessa camada, as obras públicas serão apresentadas através de mapas do google, podendo ter a localização geográfica configurada com o auxílio do GPS do dispositivo(se este tiver GPS disponível). Também será possível acessar a câmera digital do dispositivo (se este tiver câmera disponível), durante a "navegação" nos mapas.
 Analisando a estrutura da arquitetura, temos:
-    *módulo em verde escuro: componente do próprio dispositivo móvel (Câmera Digital);
-    *módulos em verde claro: componentes para interface do usuário;
+    * Módulo em verde escuro: componente do próprio dispositivo móvel (Câmera Digital);
+    * Módulos em verde claro: componentes para interface do usuário;
 
 ===Camada de Negócio===
 
