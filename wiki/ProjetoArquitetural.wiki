@@ -63,13 +63,13 @@ Analisando a estrutura da arquitetura, temos:
 A camada de negócio está dividida no dispositivo móvel e no servidor GeoDenúncia. No dispositivo, temos a lógica e a comunicação com os servidores web: GeoPB, o qual contém as informações das obras públicas; GeoServer, o qual contém bancos de mapas; e GeoDenúncia, o qual servirá para tratar denúncias e informações de auditoria.
 Observação: os servidores GeoPB e GeoServer já estão desenvolvidos. Apenas iremos acessá-los conforme é mostrado na figura acima.
 Analisando a estrutura da arquitetura, temos:
-  * módulos em branco: componentes cliente para acessarem os respectivos servidores.
-  * módulos em rosa: servidores
+  * Módulos em branco: componentes cliente para acessarem os respectivos servidores.
+  * Módulos em rosa: servidores
 
 No servidor GeoDenúncia, que será desenvolvido, teremos um controlador (struts) que transforma eventos gerados pela interface em ações de negócio, alterando o modelo. O modelo (lógica no servidor) será responsável por acessar a camada de acessos ao dados, a qual seguirá o padrão DAO. Desse modo, termos uma arquitetura dividida em camadas seguindo o padrão MVC.
 
 ===Camada de Persistência===
 Como discutido anteriormente, os dados serão armazenados conforme o padrão DAO, sendo responsabilidade do modelo.
 Analisando a estrutura da arquitetura, temos:
- * módulo em laranja: camada de acesso aos dados.
- * módulos em cinza: banco de dados
+ * Módulo em laranja: camada de acesso aos dados.
+ * Módulos em cinza: banco de dados
