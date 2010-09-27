@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPS+StaticMap", "GPS+StaticMap\GPS+StaticMap.csproj", "{45846E61-325B-4AE4-8095-304809FDC11D}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "InstaladorGPS+StaticMapP1", "Instalador\Instalador.vddproj", "{8FF35E6B-453E-4469-A23B-3F62AD39C68C}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45846E61-325B-4AE4-8095-304809FDC11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45846E61-325B-4AE4-8095-304809FDC11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45846E61-325B-4AE4-8095-304809FDC11D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{45846E61-325B-4AE4-8095-304809FDC11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45846E61-325B-4AE4-8095-304809FDC11D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45846E61-325B-4AE4-8095-304809FDC11D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8FF35E6B-453E-4469-A23B-3F62AD39C68C}.Debug|Any CPU.ActiveCfg = Debug
+		{8FF35E6B-453E-4469-A23B-3F62AD39C68C}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
