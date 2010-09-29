@@ -12,7 +12,7 @@ namespace GPS_StaticMap
     {
 
         private static GoogleMaps _instance = null;
-        private double _latitude, _longitude;
+        private double latitude, _longitude;
         private int _width, _height, _zoomLevel;
         private readonly String _mapType;
         const String ApiKey = "ABQIAAAAw69_BFiWwuyPWNJOfwkfRxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxT_htBJ1t7aoeF9pkiq0F2o7vd0-Q";
@@ -23,7 +23,7 @@ namespace GPS_StaticMap
 
         private GoogleMaps()
         {
-            _latitude = -7.2270155;
+            latitude = -7.2270155;
             _longitude = -35.8846521;
             _zoomLevel = 14;
             _mapType = "satellite";
@@ -99,7 +99,7 @@ namespace GPS_StaticMap
 
         public String getMapUrl()
         {
-            String latitudeString = String.Format("{0:0.#######}", _latitude);
+            String latitudeString = String.Format("{0:0.#######}", latitude);
             String longitudeString = String.Format("{0:0.#######}", _longitude);
 
             String latitudeFormatted = latitudeString.Replace(',', '.');
@@ -108,7 +108,7 @@ namespace GPS_StaticMap
             return "http://maps.google.com/staticmap?center=" +
                     latitudeFormatted + "," + longitudeFormatted + "&&&zoom=" + 
                     _zoomLevel + "&&&size=" + _width + "x" + _height + "&&&maptype=" + 
-                    _mapType + "&&&key=" + ApiKey;
+                    _mapType + "&&&mobile=true" + "&&&key=" + ApiKey;
         }
 
         
@@ -159,7 +159,7 @@ namespace GPS_StaticMap
 
         private double adjustLatitude(int deltaY)
         {
-            return YToL(LToY(_latitude) + (deltaY << (21 - _zoomLevel)));
+            return YToL(LToY(latitude) + (deltaY << (21 - _zoomLevel)));
         }
 
         private double adjustLongitude(int deltaX)
@@ -230,12 +230,12 @@ namespace GPS_StaticMap
 
         public double getLatitude()
         {
-            return this._latitude;
+            return this.latitude;
         }
 
         public void setLatitude(double lat)
         {
-            this._latitude = lat;
+            this.latitude = lat;
         }
 
         public double getLongitude()
