@@ -6,8 +6,8 @@ US01 - Implementar visualizaçao de obras públicas.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
 || TA1.1 || O usuário abrirá o mapa e irá visualizar as obras que estão na área visível do mapa.  ||  ||
-|| TA1.2 || O usuário realizará operações de "panning", sendo sempre mostradas as obras que estiverem na área visível. || ||
-|| TA1.3 || O usuário realizará operações de "zooming", sendo sempre mostradas as obras que estiverem na área visível. || ||
+|| TA1.2 || O usuário realizará operações de "panning", sendo sempre mostradas as obras que estiverem na área visível. || C ||
+|| TA1.3 || O usuário realizará operações de "zooming", sendo sempre mostradas as obras que estiverem na área visível. || C ||
 || TA1.4 || Quando o GPS estiver acionado, o mapa irá acompanhar a localização do usuário. || ||
 || TA1.5 || Quando o mapa for alterado para acompanhar a localização do usuário, as obras devem ser atualizadas. || ||
 
@@ -18,11 +18,11 @@ US01 - Implementar visualizaçao de obras públicas.
 || A1.3 || Verificar qual a melhor estratégia a seguir: Static Maps, uso de KML em cima do Google Maps ou Virtual Earth Maps || Filipe || 4 || || ||
 || A1.4 || Estudar API do GPS do dispositivo móvel || Kemerson e Caio || 4 ||  ||  ||
 || A1.5 || Exibir um mapa com as obras. O ponto inicial é o posicionamento geográfico do usuário. || Todos || 20 ||  ||  ||
-|| A1.6 || Implementar operação de "panning". || Todos || 4 || || ||
-|| A1.7 || Implementar operação de "zooming". || Todos || 4 || || ||
+|| A1.6 || Implementar operação de "panning". || Todos || 4 || 2 || C ||
+|| A1.7 || Implementar operação de "zooming". || Todos || 4 || 2 || C ||
 || A1.8 || Implementar alteração do mapa de acordo com posicionamento geográfico em tempo real. || Todos || 8 || || ||
-|| A1.9 || Gerar artefato Big Chart || Filipe || 2 || || ||
-|| A1.10 || Atualizar Tabela de Risco e TAA || Filipe || 2 || || ||
+|| A1.9 || Gerar artefato Big Chart || Filipe || 2 || 1 || C ||
+|| A1.10 || Atualizar Tabela de Risco e TAA || Filipe || 2 || 1 || C ||
 
 
 *Tabela de Alocação de Atividades - Iteração 02 - (05/10/2010 – 18/10/2010)*
