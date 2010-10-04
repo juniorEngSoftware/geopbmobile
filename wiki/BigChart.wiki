@@ -4,3 +4,11 @@
 
 || *Data* ||	*Classes Criadas* ||	*Classes Modificadas* || *Scripts bash* ||	*Scripts EA Criados* ||	*Scripts EA Modificados* || *Interfaces* ||	*Testes de Aceitação* ||	*Testes de Unidade* ||	*User Stories* ||	*Observações* ||
 ||21/09/2010 || 0 || 0 || 0 || 0 || 0 || 0 || 0 || 0 || 0 || Etapa de Planejamento. ||	
+
+|| *Data* || *User Stories* || *Classes* || *Testes de Unidade* || *Testes de Aceitação* || *Observações* ||
+|| 20/09/2010 (Planejamento) ||	0 || 0 || 0 || 0 || Etapa de planejamento. ||
+|| 04/10/2010 (Iteração 1) || 1 || 2 || 1 || 2 || ||
+|| 18/10/2010 (Iteração 2) || || || || || ||
+|| 03/11/2010 (Iteração 3) || || || || || ||
+|| 17/11/2010 (Iteração 4) || || || || || ||
+|| 29/11/2010 (Iteração 5) || || || || || ||
