@@ -15,9 +15,9 @@ US01 - Implementar visualizaçao de obras públicas.
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A1.1 || Estudo introdutório para programação para Windows Mobile  || Kemerson e Caio || 8 ||  ||  ||
 || A1.2 || Estudar linguagem C# || Kemerson e Caio || 8 ||  ||  ||
-|| A1.3 || Verificar qual a melhor estratégia a seguir: Static Maps, uso de KML em cima do Google Maps ou Virtual Earth Maps || Filipe || 4 || || ||
+|| A1.3 || Verificar qual a melhor estratégia a seguir: Static Maps, uso de KML em cima do Google Maps ou Virtual Earth Maps || Filipe || 4 || 2 || ||
 || A1.4 || Estudar API do GPS do dispositivo móvel || Kemerson e Caio || 4 ||  ||  ||
-|| A1.5 || Exibir um mapa com as obras. O ponto inicial é o posicionamento geográfico do usuário. || Todos || 20 ||  ||  ||
+|| A1.5 || Exibir um mapa com as obras. || Todos || 20 || 10 ||  ||
 || A1.6 || Implementar operação de "panning". || Todos || 4 || 2 || C ||
 || A1.7 || Implementar operação de "zooming". || Todos || 4 || 2 || C ||
 || A1.8 || Implementar alteração do mapa de acordo com posicionamento geográfico em tempo real. || Todos || 8 || || ||
