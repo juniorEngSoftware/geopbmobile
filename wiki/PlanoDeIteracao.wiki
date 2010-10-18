@@ -27,6 +27,11 @@ US01 - Implementar visualizaçao de obras públicas.
 
 *Tabela de Alocação de Atividades - Iteração 02 - (05/10/2010 – 18/10/2010)*
 
+Período destinado ao estudo de novas tecnologias tendo em vista que houve uma mudança drástica nos requisitos do projeto e nenhum dos desenvolvedores tinham conhecimento das novas tecnologias a serem utilizadas. Decisão acordada com o cliente.
+
+
+*Tabela de Alocação de Atividades - Iteração 03 - (19/10/2010 – 03/11/2010)*
+
 US02 - Visualização de informações das obras. 
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
@@ -43,8 +48,6 @@ US02 - Visualização de informações das obras.
 || A2.5 || Gerar artefato Big Chart || Filipe || 2 || || ||
 || A2.6 || Atualizar Tabela de Risco e TAA || Filipe || 2 || || ||
 
-
-*Tabela de Alocação de Atividades - Iteração 03 - (19/10/2010 – 03/11/2010)*
 
 US03 - Implementar a denúncia via texto.
 
