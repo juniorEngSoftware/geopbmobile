@@ -6,3 +6,5 @@
 || 14/09/2010  || Manipulação de dados já existentes em servidores. || Baixa || 4 ||  ||  || Todos || Para superar este risco, faz-se necessário um bom estudo e entendimento do que já está implementado e armazenado nos servidores. ||
 || 14/09/2010  || Inexistência de uma API bem definida para utilização de mapas do Google em dispositivos móveis com Windows Mobile. || Média || 3 ||  ||  || Filipe || Para superar este risco, o responsável terá que estudar e identificar qual a melhor estratégia para exibição de mapas em dispositivos móveis com Sistema Operacional Windows Mobile. ||
 || 14/09/2010  || Preparação do ambiente de desenvolvimento de cada desenvolvedor. || Baixa || 1 ||  ||  || Todos || É sabido que a instalação das ferramentas de desenvolvimento para Windows Mobile é um pouco complicada e custa tempo. ||
+|| 04/10/2010 || Utilização de um servidor, que irá intermediar a aplicação Google Maps Mobile e o servidor do TCE. || Alta || 1 || || || Todos || ||
+|| 04/10/2010 || Os desenvolvedores não têm conhecimento das tecnologias a serem utilizadas para desenvolvimento em um servidor. || Alta || 1 || || || Todos || ||
