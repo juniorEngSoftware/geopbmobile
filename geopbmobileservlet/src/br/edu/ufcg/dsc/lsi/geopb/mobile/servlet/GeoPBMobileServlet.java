@@ -1,6 +1,5 @@
 package br.edu.ufcg.dsc.lsi.geopb.mobile.servlet;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -8,7 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
+import de.micromata.opengis.kml.v_2_2_0.Feature;
+import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
+import de.micromata.opengis.kml.v_2_2_0.Link;
+import de.micromata.opengis.kml.v_2_2_0.LookAt;
+import de.micromata.opengis.kml.v_2_2_0.NetworkLink;
+import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
 
 
 
@@ -31,123 +37,44 @@ public class GeoPBMobileServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//		Kml kmlRoot = new Kml();
-//		NetworkLink netWorkLink = new NetworkLink();
-//		Folder folder = new Folder();
-//		kmlRoot.addFolder(folder);
-//		kmlRoot.addNetworkLink(netWorkLink);
-//		KMLParser parser = new KMLParser();
-//		parser.
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		
+		response.setContentType("application/vnd.google-earth.kml+xml");
 		
-		
-		//PRECISEI COPIAR O JAVAAPIFOR KML P/ PASTA TOMCAT/LIB
 		Kml ourKml = new Kml();
-		ourKml.createAndSetPlacemark()
-		   .withName("London, UK").withOpen(Boolean.TRUE)
-		   .createAndSetPoint().addToCoordinates(-0.126236, 51.500152);
-		ourKml.marshal(new File("HelloKml.kml"));
 		
-//		ServletOutputStream outputStream = response.getOutputStream();
-//		String str = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
-//				"<kml>" +
-//				"   <Folder>      " +
-//				"<NetworkLink>" +
-//				"         <name>tce:obras_municipais</name>" +
-//				"         <open>1</open>         " +
-//				"<visibility>1</visibility>         " +
-//				"<Url>            " +
-//				"<href><![CDATA[http://localhost/geopbmobile/kmlService?]]></href>            " +
-//				"<viewRefreshMode>onStop</viewRefreshMode>            " +
-//				"<viewRefreshTime>1</viewRefreshTime>         " +
-//				"</Url>      " +
-//				"</NetworkLink>      <LookAt>         <longitude>-37.23141714255796</longitude>" +
-//				"<latitude>-7.074256298939872</latitude>" +
-//				"        <altitude>0</altitude>" +
-//				"         <range>455596.64940826077</range>" +
-//				"         <tilt>0</tilt>" +
-//				"         <heading>0</heading>" +
-//				"         <altitudeMode>clampToGround</altitudeMode>" +
-//				"      </LookAt>" +
-//				"   </Folder>" +
-//				"</kml>";
-//		String str2 = "teste";
-		response.getWriter().print(ourKml);
-//		
-//		byte[] bytes = ourKml.toString().getBytes();
-//		outputStream.write(bytes);
-//		
-//		String bbox = request.getParameter("BBox");
-//		str = "false";
-//
-//		if (bbox != null) {
-//			str = "true";
-//			saveState();
-//			String[] coords = bbox.split(",");
-//			for (int i = 0; i < coords.length; i++) {
-//				System.out.println("coord " + i + ": " + coords[i]);
-//			}
-//			
-//			Kml ourKml = new Kml();
-//			ourKml.createAndSetPlacemark()
-//			   .withName("London, UK").withOpen(Boolean.TRUE)
-//			   .createAndSetPoint().addToCoordinates(-0.126236, 51.500152);
-//			ourKml.marshal(new File("HelloKml.kml"));
-//			
-//			ServletOutputStream outputStream = response.getOutputStream();
-//			outputStream.print(ourKml.toString());
-			
+		NetworkLink networkLink = new NetworkLink();
+		networkLink.setName("tce:obras_municipais");
+		networkLink.setOpen(true);
+		networkLink.setVisibility(true);
 		
-//		String bbox = request.getParameter("BBox");
-//		if (bbox != null) {
-//			String[] coords = bbox.split(",");
-//			for (int i = 0; i < coords.length; i++) {
-//				System.out.println("coord " + i + ": " + coords[i]);
-//			}
-//		}
-//		FileReader reader = new FileReader(new File("C:/Hugo/Projetos/TCEPB/workspace/GeoPBMobile/web/geopbmobile2.kml"));
-//		ServletOutputStream outputStream = response.getOutputStream();
-//		int i;
-//		for (i = reader.read(); i >= 0; i = reader.read()) {
-//			outputStream.write(i);
-//		}
-//		outputStream.flush();
-//		outputStream.close();
-//		reader.close();
-//		String url = "height=1024&"
-//				+ "width=1024&"
-//				+ "layers=tce%3Aobras_municipais&"
-//				+ "request=GetMap&"
-//				+ "service=wms&"
-//				+ "styles=obras2Style&"
-//				+ "format_options=SUPEROVERLAY%3Afalse%3BKMPLACEMARK%3Afalse%3BKMSCORE%3A40%3BKMATTR%3Atrue%3B&"
-//				+ "srs=EPSG%3A4326&"
-//				+ "format=application%2Fvnd.google-earth.kmz%2Bxml&"
-//				+ "transparent=false&version=1.1.1";
+		Link link = new Link();
+		link.setHref("![CDATA[http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais&request=GetMap" +
+				"&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;" +
+				"&srs=EPSG:4326&format=application/vnd.google-earth.kmz+xml&transparent=false&version=1.1.1]");
+		link.setViewRefreshMode(ViewRefreshMode.ON_STOP);
+		link.setViewRefreshTime(1);
+		
+		networkLink.setUrl(link);
+		
+		LookAt lookAt = new LookAt();
+		lookAt.withLongitude(37.23141714255796);
+		lookAt.withLatitude(-7.074256298939872);
+		lookAt.withAltitude(0);
+		lookAt.setRange(455596.64940826077);
+		lookAt.setTilt(0);
+		lookAt.setHeading(0);
+		lookAt.setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
+		
+		Folder folder = new Folder();
+		folder.addToFeature(networkLink);
+		folder.setAbstractView(lookAt);
+		
+		ourKml.setFeature(folder);
+		ourKml.marshal(response.getOutputStream());
+		
+	
 	}
 
-//	
-//	public void destroy() {
-//		super.destroy();
-//		saveState();
-//	}
-//	
-//	private void saveState() {
-//		FileWriter fileWriter = null;
-//	    PrintWriter printWriter = null;
-//	    try {                                                            
-//	      fileWriter = new FileWriter(new File(getServletContext().getRealPath(getServletName())));
-//	      printWriter = new PrintWriter(fileWriter);         
-//	      printWriter.write(str);                                  
-//	      printWriter.close();
-//	      return;                                                        
-//	    }                                                                
-//	    catch (IOException e) {
-//	    	
-//	    }
-//		
-//	}
 
 }
