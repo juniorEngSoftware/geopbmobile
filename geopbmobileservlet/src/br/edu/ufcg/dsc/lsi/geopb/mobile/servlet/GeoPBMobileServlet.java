@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
-import de.micromata.opengis.kml.v_2_2_0.Feature;
 import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.Link;
@@ -17,14 +16,11 @@ import de.micromata.opengis.kml.v_2_2_0.NetworkLink;
 import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
 
 
-
-
 /**
  * Servlet implementation class GeoPBMobileServlet
  */
 public class GeoPBMobileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private String str;
     
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,6 +35,12 @@ public class GeoPBMobileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		
+		String bbox = request.getParameter("BBox");
+		String[] coords = null;
+		if (bbox != null) {
+			coords = bbox.split(",");
+		}
+		request.getParameterNames();
 		response.setContentType("application/vnd.google-earth.kml+xml");
 		
 		Kml ourKml = new Kml();
@@ -49,9 +51,13 @@ public class GeoPBMobileServlet extends HttpServlet {
 		networkLink.setVisibility(true);
 		
 		Link link = new Link();
-		link.setHref("![CDATA[http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais&request=GetMap" +
-				"&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;" +
-				"&srs=EPSG:4326&format=application/vnd.google-earth.kmz+xml&transparent=false&version=1.1.1]");
+		String str = "<![CDATA[http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais&request=GetMap" +
+		"&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;" +
+		"&srs=EPSG:4326&format=application/vnd.google-earth.kmz+xml&transparent=false&version=1.1.1&" +
+		"bbox="+coords[0]+","+coords[1]+","+coords[2]+","+coords[3]+"]]>";
+		
+		link.setHref(str);
+		
 		link.setViewRefreshMode(ViewRefreshMode.ON_STOP);
 		link.setViewRefreshTime(1);
 		
@@ -71,10 +77,10 @@ public class GeoPBMobileServlet extends HttpServlet {
 		folder.setAbstractView(lookAt);
 		
 		ourKml.setFeature(folder);
-		ourKml.marshal(response.getOutputStream());
-		
-	
-	}
 
+		ourKml.marshal(response.getOutputStream());
+		response.getOutputStream().flush();
+		response.getOutputStream().close();
+	}
 
 }
