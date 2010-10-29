@@ -19,6 +19,6 @@
 	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/jaxb-impl.jar"/>
 	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/jaxb-xjc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/jsr173_1.0_api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/gekmlib/gekmllib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/commons-lang-2.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
