@@ -1,0 +1,1 @@
+O foco do projeto mudou completamente. O que antes seria uma aplicação própria desenvolvida na linguagem C# para rodar em dispositivos móveis Windows Mobile, agora será uma camada adicionada a aplicação Google Maps Mobile.
