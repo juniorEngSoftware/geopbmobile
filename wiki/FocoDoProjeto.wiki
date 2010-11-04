@@ -1,1 +1,11 @@
+*Foco do Projeto*
+
 O foco do projeto mudou completamente. O que antes seria uma aplicação própria desenvolvida na linguagem C# para rodar em dispositivos móveis Windows Mobile, agora será uma camada adicionada a aplicação Google Maps Mobile.
+
+O Google disponibiliza uma aplicação gratuita chamada Google Maps Mobile que disponibiliza diversos serviços para usuários utilizarem informações de posicionamento geográfico entre outros.
+
+Dentre os diversos serviços disponibilizados, é possível adicionar uma camada desenvolvida separadamente para exibir pontos sobre os mapas já disponibilizados pelo Google. Essa camada nada mais é que um arquivo KML que feito de acordo com os padrões do Google pode ser interpretado pela aplicação e exibido pontos no mapa.
+
+Nosso projeto utilizará essa funcionalidade para exibir as obras do Tribunal de Contas do Estado da Paraíba (TCE-PB). O KML será gerado por uma aplicação desenvolvida pelos envolvidos no projeto e disponíbilizada no servidor http://buchada.dsc.ufcg.edu.br/geopbmobile. Uma vez que o usuário pesquise no Google Maps Mobile a camada disponibilizada por nosso projeto, será exibida as obras do TCE-PB.
+
+Adicionalmente, é possível associar eventos ao clique nos pontos que estão sendo exibidos. É com essa funcionalidade que nossa aplicação irá mostrar os detalhes de uma obra do TCE-PB e disponibilizar as operações de denuncia textual, upload de fotos e auditoria _in locu_. Essas funcionalidades serão implementadas com o uso de html associado ao arquivos KML que é interpretado pelo Google Maps Mobile.
