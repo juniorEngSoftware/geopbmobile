@@ -4,9 +4,9 @@
 
 || *Data* || *User Stories* || *Classes* || *Testes de Unidade* || *Testes de Aceitação* || *Observações* ||
 || 20/09/2010 (Planejamento) ||	0 || 0 || 0 || 0 || Etapa de planejamento. ||
-|| 04/10/2010 (Iteração 1) || 1 || 2 || 1 || 2 || Existem tarefas a serem concluídas. A quantidades de testes de aceitação deverá aumentar.||
-|| 18/10/2010 (Iteração 2) || 1 || 1 || 1 || 3 || ||
-|| 03/11/2010 (Iteração 3) || 2 || 1 || 1 || 3 || ||
+|| 04/10/2010 (Iteração 1) || 1 || 0 || 0 || 5 || As classes e testes de unidade foram descartados devido a mudança de foco do projeto.||
+|| 18/10/2010 (Iteração 2) || 1 || 1 || 1 || 5 || ||
+|| 03/11/2010 (Iteração 3) || 2 || 1 || 1 || 8 || ||
 || 17/11/2010 (Iteração 4) || || || || || ||
 || 29/11/2010 (Iteração 5) || || || || || ||
 
