@@ -1,86 +1,99 @@
 package br.edu.ufcg.dsc.lsi.geopb.mobile.servlet;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
-import de.micromata.opengis.kml.v_2_2_0.Folder;
+import de.micromata.opengis.kml.v_2_2_0.Document;
+import de.micromata.opengis.kml.v_2_2_0.Feature;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
-import de.micromata.opengis.kml.v_2_2_0.Link;
-import de.micromata.opengis.kml.v_2_2_0.LookAt;
-import de.micromata.opengis.kml.v_2_2_0.NetworkLink;
-import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
-
+import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
 /**
  * Servlet implementation class GeoPBMobileServlet
  */
 public class GeoPBMobileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public GeoPBMobileServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		
-		String bbox = request.getParameter("BBox");
-		String[] coords = null;
-		if (bbox != null) {
-			coords = bbox.split(",");
-		}
-		request.getParameterNames();
+	public GeoPBMobileServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
 		response.setContentType("application/vnd.google-earth.kml+xml");
+
+//		String requestUrl = "http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais" +
+//				"&request=GetMap&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;" +
+//				"&srs=EPSG:4326&format=application/vnd.google-earth.kml+XML&transparent=false&version=1.1.1&bbox=-38.662,-7.36,-35.81,-6.784";
+
 		
-		Kml ourKml = new Kml();
+		String requestUrl = "http://dl.dropbox.com/u/8510487/obras_municipais.kml";
 		
-		NetworkLink networkLink = new NetworkLink();
-		networkLink.setName("tce:obras_municipais");
-		networkLink.setOpen(true);
-		networkLink.setVisibility(true);
+		URL url = new URL(requestUrl.toString());
+		URLConnection uc = url.openConnection();
+		uc.setDoOutput(true);
+		uc.setDoInput(true);
+		uc.setUseCaches(false);
+
+		File file = new File("webapps/GeoPBMobile/teste.kml");
+		FileWriter fileWriter = new FileWriter(file);
+		BufferedWriter bw = new BufferedWriter(fileWriter);
 		
-		Link link = new Link();
-		String str = "<![CDATA[http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais&request=GetMap" +
-		"&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;" +
-		"&srs=EPSG:4326&format=application/vnd.google-earth.kmz+xml&transparent=false&version=1.1.1&" +
-		"bbox="+coords[0]+","+coords[1]+","+coords[2]+","+coords[3]+"]]>";
+		InputStreamReader in = new InputStreamReader(uc.getInputStream());
+		BufferedReader br = new BufferedReader(in);
 		
-		link.setHref(str);
+		String str = null;
+		while ((str = br.readLine()) != null) {
+			bw.write(str);
+		}
+		br.close();
+		bw.flush();
+		bw.close();
 		
-		link.setViewRefreshMode(ViewRefreshMode.ON_STOP);
-		link.setViewRefreshTime(1);
-		
-		networkLink.setUrl(link);
-		
-		LookAt lookAt = new LookAt();
-		lookAt.withLongitude(37.23141714255796);
-		lookAt.withLatitude(-7.074256298939872);
-		lookAt.withAltitude(0);
-		lookAt.setRange(455596.64940826077);
-		lookAt.setTilt(0);
-		lookAt.setHeading(0);
-		lookAt.setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
-		
-		Folder folder = new Folder();
-		folder.addToFeature(networkLink);
-		folder.setAbstractView(lookAt);
-		
-		ourKml.setFeature(folder);
+		// Kml ourKml = Kml.unmarshal(new
+		// File("C:/Users/caio/Documents/testeKML/obras_municipais.kml"));
+		Kml ourKml = Kml.unmarshal(file);
+
+		Document document = (Document) ourKml.getFeature();
+
+		List<Feature> list = document.getFeature();
+
+		for (int j = 0; j < list.size(); j++) {
+			Placemark placemark = (Placemark) list.get(j);
+			placemark
+					.setDescription("<![CDATA[<h4>Obras municipais</h4> "
+							+ "<br>"
+							+ "<a href=\"http://dl.dropbox.com/u/14469229/info_obras.html\"> Informacoes da Obra</a>"
+							+ "<br>"
+							+ "<a href=\"http://dl.dropbox.com/u/14469229/denuncia.html\">Realizar Denuncia</a> "
+							+ "<br>"
+							+ "<a href=\"http://dl.dropbox.com/u/14469229/upload_img.html\">Upload de Imagem</a>"
+							+ "]]>");
+		}
 
 		ourKml.marshal(response.getOutputStream());
 		response.getOutputStream().flush();
 		response.getOutputStream().close();
 	}
-
 }
