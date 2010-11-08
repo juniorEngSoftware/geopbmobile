@@ -21,7 +21,12 @@ import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
 /**
+ * 
  * Servlet implementation class GeoPBMobileServlet
+ * @author Caio Santos
+ * @author Filipe Carolino
+ * @author Kemerson Araujo
+ * 
  */
 public class GeoPBMobileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -81,15 +86,13 @@ public class GeoPBMobileServlet extends HttpServlet {
 
 		for (int j = 0; j < list.size(); j++) {
 			Placemark placemark = (Placemark) list.get(j);
-			placemark
-					.setDescription("<![CDATA[<h4>Obras municipais</h4> "
-							+ "<br>"
-							+ "<a href=\"http://dl.dropbox.com/u/14469229/info_obras.html\"> Informacoes da Obra</a>"
-							+ "<br>"
-							+ "<a href=\"http://dl.dropbox.com/u/14469229/denuncia.html\">Realizar Denuncia</a> "
-							+ "<br>"
-							+ "<a href=\"http://dl.dropbox.com/u/14469229/upload_img.html\">Upload de Imagem</a>"
-							+ "]]>");
+			placemark.setDescription(
+					"<![CDATA[<h4>Obras municipais</h4>" +
+							"<ul>" +
+								"<li><a href=\"http://dl.dropbox.com/u/14469229/info_obras.html\">Exibir Informacoes da Obra</a></li><br>" +
+								"<li><a href=\"http://dl.dropbox.com/u/14469229/denuncia.html\">Realizar Denuncia</a></li><br>" +
+								"<li><a href=\"http://dl.dropbox.com/u/14469229/upload_img.html\">Upload de Imagem</a></li>" +
+							"</ul>]]>");
 		}
 
 		ourKml.marshal(response.getOutputStream());
