@@ -42,11 +42,10 @@ US02 - Visualização de informações das obras.
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A2.1 || Listar informações das obras, através do acesso a um WebService já existente. || Todos || 20 || 29 || C ||
-|| A2.2 || Visualizar as fotografias relacionadas a obra selecionada. || Todos || 8 ||  ||  ||
-|| A2.3 || Visualizar detalhes das fotografias. || Todos || 4 ||  ||  ||
-|| A2.4 || Implementar forma de o usuário passar a localização de onde quer ver as obras públicas. || Todos || 12 ||  ||  ||
-|| A2.5 || Gerar artefato Big Chart || Filipe || 2 || 1,5 || ||
-|| A2.6 || Atualizar Tabela de Risco e TAA || Filipe || 2 || 1,5 || ||
+|| A2.2 || Visualizar as fotografias relacionadas a obra selecionada. || Todos || 8 ||  || D ||
+|| A2.3 || Visualizar detalhes das fotografias. || Todos || 4 ||  || D ||
+|| A2.4 || Gerar artefato Big Chart || Filipe || 2 || 1,5 || C ||
+|| A2.5 || Atualizar Tabela de Risco e TAA || Filipe || 2 || 1,5 || C ||
 
 
 US03 - Implementar a denúncia via texto.
