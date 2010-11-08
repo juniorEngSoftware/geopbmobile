@@ -9,3 +9,4 @@
 || 04/10/2010 || Utilização de um servidor, que irá intermediar a aplicação Google Maps Mobile e o servidor do TCE. || Alta || 1 || || || Todos || ||
 || 04/10/2010 || Os desenvolvedores não têm conhecimento das tecnologias a serem utilizadas para desenvolvimento em um servidor. || Alta || 1 || || || Todos || ||
 || 01/11/2010 || Google Maps Mobile não suporta _networklink_. Será necessário carregar o KML por completo || Alta ||  || || || Caio || ||
+|| 02/11/2010 || Dificuldade na abertura de uma nova aba quando é clicado em um link na aplicação Google Maps || Alta ||  || || || Kemerson || ||
