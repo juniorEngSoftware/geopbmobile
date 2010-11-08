@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
@@ -36,31 +37,56 @@ public class GeoPBMobileServlet extends HttpServlet {
 	 */
 	public GeoPBMobileServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("application/vnd.google-earth.kml+xml");
 
-//		String requestUrl = "http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais" +
-//				"&request=GetMap&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;" +
-//				"&srs=EPSG:4326&format=application/vnd.google-earth.kml+XML&transparent=false&version=1.1.1&bbox=-38.662,-7.36,-35.81,-6.784";
+		URLConnection uc = createConnection();
 
+		File file = createPhysicalFile(uc);
 		
-		String requestUrl = "http://dl.dropbox.com/u/8510487/obras_municipais.kml";
-		
-		URL url = new URL(requestUrl.toString());
-		URLConnection uc = url.openConnection();
-		uc.setDoOutput(true);
-		uc.setDoInput(true);
-		uc.setUseCaches(false);
+		// Kml ourKml = Kml.unmarshal(new
+		// File("C:/Users/caio/Documents/testeKML/obras_municipais.kml"));
+		Kml ourKml = Kml.unmarshal(file);
 
+		editFeatures(ourKml);
+
+		ourKml.marshal(response.getOutputStream());
+		
+		response.getOutputStream().flush();
+		response.getOutputStream().close();
+	}
+
+	private void editFeatures(Kml ourKml) {
+		Document document = (Document) ourKml.getFeature();
+
+		List<Feature> list = document.getFeature();
+
+		editDescription(list);
+	}
+
+	private void editDescription(List<Feature> list) {
+		for (int j = 0; j < list.size(); j++) {
+			Placemark placemark = (Placemark) list.get(j);
+			//TODO colocar em arquivo de propriedade
+			placemark.setDescription(
+					"<![CDATA[<h4>Obras municipais</h4>" +
+							"<ul>" +
+								"<li><a href=\"http://dl.dropbox.com/u/14469229/info_obras.html\">Exibir Informacoes da Obra</a></li><br>" +
+								"<li><a href=\"http://dl.dropbox.com/u/14469229/denuncia.html\">Realizar Denuncia</a></li><br>" +
+								"<li><a href=\"http://dl.dropbox.com/u/14469229/upload_img.html\">Upload de Imagem</a></li>" +
+							"</ul>]]>");
+		}
+	}
+
+	private File createPhysicalFile(URLConnection uc) throws IOException {
+		//TODO colocar em arquivo de propriedades
 		File file = new File("webapps/GeoPBMobile/teste.kml");
 		FileWriter fileWriter = new FileWriter(file);
 		BufferedWriter bw = new BufferedWriter(fileWriter);
@@ -75,28 +101,22 @@ public class GeoPBMobileServlet extends HttpServlet {
 		br.close();
 		bw.flush();
 		bw.close();
+		return file;
+	}
+
+	private URLConnection createConnection() throws MalformedURLException, IOException {
+		//TODO colocar em arquivo de propriedades.
+//		String requestUrl = "http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais" +
+//		"&request=GetMap&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;" +
+//		"&srs=EPSG:4326&format=application/vnd.google-earth.kml+XML&transparent=false&version=1.1.1&bbox=-38.662,-7.36,-35.81,-6.784";
 		
-		// Kml ourKml = Kml.unmarshal(new
-		// File("C:/Users/caio/Documents/testeKML/obras_municipais.kml"));
-		Kml ourKml = Kml.unmarshal(file);
-
-		Document document = (Document) ourKml.getFeature();
-
-		List<Feature> list = document.getFeature();
-
-		for (int j = 0; j < list.size(); j++) {
-			Placemark placemark = (Placemark) list.get(j);
-			placemark.setDescription(
-					"<![CDATA[<h4>Obras municipais</h4>" +
-							"<ul>" +
-								"<li><a href=\"http://dl.dropbox.com/u/14469229/info_obras.html\">Exibir Informacoes da Obra</a></li><br>" +
-								"<li><a href=\"http://dl.dropbox.com/u/14469229/denuncia.html\">Realizar Denuncia</a></li><br>" +
-								"<li><a href=\"http://dl.dropbox.com/u/14469229/upload_img.html\">Upload de Imagem</a></li>" +
-							"</ul>]]>");
-		}
-
-		ourKml.marshal(response.getOutputStream());
-		response.getOutputStream().flush();
-		response.getOutputStream().close();
+		String requestUrl = "http://dl.dropbox.com/u/8510487/obras_municipais.kml";
+		
+		URL url = new URL(requestUrl.toString());
+		URLConnection uc = url.openConnection();
+		uc.setDoOutput(true);
+		uc.setDoInput(true);
+		uc.setUseCaches(false);
+		return uc;
 	}
 }
