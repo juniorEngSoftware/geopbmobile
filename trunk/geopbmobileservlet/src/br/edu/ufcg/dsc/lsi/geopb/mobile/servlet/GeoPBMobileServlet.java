@@ -83,13 +83,13 @@ public class GeoPBMobileServlet extends HttpServlet {
 		placemark.setDescription("<![CDATA[<h4>Obras municipais</h4>  <br> "
 						+ infos
 						+ "<br> "
-						+ "<form name=\"formInfo\" action=\"http://dl.dropbox.com/u/14469229/info_obras.html\" target=\"_blank\">"
-						+ "<input type=\"submit\" value=\"Exibir Fotos da Obra\">"
+						+ "<form name=\"formInfo\" action=\"info_obras.jsp\" target=\"_blank\">"
+						+ "<input type=\"submit\" value=\"Exibir Informacoes da Obra\">"
 						+ "</form>"
-						+ "<form name=\"formDenuncia\" action=\"http://dl.dropbox.com/u/14469229/denuncia.html\" target=\"_blank\">"
+						+ "<form name=\"formDenuncia\" action=\"denuncia.jsp\" target=\"_blank\">"
 						+ "<input type=\"submit\" value=\"Realizar Denuncia\">"
 						+ "</form>"
-						+ "<form name=\"formUpload\" action=\"http://dl.dropbox.com/u/14469229/upload_img.html\" target=\"_blank\">"
+						+ "<form name=\"formUpload\" action=\"upload_img.jsp\" target=\"_blank\">"
 						+ "<input type=\"submit\" value=\"Upload de Imagem\">"
 						+ "</form>");
 
