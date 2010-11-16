@@ -1,16 +1,10 @@
 package br.edu.ufcg.dsc.lsi.geopb.mobile.servlet;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -22,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
+
+import br.edu.ufcg.dsc.lsi.geopb.mobile.util.GeoPBMobileUtil;
 
 import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Feature;
@@ -59,7 +55,7 @@ public class GeoPBMobileServlet extends HttpServlet {
 				+ "&request=GetMap&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;"
 				+ "&srs=EPSG:4326&format=application/vnd.google-earth.kml+XML&transparent=false&version=1.1.1&bbox=-38.662,-7.36,-35.81,-6.784";
 
-		InputStream kmlInputStream = getStreamOfConnection(requestUrl);
+		InputStream kmlInputStream = GeoPBMobileUtil.getStreamOfConnection(requestUrl);
 
 		Kml ourKml = Kml.unmarshal(kmlInputStream);
 
@@ -72,15 +68,8 @@ public class GeoPBMobileServlet extends HttpServlet {
 	}
 
 	private void editFeatures(Kml ourKml) {
-		Document document = (Document) ourKml.getFeature();
-
-		List<Feature> list = document.getFeature();
-
-		for (int j = 0; j < list.size(); j++) {
-			Placemark placemark = (Placemark) list.get(j);
-			// TODO colocar em arquivo de propriedade
+		for (Placemark placemark : GeoPBMobileUtil.getPlacemarks(ourKml)) {
 			editDescription(placemark);
-
 		}
 	}
 
@@ -112,7 +101,7 @@ public class GeoPBMobileServlet extends HttpServlet {
 		
 		InputStream uc = null;
 		try {
-			uc = getStreamOfConnection(requestUrl);
+			uc = GeoPBMobileUtil.getStreamOfConnection(requestUrl);
 		} catch (MalformedURLException e1) {
 			System.out.println(e1.getMessage());
 		} catch (IOException e) {
@@ -142,13 +131,7 @@ public class GeoPBMobileServlet extends HttpServlet {
 	}
 
 
-	private InputStream getStreamOfConnection(String requestUrl) throws MalformedURLException, IOException {
-		// TODO colocar em arquivo de propriedades.
-
-		URL url = new URL(requestUrl.toString());
-		URLConnection connection = url.openConnection();
-		return connection.getInputStream();
-	}
+	
 
 	public static void main(String[] args) {
 
