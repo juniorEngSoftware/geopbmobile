@@ -8,5 +8,5 @@
 || 14/09/2010  || Preparação do ambiente de desenvolvimento de cada desenvolvedor. || Baixa || 6 || 6 || 6 || Todos || É sabido que a instalação das ferramentas de desenvolvimento para Windows Mobile é um pouco complicada e custa tempo. ||
 || 04/10/2010 || Utilização de um servidor, que irá intermediar a aplicação Google Maps Mobile e o servidor do TCE. || Alta || 4 || 3 || 4 || Todos || ||
 || 04/10/2010 || Os desenvolvedores não têm conhecimento das tecnologias a serem utilizadas para desenvolvimento em um servidor. || Alta || 2 || 2 || 4 || Todos || ||
-|| 01/11/2010 || Google Maps Mobile não suporta _networklink_. Será necessário carregar o KML por completo || Alta || 3 || 1 || 1 || Caio || ||
-|| 02/11/2010 || Dificuldade na abertura de uma nova aba quando é clicado em um link na aplicação Google Maps || Alta || 1 || 0 || 1 || Kemerson || ||
+|| 01/11/2010 || Google Maps Mobile não suporta _networklink_. Será necessário carregar o KML por completo || Alta || 3 || 1 || 1 || Caio || Superado ||
+|| 02/11/2010 || Dificuldade na abertura de uma nova aba quando é clicado em um link na aplicação Google Maps || Alta || 1 || 0 || 1 || Kemerson || Foi superado utilizando um botão. Idéia sugerida pelo cliente. ||
