@@ -55,11 +55,11 @@ US03 - Implementar a denúncia via texto.
      
 
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A3.1 || Implementar módulo de denúncia textual || Todos ||  ||  ||  ||
-|| A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe ||  ||  ||  ||
-|| A3.3 || Atualizar BD com a nova denúncia || Filipe ||  ||  ||  ||
-|| A3.4 || Gerar artefato Big Chart || Caio || || || ||
-|| A3.5 || Atualizar Tabela de Risco e TAA || Caio || || || ||
+|| A3.1 || Implementar módulo de denúncia textual || Todos || 10 ||  || D ||
+|| A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe || 6 ||  || D ||
+|| A3.3 || Atualizar BD com a nova denúncia || Filipe || 10 ||  || D ||
+|| A3.4 || Gerar artefato Big Chart || Kemerson || 2 || 1,5 || C ||
+|| A3.5 || Atualizar Tabela de Risco e TAA || Kemerson || 2 || 1 || C ||
 
 
 *Tabela de Alocação de Atividades - Iteração 04 - (04/11/2010 – 17/11/2010) *
@@ -71,11 +71,11 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A4.1 || Implementar a anexação de fotos na denúncia || Todos ||  ||  ||  ||
-|| A4.2 || Implementar a anexação de vídeos na denúncia || Filipe ||  ||  ||  ||
-|| A4.3 || Gerar artefato Big Chart  || Caio ||  ||  ||  ||
-|| A4.4 || Atualizar Tabela de Risco e TAA || Kemerson || || || ||
-|| A4.5 || Test Review || Kemerson ||  ||  ||  ||
+|| A4.1 || Implementar a anexação de fotos na denúncia || Todos || 8 ||  || D ||
+|| A4.2 || Implementar a anexação de vídeos na denúncia || Filipe || 10 ||  || D ||
+|| A4.3 || Gerar artefato Big Chart  || Kemerson || 2 || 1,5 || C ||
+|| A4.4 || Atualizar Tabela de Risco e TAA || Kemerson || 2 || 1 || C ||
+|| A4.5 || Test Review || Caio ||  ||  || D ||
 
 
 *Tabela de Alocação de Atividades - Iteração 05 - (18/11/2010 – 29/11/2010) *
@@ -90,5 +90,5 @@ US05 - Implementar a funcionalidade de auditoria in loco.
 || A5.1 || Implementar interface para prover auditoria || Todos || || ||  ||
 || A5.2 || Implementar a lógica da auditoria na aplicação || Todos || || || ||
 || A5.3 || Implementar o armazenamento das informações auditoradas nos servidores || Todos || || || ||
-|| A5.4 || Atualizar Tabela de Risco e TAA || Kemerson ||  ||  ||  ||
-|| A5.5 || Gerar artefato Big Chart  || Kemerson ||  ||  ||  ||
+|| A5.4 || Atualizar Tabela de Risco e TAA || Caio ||  ||  ||  ||
+|| A5.5 || Gerar artefato Big Chart  || Caio ||  ||  ||  ||
