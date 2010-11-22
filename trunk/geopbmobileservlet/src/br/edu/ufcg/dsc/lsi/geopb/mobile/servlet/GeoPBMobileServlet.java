@@ -80,10 +80,14 @@ public class GeoPBMobileServlet extends HttpServlet {
 		if( !(ids[2].equals("00012010")) ) {
 			infos = editWorkInformations(ids[1], ids[2]);
 		}
+		
+		URL infoObrasURL = getClass().getClassLoader().getResource("../../info_obras.jsp");
+		String infoObrasPath = infoObrasURL.getPath().replace("%20", " ");
+		
 		placemark.setDescription("<![CDATA[<h4>Obras municipais</h4>  <br> "
 						+ infos
 						+ "<br> "
-						+ "<form name=\"formInfo\" action=\"info_obras.jsp\" target=\"_blank\">"
+						+ "<form name=\"formInfo\" action=\"" + infoObrasPath + "\" target=\"_blank\">"
 						+ "<input type=\"submit\" value=\"Exibir Informacoes da Obra\">"
 						+ "</form>"
 						+ "<form name=\"formDenuncia\" action=\"denuncia.jsp\" target=\"_blank\">"
