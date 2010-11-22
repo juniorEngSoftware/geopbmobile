@@ -4,9 +4,9 @@
 <html>
      <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-          <title>Informacoes da Obra</title>
+          <title>Fotografias</title>
      </head>
      <body>
-          <h2>Informações da Obra</h2>
+          <h2>Fotografias</h2>
      </body>
 </html>
