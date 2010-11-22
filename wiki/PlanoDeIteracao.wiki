@@ -48,6 +48,8 @@ US02 - Visualização de informações das obras.
 || A2.5 || Atualizar Tabela de Risco e TAA || Filipe || 2 || 1,5 || C ||
 
 
+*Tabela de Alocação de Atividades - Iteração 04 - (04/11/2010 – 17/11/2010) *
+
 US03 - Implementar a denúncia via texto.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
@@ -55,14 +57,12 @@ US03 - Implementar a denúncia via texto.
      
 
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A3.1 || Implementar módulo de denúncia textual || Todos || 15 ||  || D ||
-|| A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe || 10 ||  || D ||
-|| A3.3 || Atualizar BD com a nova denúncia || Filipe || 10 ||  || D ||
+|| A3.1 || Implementar módulo de denúncia textual || Todos || 15 ||  || C ||
+|| A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe || 10 ||  || C ||
+|| A3.3 || Atualizar BD com a nova denúncia || Filipe || 10 ||  || C ||
 || A3.4 || Gerar artefato Big Chart || Kemerson || 2 || 1,5 || C ||
 || A3.5 || Atualizar Tabela de Risco e TAA || Kemerson || 2 || 1 || C ||
 
-
-*Tabela de Alocação de Atividades - Iteração 04 - (04/11/2010 – 17/11/2010) *
 
 US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 
@@ -71,12 +71,10 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A4.1 || Implementar a anexação de fotos na denúncia || Todos || 15 ||  || D ||
-|| A4.2 || Implementar a anexação de vídeos na denúncia || Filipe || 15 ||  || D ||
+|| A4.1 || Implementar a anexação de fotos na denúncia || Todos || 15 ||  || C ||
+|| A4.2 || Implementar a anexação de vídeos na denúncia || Filipe || 15 ||  || C ||
 || A4.3 || Gerar artefato Big Chart  || Kemerson || 2 || 1,5 || C ||
 || A4.4 || Atualizar Tabela de Risco e TAA || Kemerson || 2 || 1 || C ||
-|| A4.5 || Test Review || Caio || 5 ||  || D ||
-
 
 *Tabela de Alocação de Atividades - Iteração 05 - (18/11/2010 – 29/11/2010) *
 
@@ -92,3 +90,4 @@ US05 - Implementar a funcionalidade de auditoria in loco.
 || A5.3 || Implementar o armazenamento das informações auditoradas nos servidores || Todos || || || ||
 || A5.4 || Atualizar Tabela de Risco e TAA || Caio ||  ||  ||  ||
 || A5.5 || Gerar artefato Big Chart  || Caio ||  ||  ||  ||
+|| A5.6 || Test Review || Kemerson ||  ||  ||  ||
