@@ -4,16 +4,9 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Upload de Imagem</title>
+		<title>Formulário de Auditoria</title>
 	</head>
 	<body>
-		<h2>Upload de Imagem</h2>
-		<form action="" enctype="multipart/form-data" method="post">
-			<p>
-				<p>Selecione a imagem para fazer o upload:</p>
-				<input type="file" name="datafile" size="40">
-			</p>
-			<div><input type="submit" value="Upload"></div>
-		</form>
+		<h2>Formulário de Auditoria</h2>
 	</body>
 </html>

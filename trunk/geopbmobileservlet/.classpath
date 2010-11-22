@@ -13,19 +13,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/JavaAPIforKml.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/jaxb-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/jaxb-impl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/jaxb-xjc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jaxb-ri-20100511/lib/jsr173_1.0_api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/commons-lang-2.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jdom/lib/ant.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jdom/lib/jaxen.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jdom/lib/saxpath.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jdom/lib/xalan.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jdom/lib/xerces.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jdom/lib/xml-apis.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/Desktop/geopbmobile-jars/jdom/jdom.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
