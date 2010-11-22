@@ -57,9 +57,9 @@ US03 - Implementar a denúncia via texto.
      
 
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A3.1 || Implementar módulo de denúncia textual || Todos || 15 ||  || C ||
-|| A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe || 10 ||  || C ||
-|| A3.3 || Atualizar BD com a nova denúncia || Filipe || 10 ||  || C ||
+|| A3.1 || Implementar módulo de denúncia textual || Todos || 15 || 20 || C ||
+|| A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe || 10 || 5 || C ||
+|| A3.3 || Atualizar BD com a nova denúncia || Filipe || 10 || 1 || C ||
 || A3.4 || Gerar artefato Big Chart || Kemerson || 2 || 1,5 || C ||
 || A3.5 || Atualizar Tabela de Risco e TAA || Kemerson || 2 || 1 || C ||
 
@@ -71,8 +71,8 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A4.1 || Implementar a anexação de fotos na denúncia || Todos || 15 ||  || C ||
-|| A4.2 || Implementar a anexação de vídeos na denúncia || Filipe || 15 ||  || C ||
+|| A4.1 || Implementar a anexação de fotos na denúncia || Todos || 15 || 1 || C ||
+|| A4.2 || Implementar a anexação de vídeos na denúncia || Filipe || 15 || 1 || C ||
 || A4.3 || Gerar artefato Big Chart  || Kemerson || 2 || 1,5 || C ||
 || A4.4 || Atualizar Tabela de Risco e TAA || Kemerson || 2 || 1 || C ||
 
