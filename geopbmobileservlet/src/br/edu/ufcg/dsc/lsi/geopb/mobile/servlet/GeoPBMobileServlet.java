@@ -3,8 +3,6 @@ package br.edu.ufcg.dsc.lsi.geopb.mobile.servlet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -18,9 +16,6 @@ import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
 import br.edu.ufcg.dsc.lsi.geopb.mobile.util.GeoPBMobileUtil;
-
-import de.micromata.opengis.kml.v_2_2_0.Document;
-import de.micromata.opengis.kml.v_2_2_0.Feature;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
@@ -58,13 +53,13 @@ public class GeoPBMobileServlet extends HttpServlet {
 		InputStream kmlInputStream = GeoPBMobileUtil.getStreamOfConnection(requestUrl);
 
 		Kml ourKml = Kml.unmarshal(kmlInputStream);
-
 		editFeatures(ourKml);
-
+		
 		ServletOutputStream outputStream = response.getOutputStream();
 		ourKml.marshal(outputStream);
 		outputStream.flush();
 		outputStream.close();
+		
 		kmlInputStream.close();
 	}
 
@@ -77,7 +72,7 @@ public class GeoPBMobileServlet extends HttpServlet {
 	private void editDescription(Placemark placemark) {
 		String[] ids = placemark.getId().split("\\.");
 
-		String infos = null;
+		String infos = "não há detalhes para essa obra";
 		if( !(ids[2].equals("00012010")) ) {
 			try {
 				infos = editWorkInformations(ids[1], ids[2]);
@@ -86,11 +81,13 @@ public class GeoPBMobileServlet extends HttpServlet {
 			}
 		}
 		
-		placemark.setDescription("<![CDATA[<h4>Obras municipais</h4>  <br> "
-						+ infos
+		
+		placemark.setDescription(infos
 						+ "<br> "
-						+ "<form name=\"formInfo\" action=\"http://buchada.dsc.ufcg.edu.br/george/createXMLPhotos.action?unidadeGestora=" + ids[0] + "&numeroObra=" + ids[1] + "\" target=\"_blank\">"
-						+ "<input type=\"submit\" value=\"Visualizar Fotogfrafias\">"
+						+ "<form name=\"formInfo\" action=\"photographics.jsp\" target=\"_blank\">"
+						+ "<input type=\"hidden\" name=unidadeGestora value=\"" + ids[1] + "\">"
+						+ "<input type=\"hidden\" name=numeroObra value=\"" + ids[2] + "\">"
+						+ "<input type=\"submit\" value=\"Visualizar Fotos da Obra\" +>"
 						+ "</form>"
 						+ "<form name=\"formDenuncia\" action=\"http://buchada.dsc.ufcg.edu.br/george/jsp/denuncia/denuncia.jsp?nuObra=" + ids[1] + "&uGestora=" + ids[0]+ "\" target=\"_blank\">"
 						+ "<input type=\"submit\" value=\"Realizar Denuncia\">"
@@ -109,23 +106,23 @@ public class GeoPBMobileServlet extends HttpServlet {
 		try {
 			uc = GeoPBMobileUtil.getStreamOfConnection(requestUrl);
 		} catch (MalformedURLException e1) {
-			System.out.println(e1.getMessage());
-		}
+			e1.printStackTrace();
+		} 
 
 		StringBuilder strBuilder = new StringBuilder();
 		SAXBuilder builder = new SAXBuilder();
 		org.jdom.Document document = null;
-			
+		
 		try {
 			document = builder.build(uc);	
 		} catch (JDOMException e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 		} finally {
 			uc.close();
 		}
 		
 		Element rootElement = document.getRootElement();
-		List<Element> elementsList = (List<Element>) rootElement.getChildren();
+		List<Element> elementsList = rootElement.getChildren();
 		for (Element element : elementsList) {
 			strBuilder.append(element.getChild("name").getValue() + ": ");
 			strBuilder.append(element.getChild("value").getValue() + "<br>");
@@ -133,4 +130,5 @@ public class GeoPBMobileServlet extends HttpServlet {
 
 		return strBuilder.toString();
 	}
+
 }
