@@ -2,8 +2,6 @@ package br.edu.ufcg.dsc.lsi.geopb.mobile.servlet;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -11,11 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jdom.Element;
-import org.jdom.JDOMException;
-import org.jdom.input.SAXBuilder;
-
 import br.edu.ufcg.dsc.lsi.geopb.mobile.util.GeoPBMobileMessageManager;
+import br.edu.ufcg.dsc.lsi.geopb.mobile.util.GeoPBMobilePlacemark;
 import br.edu.ufcg.dsc.lsi.geopb.mobile.util.GeoPBMobileUtil;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
@@ -62,12 +57,13 @@ public class GeoPBMobileServlet extends HttpServlet {
 
 	private void editFeatures(Kml ourKml) {
 		for (Placemark placemark : GeoPBMobileUtil.getPlacemarks(ourKml)) {
-			editDescription(placemark);
+			GeoPBMobilePlacemark geoPBMobileplacemark = new GeoPBMobilePlacemark(placemark);
+			editDescription(geoPBMobileplacemark);
 		}
 	}
 
-	private void editDescription(Placemark placemark) {
-		placemark.setDescription(GeoPBMobileUtil.getPlacemarkDescription(placemark));
+	private void editDescription(GeoPBMobilePlacemark placemark) {
+		placemark.getOriginalPlacemark().setDescription(placemark.getDescription());
 	}
 	
 }
