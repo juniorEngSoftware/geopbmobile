@@ -19,7 +19,7 @@ public class GeoPBMobilePlacemark {
 		this.placemark = placemark;
 	}
 
-	public String getDescription() {		
+	public void editDescription() {		
 
 		String managementUnit = getManagementUnit();
 		String buildNumber = getBuildNumber();
@@ -33,7 +33,7 @@ public class GeoPBMobilePlacemark {
 			}
 		}
 
-		return GeoPBMobileMessageManager.getFormattedDescription(managementUnit, buildNumber, infos);
+		this.placemark.setDescription(GeoPBMobileMessageManager.getFormattedDescription(managementUnit, buildNumber, infos));
 	}
 
 	private String getManagementUnit() {
