@@ -15,6 +15,7 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
+import br.edu.ufcg.dsc.lsi.geopb.mobile.util.GeoPBMobileMessageManager;
 import br.edu.ufcg.dsc.lsi.geopb.mobile.util.GeoPBMobileUtil;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
@@ -44,13 +45,9 @@ public class GeoPBMobileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.setContentType("application/vnd.google-earth.kml+xml");
+		response.setContentType(GeoPBMobileMessageManager.KML_CONTENT_TYPE);
 
-		String requestUrl = "http://buchada.dsc.ufcg.edu.br:80/geoserver/wms?height=1024&width=1024&layers=tce:obras_municipais"
-				+ "&request=GetMap&service=wms&styles=obras2Style&format_options=SUPEROVERLAY:false;KMPLACEMARK:false;KMSCORE:40;KMATTR:true;"
-				+ "&srs=EPSG:4326&format=application/vnd.google-earth.kml+XML&transparent=false&version=1.1.1&bbox=-38.662,-7.36,-35.81,-6.784";
-
-		InputStream kmlInputStream = GeoPBMobileUtil.getStreamOfConnection(requestUrl);
+		InputStream kmlInputStream = GeoPBMobileUtil.getStreamOfConnection(GeoPBMobileMessageManager.URL_BBOX_OBRAS);
 
 		Kml ourKml = Kml.unmarshal(kmlInputStream);
 		editFeatures(ourKml);
@@ -70,65 +67,7 @@ public class GeoPBMobileServlet extends HttpServlet {
 	}
 
 	private void editDescription(Placemark placemark) {
-		String[] ids = placemark.getId().split("\\.");
-
-		String infos = "não há detalhes para essa obra";
-		if( !(ids[2].equals("00012010")) ) {
-			try {
-				infos = editWorkInformations(ids[1], ids[2]);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		
-		placemark.setDescription(infos
-						+ "<br> "
-						+ "<form name=\"formInfo\" action=\"photographics.jsp\" target=\"_blank\">"
-						+ "<input type=\"hidden\" name=unidadeGestora value=\"" + ids[1] + "\">"
-						+ "<input type=\"hidden\" name=numeroObra value=\"" + ids[2] + "\">"
-						+ "<input type=\"submit\" value=\"Visualizar Fotos da Obra\" +>"
-						+ "</form>"
-						+ "<form name=\"formDenuncia\" action=\"http://buchada.dsc.ufcg.edu.br/george/jsp/denuncia/denuncia.jsp?nuObra=" + ids[1] + "&uGestora=" + ids[0]+ "\" target=\"_blank\">"
-						+ "<input type=\"submit\" value=\"Realizar Denuncia\">"
-						+ "</form>"
-						+ "<form name=\"formUpload\" action=\"http://buchada.dsc.ufcg.edu.br/GeoPBMobile/auditoria.jsp\" target=\"_blank\">"
-						+ "<input type=\"submit\" value=\"Auditoria\">"
-						+ "</form>");
-
+		placemark.setDescription(GeoPBMobileUtil.getPlacemarkDescription(placemark));
 	}
-
-	private String editWorkInformations(String unidadeGestora, String numeroObra) throws IOException {
-
-		String requestUrl = "http://buchada.dsc.ufcg.edu.br/george/detalharObraXML?unidadeGestora="+ unidadeGestora + "&numeroObra=" + numeroObra;
-		
-		InputStream uc = null;
-		try {
-			uc = GeoPBMobileUtil.getStreamOfConnection(requestUrl);
-		} catch (MalformedURLException e1) {
-			e1.printStackTrace();
-		} 
-
-		StringBuilder strBuilder = new StringBuilder();
-		SAXBuilder builder = new SAXBuilder();
-		org.jdom.Document document = null;
-		
-		try {
-			document = builder.build(uc);	
-		} catch (JDOMException e) {
-			e.printStackTrace();
-		} finally {
-			uc.close();
-		}
-		
-		Element rootElement = document.getRootElement();
-		List<Element> elementsList = rootElement.getChildren();
-		for (Element element : elementsList) {
-			strBuilder.append(element.getChild("name").getValue() + ": ");
-			strBuilder.append(element.getChild("value").getValue() + "<br>");
-		}
-
-		return strBuilder.toString();
-	}
-
+	
 }
