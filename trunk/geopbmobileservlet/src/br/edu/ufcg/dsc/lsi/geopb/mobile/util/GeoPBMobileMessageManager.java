@@ -11,7 +11,7 @@ public class GeoPBMobileMessageManager {
 	public static String getFormattedDescription(String managementUnit, String buildNumber, String infos) {
 		return infos
 				+ "<br> "
-				+ "<form name=\"formInfo\" action=\"photographics.jsp\" target=\"_blank\">"
+				+ "<form name=\"formInfo\" action=\"http://buchada.dsc.ufcg.edu.br/GeoPBMobile/photographics.jsp\" target=\"_blank\">"
 				+ "<input type=\"hidden\" name=unidadeGestora value=\"" + managementUnit + "\">"
 				+ "<input type=\"hidden\" name=numeroObra value=\"" + buildNumber + "\">"
 				+ "<input type=\"submit\" value=\"Visualizar Fotos da Obra\" +>"

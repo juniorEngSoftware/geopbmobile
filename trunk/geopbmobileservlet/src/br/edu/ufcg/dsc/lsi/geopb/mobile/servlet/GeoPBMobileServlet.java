@@ -58,12 +58,8 @@ public class GeoPBMobileServlet extends HttpServlet {
 	private void editFeatures(Kml ourKml) {
 		for (Placemark placemark : GeoPBMobileUtil.getPlacemarks(ourKml)) {
 			GeoPBMobilePlacemark geoPBMobileplacemark = new GeoPBMobilePlacemark(placemark);
-			editDescription(geoPBMobileplacemark);
+			geoPBMobileplacemark.editDescription();
 		}
 	}
 
-	private void editDescription(GeoPBMobilePlacemark placemark) {
-		placemark.getOriginalPlacemark().setDescription(placemark.getDescription());
-	}
-	
 }
