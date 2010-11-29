@@ -70,8 +70,9 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
 || TA4.1 || Após o usuário clicar no botão de denúncia, será exibido também um campo para anexar um arquivo.  || C ||
-|| TA4.1 || O usuário  irá selecionar o arquivo a ser anexado e em seguida submeter a denúncia.|| C ||
+|| TA4.2 || O usuário  irá selecionar o arquivo a ser anexado e em seguida submeter a denúncia.|| C ||
      
+
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A4.1 || Implementar a anexação de fotos na denúncia || Todos || 15 || 1 || C ||
 || A4.2 || Implementar a anexação de vídeos na denúncia || Filipe || 15 || 1 || C ||
@@ -82,7 +83,9 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 
 US05 - Implementar a funcionalidade de auditoria in loco.
 
-*US remanejada para a disciplina Projeo 2*
+
+*User Storie remanejada para a disciplina Projeo 2*
+
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
 || TA5.1 ||  ||  ||
