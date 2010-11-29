@@ -54,7 +54,7 @@
 
 *US05* -  Implementar a funcionalidade para auditoria in loco.
 
-    *OBS.: Essa US foi remanejada para disciplina de Projeto 2.*
+    OBS.: Essa US foi remanejada para disciplina de Projeto 2.
 
     Testes de Aceitação: A serem descritos pelo cliente posteriormente.
 
