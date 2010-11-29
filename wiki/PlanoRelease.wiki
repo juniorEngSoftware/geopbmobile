@@ -19,6 +19,8 @@
 *Gerente: * Kemerson (Iteração 4) e Caio  (Iteração 5)
 || *Iteração*  || *User Story* || *Período* ||
 || Iteração 04 || US03, US04 || 04/11/2010 – 17/11/2010 ||
-|| Iteração 05 || US05 || 18/11/2010 – 29/11/2010 ||
+|| Iteração 05 || Melhorar interface com usuário e desenvolver mais testes || 18/11/2010 – 29/11/2010 ||
 
 ================================
+
+*US05 foi remanejada para a disciplina de Projeto 2.*
