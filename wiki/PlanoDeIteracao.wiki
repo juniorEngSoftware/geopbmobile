@@ -84,7 +84,7 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 US05 - Implementar a funcionalidade de auditoria in loco.
 
 
-*User Storie remanejada para a disciplina Projeo 2*
+*User Storie remanejada para a disciplina de Projeto 2*
 
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
