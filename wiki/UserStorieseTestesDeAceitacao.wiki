@@ -32,7 +32,11 @@
 
 *US03* -  Implementar a Denuncia textual.
 
-    Testes de Aceitação: A serem descritos pelo cliente posteriormente.
+    TA3.1 - O usuário irá clicar em uma obra e um botão destinado para denúncia será exibido. 
+
+    TA3.2 - O usuário irá clicar no botão de denúncia e será exibido um formulário para realização da denúncia. 
+
+    TA3.3 - O usuário irá preencher o campo textual e submeter a denúncia. 
 
     Estimativa inicial: 45h
 
@@ -40,13 +44,17 @@
 
 *US04* - Implementar a funcionalidade de denuncia atraves de upload de fotos.
 
-    Testes de Aceitação: A serem descritos pelo cliente posteriormente.
+    TA4.1 - Após o usuário clicar no botão de denúncia, será exibido também um campo para anexar um arquivo. 
+
+    TA4.2 - O usuário irá selecionar o arquivo a ser anexado e em seguida submeter a denúncia.
 
     Estimativa inicial: 45h
 
 
 
 *US05* -  Implementar a funcionalidade para auditoria in loco.
+
+    *OBS.: Essa US foi remanejada para disciplina de Projeto 2.*
 
     Testes de Aceitação: A serem descritos pelo cliente posteriormente.
 
