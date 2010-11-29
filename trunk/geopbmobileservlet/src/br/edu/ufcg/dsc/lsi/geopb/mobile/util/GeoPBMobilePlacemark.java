@@ -69,10 +69,12 @@ public class GeoPBMobilePlacemark {
 
 		Element rootElement = document.getRootElement();
 		List<Element> elementsList = rootElement.getChildren();
+		strBuilder.append("<table border=1>");
 		for (Element element : elementsList) {
-			strBuilder.append(element.getChild("name").getValue() + ": ");
-			strBuilder.append(element.getChild("value").getValue() + "<br>");
+			strBuilder.append("<tr><td><b>" + element.getChild("name").getValue() + "</b></td>");
+			strBuilder.append("<td>" + element.getChild("value").getValue() + "</td></tr>");
 		}
+		strBuilder.append("</table>");
 
 		return strBuilder.toString();
 	}
