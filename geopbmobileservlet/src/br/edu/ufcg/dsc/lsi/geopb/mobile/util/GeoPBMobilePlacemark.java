@@ -11,12 +11,23 @@ import org.jdom.input.SAXBuilder;
 
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
+/**
+ * 
+ * @author Caio Santos
+ * @author Filipe Carolino
+ * @author Kemerson Araujo
+ *
+ */
 public class GeoPBMobilePlacemark {
 	
 	private Placemark placemark;
+	private String managementUnit;
+	private String buildNumber; 
 	
 	public GeoPBMobilePlacemark(Placemark placemark) {
 		this.placemark = placemark;
+		this.managementUnit = placemark.getId().split("\\.")[1];
+		this.buildNumber = placemark.getId().split("\\.")[2];
 	}
 
 	public void editDescription() {		
@@ -36,15 +47,15 @@ public class GeoPBMobilePlacemark {
 		this.placemark.setDescription(GeoPBMobileMessageManager.getFormattedDescription(managementUnit, buildNumber, infos));
 	}
 
-	private String getManagementUnit() {
-		return this.placemark.getId().split("\\.")[1];
+	public String getManagementUnit() {
+		return managementUnit;
 	}
 
-	private String getBuildNumber() {
-		return this.placemark.getId().split("\\.")[2];
+	public String getBuildNumber() {
+		return buildNumber;
 	}
 
-	private String editBuildInformations() throws IOException {
+	public String editBuildInformations() throws IOException {
 
 		String requestUrl = GeoPBMobileMessageManager.getBuildDetailsRequest(getManagementUnit(), getBuildNumber());
 
@@ -78,9 +89,23 @@ public class GeoPBMobilePlacemark {
 
 		return strBuilder.toString();
 	}
+
+	//CONSTRUTOR E MÉTODOS DESTINADOS PARA TESTE
+	public GeoPBMobilePlacemark(String managementUnit, String buildNumber) {
+		this.managementUnit = managementUnit;
+		this.buildNumber = buildNumber;
+	}
 	
 	public Placemark getOriginalPlacemark() {
 		return this.placemark;
+	}
+	
+	public void setManagementUnit(String managementUnit) {
+		this.managementUnit = managementUnit;
+	}
+	
+	public void setBuildNumber(String buildNumber) {
+		this.buildNumber = buildNumber;
 	}
 
 }
