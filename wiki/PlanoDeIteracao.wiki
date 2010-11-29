@@ -36,14 +36,14 @@ US02 - Visualização de informações das obras.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
 || TA2.1 || O usuário irá clicar em uma obra e as informações textuais desta serão exibidas. || C ||
-|| TA2.2 || Na janela de informações da obra, o usuário irá selecionar a aba de fotografias e as fotografias relacionadas a esta obra serão mostradas. || D ||
-|| TA2.3 || O usuário poderá visualizar cada fotografia com detalhes podendo ampliar para ver os detalhes e passar para outra fotografia. || D ||
+|| TA2.2 || Na janela de informações da obra, o usuário irá selecionar a aba de fotografias e as fotografias relacionadas a esta obra serão mostradas. || C ||
+|| TA2.3 || O usuário poderá visualizar cada fotografia com detalhes podendo ampliar para ver os detalhes e passar para outra fotografia. || C ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A2.1 || Listar informações das obras, através do acesso a um WebService já existente. || Todos || 20 || 29 || C ||
-|| A2.2 || Visualizar as fotografias relacionadas a obra selecionada. || Todos || 8 ||  || D ||
-|| A2.3 || Visualizar detalhes das fotografias. || Todos || 4 ||  || D ||
+|| A2.2 || Visualizar as fotografias relacionadas a obra selecionada. || Todos || 8 || 10 || C ||
+|| A2.3 || Visualizar detalhes das fotografias. || Todos || 4 || 2 || C ||
 || A2.4 || Gerar artefato Big Chart || Filipe || 2 || 1,5 || C ||
 || A2.5 || Atualizar Tabela de Risco e TAA || Filipe || 2 || 1,5 || C ||
 
@@ -53,9 +53,11 @@ US02 - Visualização de informações das obras.
 US03 - Implementar a denúncia via texto.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA3.1 ||  ||  ||
-     
+|| TA3.1 || O usuário irá clicar em uma obra e um botão destinado para denúncia será exibido. || C ||
+|| TA3.2 || O usuário irá clicar no botão de denúncia e será exibido um formulário para realização da denúncia. || C ||
+|| TA3.3 || O usuário irá preencher o campo textual e submeter a denúncia. || C ||
 
+     
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A3.1 || Implementar módulo de denúncia textual || Todos || 15 || 20 || C ||
 || A3.2 || Criar uma GUI para o módulo de denúncia textual || Filipe || 10 || 5 || C ||
@@ -67,8 +69,8 @@ US03 - Implementar a denúncia via texto.
 US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA4.1 ||   ||  ||
-
+|| TA4.1 || Após o usuário clicar no botão de denúncia, será exibido também um campo para anexar um arquivo.  || C ||
+|| TA4.1 || O usuário  irá selecionar o arquivo a ser anexado e em seguida submeter a denúncia.|| C ||
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A4.1 || Implementar a anexação de fotos na denúncia || Todos || 15 || 1 || C ||
@@ -79,6 +81,8 @@ US04 - Implementar a funcionalidade de anexar fotos e/ou vídeos na denúncia.
 *Tabela de Alocação de Atividades - Iteração 05 - (18/11/2010 – 29/11/2010) *
 
 US05 - Implementar a funcionalidade de auditoria in loco.
+
+*US remanejada para a disciplina Projeo 2*
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
 || TA5.1 ||  ||  ||
