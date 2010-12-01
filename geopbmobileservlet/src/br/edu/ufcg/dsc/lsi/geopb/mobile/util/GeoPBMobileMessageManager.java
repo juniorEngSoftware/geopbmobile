@@ -11,16 +11,15 @@ public class GeoPBMobileMessageManager {
 	public static String getFormattedDescription(String managementUnit, String buildNumber, String infos) {
 		return infos
 				+ "<br> "
-				+ "<form name=\"formInfo\" action=\"http://buchada.dsc.ufcg.edu.br/GeoPBMobile/photographics.jsp\" target=\"_blank\">"
+				+ "<form name=\"formInfo\" action=\"http://buchada.dsc.ufcg.edu.br/geopbmobile/photographics.jsp\" target=\"_blank\">"
 				+ "<input type=\"hidden\" name=unidadeGestora value=\"" + managementUnit + "\">"
 				+ "<input type=\"hidden\" name=numeroObra value=\"" + buildNumber + "\">"
 				+ "<input type=\"submit\" value=\"Visualizar Fotos da Obra\" +>"
 				+ "</form>"
-				+ "<form name=\"formDenuncia\" action=\"http://buchada.dsc.ufcg.edu.br/george/jsp/denuncia/denuncia.jsp?nuObra=" + buildNumber + "&uGestora=" + managementUnit + "\" target=\"_blank\">"
+				+ "<form name=\"formDenuncia\" action=\"http://buchada.dsc.ufcg.edu.br/george/jsp/denuncia/denuncia.jsp?  target=\"_blank\">"
+				+ "<input type=\"hidden\" name=nuObra value=\"" + buildNumber + "\">"
+				+ "<input type=\"hidden\" name=uGestora value=\"" + managementUnit + "\">" 
 				+ "<input type=\"submit\" value=\"Realizar Denuncia\">"
-				+ "</form>"
-				+ "<form name=\"formUpload\" action=\"http://buchada.dsc.ufcg.edu.br/GeoPBMobile/auditoria.jsp\" target=\"_blank\">"
-				+ "<input type=\"submit\" value=\"Auditoria\">"
 				+ "</form>";
 	}
 	
