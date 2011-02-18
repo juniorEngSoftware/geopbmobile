@@ -1,9 +1,9 @@
 = Tabela de Riscos - Projeto 2  =
 
 || *Data de Identificação* || *Descrição* || *Gravidade* || *Ordem* || *Ordem Semana Passada* || *Número de Semanas na Lista* || *Responsável por Superar o Risco* || *Observações* ||
-|| //2011 ||  || Alta || 9 || 8 || 8 || Cliente ||  ||
-|| //2011 ||  || Baixa || 8 || 7 || 6 || Kemerson e Caio ||  ||
-|| //2011 || Manipulação de dados já existentes em servidores. || Baixa || 7 || 5 ||  || Todos || Para superar este risco, faz-se necessário um bom estudo e entendimento do que já está implementado e armazenado nos servidores. ||
+|| //2011 ||  || Alta || || || || ||  ||
+|| //2011 ||  || Baixa ||  || || || ||  ||
+|| //2011 ||  || Baixa || || ||  || || ||
 
 
 = Tabela de Riscos - Projeto 1  =
