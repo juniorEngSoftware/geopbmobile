@@ -1,4 +1,32 @@
-= Plano das Iterações =
+= Plano das Iterações - Projeto 2 =
+
+*Tabela de Alocação de Atividades - Iteração 01 - (//2011– //2011)*
+
+US01 - 
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA1.1 || || ||
+|| TA1.2 || || ||
+|| TA1.3 || || ||
+|| TA1.4 || || ||
+|| TA1.5 || ||  ||
+
+
+*Tabela de Alocação de Atividades - Iteração 01 - (//2011– //2011)*
+
+US01 - 
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA1.1 || || ||
+|| TA1.2 || || ||
+|| TA1.3 || || ||
+|| TA1.4 || || ||
+|| TA1.5 || ||  ||
+
+
+
+
+= Plano das Iterações - Projeto 1=
 
 *Tabela de Alocação de Atividades - Iteração 01 - (21/09/2010 – 15/10/2010)*
 
