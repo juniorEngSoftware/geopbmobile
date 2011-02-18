@@ -26,6 +26,10 @@ US01 -
 
 
 
+
+
+
+
 = Plano das Iterações - Projeto 1=
 
 *Tabela de Alocação de Atividades - Iteração 01 - (21/09/2010 – 15/10/2010)*
