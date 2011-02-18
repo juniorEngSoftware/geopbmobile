@@ -1,4 +1,30 @@
-= USERSTORIES e TESTES DE ACEITAÇÃO  =
+= USERSTORIES e TESTES DE ACEITAÇÃO - Projeto 2=
+
+*Lista de User Stories*
+
+
+*US01* - 
+
+    TA1.1 - 
+
+    TA1.2 - 
+
+    TA1.3 -
+
+
+    Estimativa inicial: h
+*US02* - 
+
+    TA1.1 - 
+
+    TA1.2 - 
+
+    TA1.3 -
+
+
+    Estimativa inicial: h
+
+= USERSTORIES e TESTES DE ACEITAÇÃO - Projeto 1 =
 
 *Lista de User Stories*
 
