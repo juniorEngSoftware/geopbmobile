@@ -3,7 +3,7 @@
 *Acompanhamento da Coleta de Métricas*
 
 || *Data* || *User Stories* || *Classes* || *Testes de Unidade* || *Testes de Aceitação* || *Páginas HTML/JSP* || *Observações* ||
-|| 20/09/2011 (Planejamento) ||	0 || 0 || 0 || 0 || 0 || Etapa de planejamento da disciplina Projeto 2. ||
+|| 21/02/2011 (Planejamento) ||	0 || 0 || 0 || 0 || 0 || Etapa de planejamento da disciplina Projeto 2. ||
 || ??/??/2011 (Iteração 1) ||  ||  ||  ||  ||  ||  ||
 || ??/??/2011 (Iteração 2) ||  ||  ||  ||  ||  ||  ||
 || ??/??/2011 (Iteração 3) ||  ||  ||  ||  ||  ||  ||
