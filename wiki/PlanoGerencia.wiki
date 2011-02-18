@@ -1,4 +1,13 @@
-= Plano de Gerência =
+= Plano de Gerência - Projeto 2 =
+
+|| *Gerente* || *Etapa* || *Período* ||
+|| ||  || //2011 -  //2011||
+|| || Release 1 ||  //2011 -  //2011 ||
+|| || Release 2  ||  //2011 -  //2011 ||
+|| ||  Release 3||  //2011 -  //2011 ||
+
+
+= Plano de Gerência - Projeto 1 =
 
 || *Gerente* || *Etapa* || *Período* ||
 || Caio Santos || Etapa de Planejamento || 16/08/2010 - 20/09/2010 ||
