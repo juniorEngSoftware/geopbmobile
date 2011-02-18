@@ -1,8 +1,7 @@
 = Plano de Gerência - Projeto 2 =
 
 || *Gerente* || *Etapa* || *Período* ||
-|| ||  || //2011 -  //2011||
-|| || Release 1 ||  //2011 -  //2011 ||
+|| || Planejamento e Release 1 ||  //2011 -  //2011 ||
 || || Release 2  ||  //2011 -  //2011 ||
 || ||  Release 3||  //2011 -  //2011 ||
 
