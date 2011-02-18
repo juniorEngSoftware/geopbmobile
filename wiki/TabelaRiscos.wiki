@@ -1,9 +1,9 @@
 = Tabela de Riscos - Projeto 2  =
 
 || *Data de Identificação* || *Descrição* || *Gravidade* || *Ordem* || *Ordem Semana Passada* || *Número de Semanas na Lista* || *Responsável por Superar o Risco* || *Observações* ||
-|| //2011 ||  || Alta || || || || ||  ||
-|| //2011 ||  || Baixa ||  || || || ||  ||
-|| //2011 ||  || Baixa || || ||  || || ||
+|| //2011 ||  || || || || || ||  ||
+|| //2011 ||  || ||  || || || ||  ||
+|| //2011 ||  || || || ||  || || ||
 
 
 = Tabela de Riscos - Projeto 1  =
