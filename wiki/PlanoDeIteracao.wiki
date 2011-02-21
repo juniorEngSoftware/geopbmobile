@@ -1,6 +1,6 @@
 = Plano das Iterações - Projeto 2 =
 
-*Tabela de Alocação de Atividades - Iteração 01 - (21/02/2011 – 07/03/2010) *
+*Tabela de Alocação de Atividades - Iteração 01 - (21/02/2011 – 07/03/2011) *
 
 US01 - Implementar a funcionalidade de auditoria in loco.
 
