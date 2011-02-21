@@ -1,9 +1,9 @@
 = Plano de Gerência - Projeto 2 =
 
 || *Gerente* || *Etapa* || *Período* ||
-|| || Planejamento e Release 1 ||  //2011 -  //2011 ||
-|| || Release 2  ||  //2011 -  //2011 ||
-|| ||  Release 3||  //2011 -  //2011 ||
+|| Kemerson || Planejamento e Release 1 ||  //2011 -  //2011 ||
+|| Caio || Release 2  ||  //2011 -  //2011 ||
+|| Filipe ||  Release 3||  //2011 -  //2011 ||
 
 
 = Plano de Gerência - Projeto 1 =
