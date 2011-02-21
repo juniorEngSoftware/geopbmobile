@@ -2,19 +2,19 @@
 
 *Tabela de Alocação de Atividades - Iteração 01 - (21/02/2011 – 07/03/2010) *
 
-US05 - Implementar a funcionalidade de auditoria in loco.
+US01 - Implementar a funcionalidade de auditoria in loco.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA5.1 ||  ||  ||
+|| TA1.1 ||  ||  ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A5.1 || Implementar interface para prover auditoria || Kemerson || || ||  ||
-|| A5.2 || Implementar a lógica da auditoria na aplicação || Caio || || || ||
-|| A5.3 || Implementar o armazenamento das informações auditoradas nos servidores || Filipe || || || ||
-|| A5.4 || Atualizar Tabela de Risco e TAA || Kemerson ||  ||  ||  ||
-|| A5.5 || Gerar artefato Big Chart  || Kemerson ||  ||  ||  ||
-|| A5.6 || Test Review || Filipe ||  ||  ||  ||
+|| A1.1 || Implementar interface para prover auditoria || Kemerson || || ||  ||
+|| A1.2 || Implementar a lógica da auditoria na aplicação || Caio || || || ||
+|| A1.3 || Implementar o armazenamento das informações auditoradas nos servidores || Filipe || || || ||
+|| A1.4 || Atualizar Tabela de Risco e TAA || Kemerson ||  ||  ||  ||
+|| A1.5 || Gerar artefato Big Chart  || Kemerson ||  ||  ||  ||
+|| A1.6 || Test Review || Filipe ||  ||  ||  ||
 
 
 
