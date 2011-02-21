@@ -4,11 +4,7 @@
 
 || *Data* || *User Stories* || *Classes* || *Testes de Unidade* || *Testes de Aceitação* || *Páginas HTML/JSP* || *Observações* ||
 || 21/02/2011 (Planejamento) ||	0 || 0 || 0 || 0 || 0 || Etapa de planejamento da disciplina Projeto 2. ||
-|| ??/??/2011 (Iteração 1) ||  ||  ||  ||  ||  ||  ||
-|| ??/??/2011 (Iteração 2) ||  ||  ||  ||  ||  ||  ||
-|| ??/??/2011 (Iteração 3) ||  ||  ||  ||  ||  ||  ||
-|| ??/??/2011 (Iteração 4) ||  ||  ||  ||  ||  ||  ||
-|| ??/??/2011 (Iteração 5) ||  ||  ||  ||  ||  ||  ||
+
 
 http://geopbmobile.googlecode.com/files/geopb_mobile_-_big_chart_it1-projeto2.png
 
