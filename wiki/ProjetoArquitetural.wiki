@@ -54,6 +54,8 @@ OBS: Com a mudança de foco no projeto, percebida através de um estudo inicial 
 Mesmo algumas mudanças, os componentes foram mantidos, porém simplificados.
 
 
+http://geopbmobile.googlecode.com/files/proj.atual.jpg
+
 
 
 
