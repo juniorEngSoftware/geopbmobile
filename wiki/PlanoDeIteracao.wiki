@@ -2,22 +2,121 @@
 
 *Tabela de Alocação de Atividades - Iteração 01 - (21/02/2011 – 07/03/2011) *
 
-US01 - Implementar a funcionalidade de auditoria in loco.
+US01 - Leitura de arquivo XML no dispositivo móvel que represente os campos de um formulário.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA1.1 ||  ||  ||
+|| TA1.1 || O usuário irá fornecer numa interface no dispositivo móvel o link para um xml contido na Web ||  ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A1.1 || Implementar interface para prover auditoria || Kemerson || || ||  ||
-|| A1.2 || Implementar a lógica da auditoria na aplicação || Caio || || || ||
-|| A1.3 || Implementar o armazenamento das informações auditoradas nos servidores || Filipe || || || ||
-|| A1.4 || Atualizar Tabela de Risco e TAA || Kemerson ||  ||  ||  ||
-|| A1.5 || Gerar artefato Big Chart  || Kemerson ||  ||  ||  ||
-|| A1.6 || Test Review || Filipe ||  ||  ||  ||
+|| A1.1 || || || || ||  ||
 
 
 
+*Tabela de Alocação de Atividades - Iteração 02 - (07/03/2011 – 21/03/2011) *
+
+US02 - CCriação de formulários no dispositivo móvel a partir do XML - somente campos textuais e numéricos.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA2.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A2.1 || || || || ||  ||
+
+US03 - Criação de formulários no dispositivo móvel a partir do XML - campos de checkbox, seleção simples e seleção múltipla.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA3.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A3.1 || || || || ||  ||
+
+*Tabela de Alocação de Atividades - Iteração 03 - (21/03/2011 – 04/04/2011) *
+
+US04 - Criação de formulários no dispositivo móvel a partir do XML - campo de georreferenciamento (acessa o GPS ou mostra o mapa para o usuário mostrar a localização).
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA4.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A4.1 || || || || ||  ||
+
+
+US05 - Criação de formulários no dispositivo móvel a partir do XML - campo de captura de arquivos multimídia (acessa o sistema de arquivos ou acessa a câmera para capturar fotografia ou filmar).
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA5.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A5.1 || || || || ||  ||
+
+
+*Tabela de Alocação de Atividades - Iteração 04 - (04/04/2011 – 18/04/2011) *
+
+US06 - Gerar um arquivo XML com os dados preenchidos no formulário.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA6.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A6.1 || || || || ||  ||
+
+
+US07 - Enviar o XML com os dados do formulário para o servidor (o servidor deve ser especificado no XML de configuração do formulário).
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA7.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A7.1 || || || || ||  ||
+
+
+*Tabela de Alocação de Atividades - Iteração 05 - (18/04/2011 – 02/05/2011) *
+
+US08 - Criar um XML com a descrição de um formulário para ser realizada a auditoria in loco de uma obra.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA8.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A8.1 || || || || ||  ||
+
+US09 - Parser no servidor dos dados preenchidos no formulário de auditoria in loco.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA9.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A9.1 || || || || ||  ||
+
+*Tabela de Alocação de Atividades - Iteração 06 - (02/05/2011 – 16/05/2011) *
+
+US10 - Armazenamento no banco de dados dos dados de auditoria in loco.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA10.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A10.1 || || || || ||  ||
+
+
+US11 - Visualização das informações de auditoria in loco de uma obra no mapa através de KML.
+
+|| *Testes de Aceitação* || *Descrição* || *Status* ||
+|| TA11.1 ||  ||  ||
+
+     
+|| *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
+|| A11.1 || || || || ||  ||
 
 = Plano das Iterações - Projeto 1=
 
