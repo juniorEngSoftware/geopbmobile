@@ -51,7 +51,7 @@ GeoPB Mobile, tais diagramas de componentes e comentários sobre suas respectiva
 ===Estrutura da Arquitetura - Atual===
 
 OBS: Com a mudança de foco no projeto, percebida através de um estudo inicial de viabilidade, o projeto arquitetural sofreu algumas mudanças. O sistema, ao final da disciplina projeto1, consiste em aplicativo _server_ _side_ .(Mais detalhes: http://code.google.com/p/geopbmobile/wiki/FocoDoProjeto). 
-Mesmo algumas mudanças, os componentes foram mantidos, porém simplificados.
+Mesmo com algumas mudanças, os componentes foram mantidos, porém simplificados.
 
 
 http://geopbmobile.googlecode.com/files/proj.atual.jpg
