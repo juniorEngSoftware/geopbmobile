@@ -1,6 +1,6 @@
 = Plano das Iterações - Projeto 2 =
 
-*Tabela de Alocação de Atividades - Iteração 01 - (21/02/2011 – 07/03/2011) *
+*Tabela de Alocação de Atividades - Iteração 01 - (21/02/2011 – 06/03/2011) *
 
 US01 - Leitura de arquivo XML no dispositivo móvel que represente os campos de um formulário. O usuário irá fornecer numa interface no dispositivo móvel o link para um xml contido na Web.
 
@@ -17,7 +17,7 @@ US01 - Leitura de arquivo XML no dispositivo móvel que represente os campos de 
 
 
 
-*Tabela de Alocação de Atividades - Iteração 02 - (07/03/2011 – 21/03/2011) *
+*Tabela de Alocação de Atividades - Iteração 02 - (07/03/2011 – 20/03/2011) *
 
 US02 - Criação de formulários no dispositivo móvel a partir do XML - somente campos textuais e numéricos.
 
@@ -37,7 +37,7 @@ US03 - Criação de formulários no dispositivo móvel a partir do XML - campos 
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A3.1 || || || || ||  ||
 
-*Tabela de Alocação de Atividades - Iteração 03 - (21/03/2011 – 04/04/2011) *
+*Tabela de Alocação de Atividades - Iteração 03 - (21/03/2011 – 03/04/2011) *
 
 US04 - Criação de formulários no dispositivo móvel a partir do XML - campo de georreferenciamento (acessa o GPS ou mostra o mapa para o usuário mostrar a localização).
 
@@ -59,7 +59,7 @@ US05 - Criação de formulários no dispositivo móvel a partir do XML - campo d
 || A5.1 || || || || ||  ||
 
 
-*Tabela de Alocação de Atividades - Iteração 04 - (04/04/2011 – 18/04/2011) *
+*Tabela de Alocação de Atividades - Iteração 04 - (04/04/2011 – 17/04/2011) *
 
 US06 - Gerar um arquivo XML com os dados preenchidos no formulário.
 
@@ -81,7 +81,7 @@ US07 - Enviar o XML com os dados do formulário para o servidor (o servidor deve
 || A7.1 || || || || ||  ||
 
 
-*Tabela de Alocação de Atividades - Iteração 05 - (18/04/2011 – 02/05/2011) *
+*Tabela de Alocação de Atividades - Iteração 05 - (18/04/2011 – 01/05/2011) *
 
 US08 - Criar um XML com a descrição de um formulário para ser realizada a auditoria in loco de uma obra.
 
@@ -101,7 +101,7 @@ US09 - Parser no servidor dos dados preenchidos no formulário de auditoria in l
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
 || A9.1 || || || || ||  ||
 
-*Tabela de Alocação de Atividades - Iteração 06 - (02/05/2011 – 16/05/2011) *
+*Tabela de Alocação de Atividades - Iteração 06 - (02/05/2011 – 15/05/2011) *
 
 US10 - Armazenamento no banco de dados dos dados de auditoria in loco.
 
