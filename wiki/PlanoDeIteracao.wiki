@@ -9,11 +9,11 @@ US01 - Leitura de arquivo XML no dispositivo móvel que represente os campos de 
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A1.1 || Realizar estudo de viabilidade sobre a melhor versão do Android a ser utilizada no projeto || Kemerson || || || D ||
-|| A1.2 || Preparar o ambiente para desenvolvimento com a tecnologia Android || Caio || || || D ||
-|| A1.3 || Implementar um parser para interpretar o arquivo XML recebido. || Filipe || || || D ||
-|| A1.4 || Gerar artefato Big Chart || Kemerson || || || D ||
-|| A1.5 || Atualizar Tabela de Risco e TAA || Kemerson || || || D ||
+|| A1.1 || Realizar estudo de viabilidade sobre a melhor versão do Android a ser utilizada no projeto || Kemerson || 10 || || D ||
+|| A1.2 || Preparar o ambiente para desenvolvimento com a tecnologia Android || Caio || 12 || || D ||
+|| A1.3 || Implementar um parser para interpretar o arquivo XML recebido. || Filipe || 12 || || D ||
+|| A1.4 || Gerar artefato Big Chart || Kemerson || 1 || || D ||
+|| A1.5 || Atualizar Tabela de Risco e TAA || Kemerson || 1 || || D ||
 
 
 
