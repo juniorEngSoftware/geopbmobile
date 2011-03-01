@@ -3,23 +3,31 @@
 *Lista de User Stories*
 
 
-*US01* - Implementar a funcionalidade para auditoria in loco.
+*US01* - Leitura de arquivo XML no dispositivo móvel que represente os campos de um formulário. O usuário irá fornecer numa interface no dispositivo móvel o link para um xml contido na Web.
 
-    Testes de Aceitação: A serem descritos pelo cliente.
+     TA1.1 - Serão passados vários arquivos XML, parte deles correto e parte deles incorreto. O software deverá considerar apenas os arquivos corretos.
 
-    Estimativa inicial: 60h
+*US02* - Criação de formulários no dispositivo móvel a partir do XML - somente campos textuais e numéricos.
+
+*US03* - Criação de formulários no dispositivo móvel a partir do XML - campos de checkbox, seleção simples e seleção múltipla.
+
+*US04* - Criação de formulários no dispositivo móvel a partir do XML - campo de georreferenciamento (acessa o GPS ou mostra o mapa para o usuário mostrar a localização).
+
+*US05* - Criação de formulários no dispositivo móvel a partir do XML - campo de captura de arquivos multimídia (acessa o sistema de arquivos ou acessa a câmera para capturar fotografia ou filmar).
+
+*US06* - Gerar um arquivo XML com os dados preenchidos no formulário.
+
+*US07* - Enviar o XML com os dados do formulário para o servidor (o servidor deve ser especificado no XML de configuração do formulário).
+
+*US08* - Criar um XML com a descrição de um formulário para ser realizada a auditoria in loco de uma obra.
+
+*US09* - Parser no servidor dos dados preenchidos no formulário de auditoria in loco.
+
+*US10* - Armazenamento no banco de dados dos dados de auditoria in loco.
+
+*US11* - Visualização das informações de auditoria in loco de uma obra no mapa através de KML.
 
 
-*US02* - 
-
-    TA2.1 - 
-
-    TA2.2 - 
-
-    TA2.3 -
-
-
-    Estimativa inicial: h
 
 = USERSTORIES e TESTES DE ACEITAÇÃO - Projeto 1 =
 
