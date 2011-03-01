@@ -6,6 +6,7 @@
 *US01* - Leitura de arquivo XML no dispositivo móvel que represente os campos de um formulário. O usuário irá fornecer numa interface no dispositivo móvel o link para um xml contido na Web.
 
     TA1.1 - Serão passados vários arquivos XML no formato correto, que deve ser lido pelo parser. O software deverá aceitar e ler esses arquivos.
+
     TA1.2 - Serão passados vários arquivos XML incorretos. O software deverá rejeitar esses arquivos.
 
 *US02* - Criação de formulários no dispositivo móvel a partir do XML - somente campos textuais e numéricos.
