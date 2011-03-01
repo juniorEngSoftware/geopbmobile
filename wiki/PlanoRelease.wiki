@@ -2,35 +2,34 @@
 
 *Release 01 *
 
-*Período : * 
+*Período : * 21/02/2011 - 20/03/2011 
 
-*Gerente: * (Iteração 1 e 2) e (Iteração 3)
+*Gerente: * Kemerson
 || *Iteração*  || *User Story* || *Período* ||
-|| Iteração 01 || || //2011 – //2011 ||
-|| Iteração 02 || || //2011 – //2011 ||
-|| Iteração 03 || || //2011 – //2011 ||
+|| Iteração 01 || US01 || 21/02/2011 – 06/03/2011 ||
+|| Iteração 02 || US02, US03 || 07/03/2011 – 20/03/2011 ||
 
 ================================
 
 *Release 02 *
 
-*Período : * 
+*Período : * 21/03/2011 - 17/04/2011
 
-*Gerente: * (Iteração 4) e (Iteração 5)
+*Gerente: * Caio
 || *Iteração*  || *User Story* || *Período* ||
-|| Iteração 04 ||  || //2011– //2011 ||
-|| Iteração 05 ||  || //2011 – //2011 ||
+|| Iteração 03 || US04, US05 || 21/03/2011 – 03/04/2011 ||
+|| Iteração 04 || US06, US07 || 04/04/2011 – 17/04/2011 ||
 
 ================================
 
 *Release 03 *
 
-*Período : * 
+*Período : * 18/04/2011 - 15/05/2011
 
-*Gerente: * (Iteração 4) e (Iteração 5)
+*Gerente: * Filipe
 || *Iteração*  || *User Story* || *Período* ||
-|| Iteração 04 ||  || //2011– //2011 ||
-|| Iteração 05 ||  || //2011 – //2011 ||
+|| Iteração 04 || US08, US09 || 18/04/2011 – 01/05/2011 ||
+|| Iteração 05 || US10, US11 || 02/05/2011 – 15/05/2011 ||
 
 
 
