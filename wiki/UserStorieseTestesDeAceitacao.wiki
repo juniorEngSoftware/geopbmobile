@@ -39,10 +39,16 @@
 
 *US09* - Parser no servidor dos dados preenchidos no formulário de auditoria in loco.
 
+    TA9.1 - O componente servidor da arquitetura deverá analisar um arquivo XML, corretamente enviado pela componente cliente, verificando possíveis erros  para manipulá-lo antes de salvar no banco de dados
+
+
 *US10* - Armazenamento no banco de dados dos dados de auditoria in loco.
+
+    TA10.1 - O componente servidor da arquitetura deverá analisar um arquivo XML, corretamente enviado pela componente cliente, realizar o parser e salvá-lo no banco de dados de forma coerente.
 
 *US11* - Visualização das informações de auditoria in loco de uma obra no mapa através de KML.
 
+    TA11.1 - A aplicação cliente enviará um formulário de auditoria in loco corretamente preenchido. O componente servidor deverá analisá-lo, salvar as informações e criar um arquivo kml correspondente para ser exibido através de aplicação de mapas do dispositivo móvel.
 
 
 = USERSTORIES e TESTES DE ACEITAÇÃO - Projeto 1 =
