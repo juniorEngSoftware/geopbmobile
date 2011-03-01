@@ -1,8 +1,8 @@
 = Tabela de Riscos - Projeto 2  =
 
 || *Data de Identificação* || *Descrição* || *Gravidade* || *Ordem* || *Ordem Semana Passada* || *Número de Semanas na Lista* || *Responsável por Superar o Risco* || *Observações* ||
-|| 20/02/2011 || Atraso nas atividades de planejamento devido a problemas de saúde ocorridos com o cliente. || Alta || 1 || 1 || 1 || Cliente ||  ||
-|| 18/02/2011 || O desenvolvimento a partir de agora (em Projeto 2) terá seu foco alterado: não será um sistema com desenvolvimento focado apenas para o TCE, mas será generalizado. || Média || 2 || 2 || 1 || Kemerson || A gravidade foi colocada como média pois ainda não sabe-se até que ponto essa mudança vai impactar no software. Para superar esse risco é necessário fazer uma análise do impacto desse requisito no software e tomar as melhores providências para que esse impacto seja minimizado. ||
+|| 20/02/2011 || Atraso nas atividades de planejamento devido a problemas de saúde ocorridos com o cliente. || Alta || 1 || 1 || 1 || Cliente || Risco superado, pois cumprindo a atual divisão das User Stories em cada iteração, o projeto será finalizado sem nenhum atraso. ||
+|| 18/02/2011 || O desenvolvimento a partir de agora (em Projeto 2) terá seu foco alterado: não será um sistema com desenvolvimento focado apenas para o TCE, mas será generalizado. || Baixa || 2 || 2 || 1 || Kemerson || A gravidade foi colocada como média pois ainda não sabe-se até que ponto essa mudança vai impactar no software. Para superar esse risco é necessário fazer uma análise do impacto desse requisito no software e tomar as melhores providências para que esse impacto seja minimizado. (Após a última reunião com o cliente, verificamos que essa mudança não vai impactar em nada o software feito anteriormente em Projeto 1. Portanto, a gravidade desse risco foi alterada para baixa). ||
 
 
 = Tabela de Riscos - Projeto 1  =
