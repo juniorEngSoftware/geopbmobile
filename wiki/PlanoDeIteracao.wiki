@@ -5,7 +5,7 @@
 US01 - Leitura de arquivo XML no dispositivo móvel que represente os campos de um formulário. O usuário irá fornecer numa interface no dispositivo móvel o link para um xml contido na Web.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA1.1 || Serão passados vários arquivos XML, parte deles correto e parte deles incorreto. O software deverá considerar apenas os arquivos corretos. ||  ||
+|| TA1.1 || Serão passados vários arquivos XML, parte deles correto e parte deles incorreto. O software deverá considerar apenas os arquivos corretos. || D ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
