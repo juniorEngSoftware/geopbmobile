@@ -2,20 +2,24 @@
 
 *Tabela de Alocação de Atividades - Iteração 01 - (21/02/2011 – 07/03/2011) *
 
-US01 - Leitura de arquivo XML no dispositivo móvel que represente os campos de um formulário.
+US01 - Leitura de arquivo XML no dispositivo móvel que represente os campos de um formulário. O usuário irá fornecer numa interface no dispositivo móvel o link para um xml contido na Web.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
-|| TA1.1 || O usuário irá fornecer numa interface no dispositivo móvel o link para um xml contido na Web ||  ||
+|| TA1.1 || Serão passados vários arquivos XML, parte deles correto e parte deles incorreto. O software deverá considerar apenas os arquivos corretos. ||  ||
 
      
 || *Atividade* || *Descrição* || *Responsável* || *Estimativa de tempo (horas) * || *Tempo real (horas)* || *Status* ||
-|| A1.1 || || || || ||  ||
+|| A1.1 || Realizar estudo de viabilidade sobre a melhor versão do Android a ser utilizada no projeto || Kemerson || || || D ||
+|| A1.2 || Preparar o ambiente para desenvolvimento com a tecnologia Android || Caio || || || D ||
+|| A1.3 || Implementar um parser para interpretar o arquivo XML recebido. || Filipe || || || D ||
+|| A1.4 || Gerar artefato Big Chart || Kemerson || || || D ||
+|| A1.5 || Atualizar Tabela de Risco e TAA || Kemerson || || || D ||
 
 
 
 *Tabela de Alocação de Atividades - Iteração 02 - (07/03/2011 – 21/03/2011) *
 
-US02 - CCriação de formulários no dispositivo móvel a partir do XML - somente campos textuais e numéricos.
+US02 - Criação de formulários no dispositivo móvel a partir do XML - somente campos textuais e numéricos.
 
 || *Testes de Aceitação* || *Descrição* || *Status* ||
 || TA2.1 ||  ||  ||
