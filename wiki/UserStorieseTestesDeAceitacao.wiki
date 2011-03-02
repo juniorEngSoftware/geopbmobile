@@ -9,33 +9,41 @@
 
     TA1.2 - Serão passados vários arquivos XML incorretos. O software deverá rejeitar esses arquivos.
 
+
 *US02* - Criação de formulários no dispositivo móvel a partir do XML - somente campos textuais e numéricos.
    
     TA2.1 - O software vai receber vários arquivos XML contendo instruções para a criação de campos textuais e numéricos na aplicação. Esses campos podem ter restrições (como, por exemplo, os números devem ser maiores que 0). Essas restrições devem ser respeitadas. O resultado deve ser a aplicação acrescida desses componentes.
+
 
 *US03* - Criação de formulários no dispositivo móvel a partir do XML - campos de checkbox, seleção simples e seleção múltipla.
 
     TA3.1 - O software vai receber vários arquivos XML contendo instruções para a criação de checkbox, seleção simples e seleção mútipla na aplicação. O resultado deve ser a aplicação acrescida desses componentes.
 
+
 *US04* - Criação de formulários no dispositivo móvel a partir do XML - campo de georreferenciamento (acessa o GPS ou mostra o mapa para o usuário mostrar a localização).
 
     TA4.1 - O software vai receber vários arquivos XML contendo instruções para a criação de um campo de georreferenciamento. O resultado deve ser a aplicação acrescida desse componente.
+
 
 *US05* - Criação de formulários no dispositivo móvel a partir do XML - campo de captura de arquivos multimídia (acessa o sistema de arquivos ou acessa a câmera para capturar fotografia ou filmar).
 
     TA5.1 - O software vai receber vários arquivos XML contendo instruções para a criação de campos para conteúdo multimídia (fotos ou vídeos). O resultado deve ser a aplicação acrescida desses componentes.
 
+
 *US06* - Gerar um arquivo XML com os dados preenchidos no formulário.
 
     TA6.1 - Com a aplicação já concluída após a leitura do arquivo XML, os campos do formulário serão preenchidos com dados pré-estabelecidos. O resultado deve ser a criação de um arquivo XML contendo esses dados corretamente.
+
 
 *US07* - Enviar o XML com os dados do formulário para o servidor (o servidor deve ser especificado no XML de configuração do formulário).
 
     TA7.1 - Com o arquivo pronto, enviá-lo para o servidor e, em seguida, recuperá-lo do servidor e compará-lo com o arquivo original.
 
+
 *US08* - Criar um XML com a descrição de um formulário para ser realizada a auditoria in loco de uma obra.
 
     TA8.1 - Baseando-se em um arquivo XML correto, a aplicação deverá criar um arquivo XML contendo todos os campos necessários para a realização de uma auditoria in loco de alguma obra. Depois disso, o arquivo resultante será comparado com o original.
+
 
 *US09* - Parser no servidor dos dados preenchidos no formulário de auditoria in loco.
 
@@ -45,6 +53,7 @@
 *US10* - Armazenamento no banco de dados dos dados de auditoria in loco.
 
     TA10.1 - O componente servidor da arquitetura deverá analisar um arquivo XML, corretamente enviado pela componente cliente, realizar o parser e salvá-lo no banco de dados de forma coerente.
+
 
 *US11* - Visualização das informações de auditoria in loco de uma obra no mapa através de KML.
 
