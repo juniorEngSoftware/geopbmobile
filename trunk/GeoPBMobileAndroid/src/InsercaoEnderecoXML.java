@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 
 import com.example.helloandroid.R;
@@ -31,6 +32,6 @@ public class InsercaoEnderecoXML extends Activity {
     	final EditText edittext = (EditText) findViewById(R.id.edittext);
     	String xmlAdress = edittext.getText().toString();
     	
-    	GeoPBMobileUtil.getStreamOfConnection(xmlAdress);
+    	InputStream input = GeoPBMobileUtil.getStreamOfConnection(xmlAdress);
     }
 }
