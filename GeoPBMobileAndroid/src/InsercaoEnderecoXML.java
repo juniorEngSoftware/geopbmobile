@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import com.example.helloandroid.R;
 import com.example.helloandroid.R.id;
 import com.example.helloandroid.R.layout;
+import com.thoughtworks.xstream.XStream;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -33,5 +34,9 @@ public class InsercaoEnderecoXML extends Activity {
     	String xmlAdress = edittext.getText().toString();
     	
     	InputStream input = GeoPBMobileUtil.getStreamOfConnection(xmlAdress);
+    	XStream xStream = new XStream();
+    	Object geoPBform =  xStream.fromXML(input);
+    	
+    	
     }
 }
