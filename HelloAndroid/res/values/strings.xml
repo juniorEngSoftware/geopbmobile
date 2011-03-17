@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Digite o link de seu arquivo XML e aperte o botão Enviar ou pressione Enter.</string>
+    <string name="app_name">GeoPB Mobile</string>
+    <string name="send_button">Enviar Requisição</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="form_name">Form</string>
+</resources>
