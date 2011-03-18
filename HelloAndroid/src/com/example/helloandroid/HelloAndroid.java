@@ -53,8 +53,8 @@ public class HelloAndroid extends Activity {
 
 	private void setXMLRequestButtonEvent() {
 	
-		final Button startButton = (Button) findViewById(R.id.button);
-		final EditText editText =  (EditText) findViewById(R.id.edittext);
+		final Button startButton = (Button) findViewById(R.id.send_button);
+		final EditText editText =  (EditText) findViewById(R.id.edit_url_text);
 		startButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -69,13 +69,13 @@ public class HelloAndroid extends Activity {
 	
 
 	private void setXMLRequestKeyEvent() {
-		final EditText editText = (EditText) findViewById(R.id.edittext);
+		final EditText editText = (EditText) findViewById(R.id.edit_url_text);
 		editText.setOnKeyListener(new OnKeyListener() {
 			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER){
 //					xmlURL = editText.getText().toString();
-					xmlURL = "http://dl.dropbox.com/u/8923123/features.xml";
+					xmlURL = "http://dl.dropbox.com/u/8510487/teste.xml";
 					downloadFile();
 					return true;
 				}
