@@ -3,6 +3,10 @@ package model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+import com.example.helloandroid.R;
 
 public class Feature implements Parcelable {
 
@@ -22,6 +26,14 @@ public class Feature implements Parcelable {
 	}
 
 
+	public Feature(Parcel in) {
+		readFromParcel(in);
+	}
+
+	private void readFromParcel(Parcel in) {
+		this.name = in.readString();
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -30,6 +42,13 @@ public class Feature implements Parcelable {
 		this.name = name;
 	}
 
+	public int getType() {
+		return -1;
+	}
+
+	public View setUpView(View inflate) {
+		return null;
+	}
 	@Override
 	public String toString() {
 		return "Name: " + name;
@@ -46,7 +65,6 @@ public class Feature implements Parcelable {
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
-		Log.e("FEATURE", "SETOU O NOME QND writeTOParcel");
 		dest.writeInt(this.describeContents());
 		dest.writeString(this.name);
 	}
@@ -54,19 +72,18 @@ public class Feature implements Parcelable {
 	public static final Parcelable.Creator<Feature> CREATOR = new Parcelable.Creator<Feature>() {
 		public Feature createFromParcel(Parcel in) {
 			int description = in.readInt();
-			String name = in.readString();
-			Log.e("FEATURE bbb", "descricao: " + description + " nome: " + name);
+			Log.e("FEATURE bbb", "descricao: " + description );
 			switch (description) {
 				case TEXT_FEATURE_DESCRIPTION:
-					return new TextFeature(name);
+					return new TextFeature(in);
 				case NUMERIC_FEATURE_DESCRIPTION:
-					return new NumericFeature();
+					return new NumericFeature(in);
 				case SINGLE_CHECK_BOX_FEATURE_DESCRIPTION:
 					return new SingleCheckBoxFeature();
 				case MULTIPLE_CHECK_BOX_FEATURE_DESCRIPTION:
 					return new MutipleCheckBoxFeature();
 				default:
-					return new Feature(name);
+					return new Feature(in);
 			}
 			
 	
@@ -77,5 +94,6 @@ public class Feature implements Parcelable {
 			return new Feature[size];
 		}
 	};
+
 
 }

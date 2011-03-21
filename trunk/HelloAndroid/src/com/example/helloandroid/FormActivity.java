@@ -17,40 +17,27 @@ import android.widget.TextView;
 
 public class FormActivity extends Activity{
 
-	private ArrayList<Parcelable> xmlFeatures;
 	@Override
 	public void onCreate (Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.form);
 		
+		Log.e("FormActivity", "ENTROU NO FormActivity");
+		
 		ArrayList<Feature> xmlInfo = this.getIntent().getParcelableArrayListExtra("features");
-//		xmlFeatures =  xmlInfo.getParcelableArrayList("features");
 		Log.e("FormActivity", "size: " + String.valueOf(xmlInfo.size()) );
 		
 		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.form_layout);
-		if(linearLayout == null){
-			Log.e("FormActivity", "linearLayout igual a null");
-		}else{
-			Log.e("FormActivity", linearLayout.toString());
-		}
+
+		//talvez criar um FormManager passando a feature
+		FormManager formManager = new FormManager(linearLayout);
 		
 		for (Feature feature : xmlInfo) {
 			LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			EditText editText = (EditText) inflater.inflate(R.layout.edittext, null);
-//			EditText editText = (EditText) findViewById(R.layout.edittext);
-			if(editText == null){
-				Log.e("FormActivity", "editText igual a null");
-				break;
-			}
-			if(feature == null){
-				Log.e("FormActivity", "feature igual a null");
-				break;
-			}				
+			formManager.addFeature(feature, inflater);	
 			
-			editText.setText(feature.getName());
 			Log.e("FormActivity", feature.getName());
 			
-			linearLayout.addView(editText);
 		}
 		
 		
