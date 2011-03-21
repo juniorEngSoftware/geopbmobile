@@ -33,11 +33,7 @@ public class HelloAndroid extends Activity {
 	private static final String MAIN_LOG_TAG = "HELO ANDROID CLASS";
 	private ProgressDialog progressDialog;
 	
-	private String text;
-	
 	private String xmlURL;
-	private XMLManager xmlManager;
-	private FormManager formManager;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -45,7 +41,7 @@ public class HelloAndroid extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);		
 		
-		Log.e("MAin", "on create ========================");
+		Log.e(MAIN_LOG_TAG, "on create ========================");
 		
 		setXMLRequestKeyEvent();
 		setXMLRequestButtonEvent();
@@ -65,8 +61,6 @@ public class HelloAndroid extends Activity {
 			}
 		});
 	}
-
-	
 
 	private void setXMLRequestKeyEvent() {
 		final EditText editText = (EditText) findViewById(R.id.edit_url_text);
@@ -99,10 +93,13 @@ public class HelloAndroid extends Activity {
 			progressDialog.dismiss();
 
 			if(msg.getData().getString("erro").equals(FetchThread.OK_MESSAGE)) {
-//				Bundle xmlInfo = new Bundle();
-//				xmlInfo.putParcelable("features", msg.getData().getParcelable("features"));
-				Log.e(MAIN_LOG_TAG, "ENTROU NO IF");
 				Intent intent = new Intent(HelloAndroid.this, FormActivity.class);
+				
+				ArrayList<Feature> parcelableArrayList = msg.getData().getParcelableArrayList("features");
+				for (Feature feature: parcelableArrayList) {
+					Log.e(MAIN_LOG_TAG, feature.toString());
+				}
+				
 				intent.putParcelableArrayListExtra("features",  msg.getData().getParcelableArrayList("features"));
 				
 				startActivity(intent);				
