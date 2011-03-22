@@ -3,9 +3,6 @@ package model;
 import android.os.Parcel;
 import android.util.Log;
 import android.view.View;
-import com.example.helloandroid.R;
-
-
 
 public class NumericFeature extends Feature{
 
