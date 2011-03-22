@@ -3,8 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="C:/Users/caio/workspace/HelloAndroid/jars/jdom.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/workspace/HelloAndroid/jars/xpp3_min-1.1.4c.jar"/>
-	<classpathentry kind="lib" path="C:/Users/caio/workspace/HelloAndroid/jars/xstream-1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Filipe/workspace/HelloAndroid/jars/jdom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Filipe/workspace/HelloAndroid/jars/xpp3_min-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Filipe/workspace/HelloAndroid/jars/xstream-1.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

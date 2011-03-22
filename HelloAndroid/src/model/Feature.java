@@ -81,7 +81,7 @@ public class Feature implements Parcelable {
 				case SINGLE_CHECK_BOX_FEATURE_DESCRIPTION:
 					return new SingleCheckBoxFeature();
 				case MULTIPLE_CHECK_BOX_FEATURE_DESCRIPTION:
-					return new MutipleCheckBoxFeature();
+					return new MultipleCheckBoxFeature();
 				default:
 					return new Feature(in);
 			}
