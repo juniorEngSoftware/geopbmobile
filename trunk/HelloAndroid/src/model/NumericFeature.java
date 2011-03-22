@@ -1,7 +1,9 @@
 package model;
 
+import android.app.Activity;
 import android.os.Parcel;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 
 public class NumericFeature extends Feature{
@@ -56,7 +58,7 @@ public class NumericFeature extends Feature{
 	
 	//FIXME
 	@Override
-	public View setUpView(View inflate){
+	public View setUpView(View inflate, LayoutInflater inflater){
 		return null;
 		
 	}

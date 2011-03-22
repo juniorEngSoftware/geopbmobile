@@ -69,7 +69,7 @@ public class HelloAndroid extends Activity {
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER){
 //					xmlURL = editText.getText().toString();
-					xmlURL = "http://dl.dropbox.com/u/8510487/teste.xml";
+					xmlURL = "http://dl.dropbox.com/u/8510487/features.xml";
 					downloadFile();
 					return true;
 				}
@@ -96,9 +96,9 @@ public class HelloAndroid extends Activity {
 				Intent intent = new Intent(HelloAndroid.this, FormActivity.class);
 				
 				ArrayList<Feature> parcelableArrayList = msg.getData().getParcelableArrayList("features");
-				for (Feature feature: parcelableArrayList) {
-					Log.e(MAIN_LOG_TAG, feature.toString());
-				}
+//				for (Feature feature: parcelableArrayList) {
+//					Log.e(MAIN_LOG_TAG, feature.toString());
+//				}
 				
 				intent.putParcelableArrayListExtra("features",  msg.getData().getParcelableArrayList("features"));
 				

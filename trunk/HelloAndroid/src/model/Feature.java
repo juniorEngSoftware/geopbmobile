@@ -3,6 +3,7 @@ package model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,7 +17,9 @@ public class Feature implements Parcelable {
 	private static final int SINGLE_CHECK_BOX_FEATURE_DESCRIPTION = 3;
 	private static final int MULTIPLE_CHECK_BOX_FEATURE_DESCRIPTION = 4;
 	
-	private String name;
+	private static final String FEATURE_LOG_TAG = "FEATURE CLASS";
+	
+	protected String name;
 
 	public Feature(){
 	}
@@ -30,7 +33,8 @@ public class Feature implements Parcelable {
 		readFromParcel(in);
 	}
 
-	private void readFromParcel(Parcel in) {
+	protected void readFromParcel(Parcel in) {
+		Log.e(FEATURE_LOG_TAG, "chamou readFromParcel");
 		this.name = in.readString();
 	}
 
@@ -46,7 +50,7 @@ public class Feature implements Parcelable {
 		return -1;
 	}
 
-	public View setUpView(View inflate) {
+	public View setUpView(View inflate, LayoutInflater inflater) {
 		return null;
 	}
 	@Override
@@ -65,6 +69,7 @@ public class Feature implements Parcelable {
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
+		Log.e(FEATURE_LOG_TAG, "writeToParcel na CLASSE MAE");
 		dest.writeInt(this.describeContents());
 		dest.writeString(this.name);
 	}
@@ -79,9 +84,9 @@ public class Feature implements Parcelable {
 				case NUMERIC_FEATURE_DESCRIPTION:
 					return new NumericFeature(in);
 				case SINGLE_CHECK_BOX_FEATURE_DESCRIPTION:
-					return new SingleCheckBoxFeature();
+					return new SingleCheckBoxFeature(in);
 				case MULTIPLE_CHECK_BOX_FEATURE_DESCRIPTION:
-					return new MultipleCheckBoxFeature();
+					return new MultipleCheckBoxFeature(in);
 				default:
 					return new Feature(in);
 			}
