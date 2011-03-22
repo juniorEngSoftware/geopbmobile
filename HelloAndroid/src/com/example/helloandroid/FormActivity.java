@@ -3,17 +3,12 @@ package com.example.helloandroid;
 import java.util.ArrayList;
 
 import model.Feature;
-import android.R.xml;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class FormActivity extends Activity{
 

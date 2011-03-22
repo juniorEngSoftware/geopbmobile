@@ -1,18 +1,36 @@
 package model;
+import java.util.ArrayList;
 import java.util.List;
+
+import android.os.Parcel;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.ListView;
+
+import com.example.helloandroid.FormActivity;
+import com.example.helloandroid.R;
 
 public class MultipleCheckBoxFeature extends Feature {
 
-	private String name;
-
+	private static final String MULTIPLE_CHECKBOX_LOG_TAG = "MultipleCheckBoxFeature CLASS";
 	private List<Option> optionList;
 	
 	public MultipleCheckBoxFeature() {
-		
+		optionList = new ArrayList<Option>();
 	}
 	
-	public MultipleCheckBoxFeature(List<Option> optionList) {
-		this.optionList = optionList;
+	public MultipleCheckBoxFeature(Parcel in) {
+		this();
+		readFromParcel(in);
+	}
+	
+	@Override
+	protected void readFromParcel(Parcel in) {
+		super.readFromParcel(in);
+		in.readList(optionList, Option.class.getClassLoader());	
 	}
 	
 	public String getName() {
@@ -30,8 +48,35 @@ public class MultipleCheckBoxFeature extends Feature {
 	public void setOptionList(List<Option> optionList) {
 		this.optionList = optionList;
 	}
-	
+
+	@Override
 	public String toString() {
 		return "Multiple Check Box: " + this.name + "\n" + "Options: " + this.optionList.toString() + "\n";
+	}
+	
+	@Override
+	public int getType() {
+		return R.layout.multiplecheckbox;
+	}
+	
+	
+	@Override
+	public View setUpView(View inflate, LayoutInflater inflater){
+
+		return null;
+	}
+	
+	
+	@Override
+	public int describeContents() {
+		Log.e(MULTIPLE_CHECKBOX_LOG_TAG, "SETOU CONTENTS p 4");
+		return 4;
+	}
+	
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		super.writeToParcel(dest, flags);
+		Log.e(MULTIPLE_CHECKBOX_LOG_TAG, "writeToParcel na subclasse");
+		dest.writeList(optionList);
 	}
 }

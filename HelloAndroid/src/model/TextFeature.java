@@ -4,11 +4,13 @@ import com.example.helloandroid.R;
 
 import android.os.Parcel;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
 public class TextFeature extends Feature{
 
+	private static final String TEXT_FEATURE_LOG_TAG = "TEXT FEATURE CLASS";
 	private String content;
 
 	public TextFeature(){
@@ -44,9 +46,8 @@ public class TextFeature extends Feature{
 	}
 	
 	@Override
-	public View setUpView(View inflate){
+	public View setUpView(View inflate, LayoutInflater inflater){
 		EditText editText = (EditText) inflate;
-//		editText.setText(this.getName());
 		
 		return editText;
 	}
@@ -64,7 +65,7 @@ public class TextFeature extends Feature{
 	
 	@Override
 	public int describeContents() {
-		Log.e("TEXT_FEATURE", "SETOU CONTENTS p 1");
+		Log.e(TEXT_FEATURE_LOG_TAG, "SETOU CONTENTS p 1");
 		return 1;
 	}
 }

@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 public class FormManager {
 
+	private static final String FORM_MANAGER_LOG_TAG = "Form Manager CLASS";
+	
 	private LinearLayout layout;
 
 	public FormManager() {
@@ -21,11 +23,12 @@ public class FormManager {
 	}
 
 	public void addFeature(Feature feature, LayoutInflater inflater) {
-		setTextView(feature, inflater);
+		setTextView(feature, inflater);//set the feature title
 		
 		View inflate = inflater.inflate(feature.getType(), null);
-		View setView = feature.setUpView(inflate);
+		View setView = feature.setUpView(inflate, inflater);
 		
+		Log.e(FORM_MANAGER_LOG_TAG, "SETOU VIEW" );
 		if(setView != null) 
 			layout.addView(setView);
 	}
