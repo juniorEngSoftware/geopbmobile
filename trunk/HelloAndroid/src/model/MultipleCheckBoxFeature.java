@@ -6,17 +6,16 @@ import android.os.Parcel;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.ListView;
+import android.widget.LinearLayout;
 
-import com.example.helloandroid.FormActivity;
 import com.example.helloandroid.R;
 
 public class MultipleCheckBoxFeature extends Feature {
 
 	private static final String MULTIPLE_CHECKBOX_LOG_TAG = "MultipleCheckBoxFeature CLASS";
 	private List<Option> optionList;
+	
 	
 	public MultipleCheckBoxFeature() {
 		optionList = new ArrayList<Option>();
@@ -62,8 +61,16 @@ public class MultipleCheckBoxFeature extends Feature {
 	
 	@Override
 	public View setUpView(View inflate, LayoutInflater inflater){
-
-		return null;
+		LinearLayout linearLayout = (LinearLayout) inflate;
+		
+		Log.e(MULTIPLE_CHECKBOX_LOG_TAG, "setuP OPTIONS COMO CHECKBOXS");
+		
+		for (Option option : optionList) {
+			CheckBox checkBox = (CheckBox) inflater.inflate(R.layout.checkbox, null);
+			checkBox.setText(option.getName());
+			linearLayout.addView(checkBox);
+		}
+		return linearLayout;
 	}
 	
 	
