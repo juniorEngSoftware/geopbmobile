@@ -2,15 +2,19 @@ package model;
 
 import android.app.Activity;
 import android.os.Parcel;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 
-public class NumericFeature extends Feature{
+public class NumericFeature extends TextFeature{
 
+	private static final String NUMERIC_FEATURE_LOG_TAG = "NUMERIC FEATURE CLASS";
+	
 	private String content;
-	private double minValue;
-	private double maxValue;
+//	private double minValue;
+//	private double maxValue;
 
 	public NumericFeature(){
 		super();
@@ -22,27 +26,10 @@ public class NumericFeature extends Feature{
 
 	public NumericFeature(Parcel in) {
 		super(in);
-		this.minValue = in.readDouble();
-		this.maxValue = in.readDouble();
+//		this.minValue = in.readDouble();
+//		this.maxValue = in.readDouble();
 	}
-	
 
-	public void setMinValue(double minValue) {
-		this.minValue = minValue;
-	}
-	
-	public double getMinValue() {
-		return minValue;
-	}
-	
-	public void setMaxValue(double maxValue) {
-		this.maxValue = maxValue;
-	}
-	
-	public double getMaxValue() {
-		return maxValue;
-	}
-	
 	public String getContent() {
 		return content;
 	}
@@ -51,34 +38,20 @@ public class NumericFeature extends Feature{
 		this.content = content;
 	}
 
-	//FIXME
-	public int getType() {
-		return -1;
-	}
-	
-	//FIXME
 	@Override
 	public View setUpView(View inflate, LayoutInflater inflater){
-		return null;
+		EditText editText = (EditText) inflate;
+		editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 		
-	}
-	
-	@Override
-	public String toString() {
-		return "Name: " + super.getName() + "\n" + "Content: " + this.content;
+		return editText;
 	}
 	
 	@Override
 	public int describeContents() {
-		Log.e("NUMERIC_FEATURE", "SETOU CONTENTS p 2");
+		Log.e(NUMERIC_FEATURE_LOG_TAG, "SETOU CONTENTS p 2");
 		return 2;
 	}
 	
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		super.writeToParcel(dest, flags);
-		dest.writeDouble(minValue);
-		dest.writeDouble(maxValue);
-	}
+	
 
 }

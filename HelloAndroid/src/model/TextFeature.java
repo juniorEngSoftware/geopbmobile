@@ -3,6 +3,7 @@ package model;
 import com.example.helloandroid.R;
 
 import android.os.Parcel;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +39,6 @@ public class TextFeature extends Feature{
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
 
 	@Override
 	public int getType() {
@@ -48,7 +48,6 @@ public class TextFeature extends Feature{
 	@Override
 	public View setUpView(View inflate, LayoutInflater inflater){
 		EditText editText = (EditText) inflate;
-		
 		return editText;
 	}
 	
@@ -56,12 +55,6 @@ public class TextFeature extends Feature{
 	public String toString() {
 		return "Name: " + super.getName() + "\n" + "Content: " + this.content;
 	}
-	
-//	@Override
-//	public void writeToParcel(Parcel dest, int flags) {
-//		Log.e("TEXT_FEATURE", "SETOU O NOME subclasse");
-//		super.writeToParcel(dest, flags);
-//	}
 	
 	@Override
 	public int describeContents() {

@@ -16,10 +16,9 @@
 		android:layout_height="wrap_content" />
 
 	<Button
-		android:id="@+id/send_button"
+		android:id="@+id/sendRequest_button"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/send_button"/>
-			
+		android:text="@string/sendRequest_button"/>
 
 </LinearLayout>

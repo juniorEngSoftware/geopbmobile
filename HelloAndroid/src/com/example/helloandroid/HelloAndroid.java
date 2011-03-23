@@ -39,7 +39,7 @@ public class HelloAndroid extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);		
+		setContentView(R.layout.main);
 		
 		Log.e(MAIN_LOG_TAG, "on create ========================");
 		
@@ -49,7 +49,7 @@ public class HelloAndroid extends Activity {
 
 	private void setXMLRequestButtonEvent() {
 	
-		final Button startButton = (Button) findViewById(R.id.send_button);
+		final Button startButton = (Button) findViewById(R.id.sendRequest_button);
 		final EditText editText =  (EditText) findViewById(R.id.edit_url_text);
 		startButton.setOnClickListener(new OnClickListener() {
 			
@@ -69,6 +69,7 @@ public class HelloAndroid extends Activity {
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER){
 //					xmlURL = editText.getText().toString();
+//					xmlURL = "http://dl.dropbox.com/u/8923123/novosCheckBox.xml";
 					xmlURL = "http://dl.dropbox.com/u/8510487/features.xml";
 					downloadFile();
 					return true;
