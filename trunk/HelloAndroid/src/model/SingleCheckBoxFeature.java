@@ -2,13 +2,14 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Context;
 import android.os.Parcel;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import com.example.helloandroid.R;
 
@@ -58,25 +59,38 @@ public class SingleCheckBoxFeature extends Feature{
 	
 	@Override
 	public int getType() {
-		return R.layout.singlecheckbox;
+//		return R.layout.singlecheckbox;
+		return R.layout.selectbox;
 	}
 	
 	@Override
 	public View setUpView(View inflate, LayoutInflater inflater){
+//		Spinner spinner = (Spinner) inflate;
+//		Log.e(SINGLE_CHECKBOX_LOG_TAG, "==========");
+//		
+//		ArrayAdapter adapter = new ArrayAdapter(inflater.getContext(), android.R.layout.simple_spinner_item, listToArray(optionList));
+//	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//	    spinner.setAdapter(adapter);
 		RadioGroup radioGroup = (RadioGroup) inflate;
-		
 		Log.e(SINGLE_CHECKBOX_LOG_TAG, "setuP OPTIONS COMO BUTTONS");
 		
 		for (Option option : optionList) {
-			RadioButton radioButton = (RadioButton) inflater.inflate(R.layout.radiobutton, null);
+			RadioButton radioButton = new RadioButton(radioGroup.getContext());
 			radioButton.setText(option.getName());
 			radioGroup.addView(radioButton);
 		}
-		
+		((RadioButton)radioGroup.getChildAt(0)).setChecked(true);
 		return radioGroup;
+//	    return spinner;
 	}
-	
-	
+			
+	private String[] listToArray(List<Option> list){
+		 String[] arraySpinner = new String[list.size()];
+		 for (int i = 0; i < arraySpinner.length; i++) {
+			arraySpinner[i] = list.get(i).getName();
+		}
+		return arraySpinner;
+	}
 	@Override
 	public int describeContents() {
 		Log.e(SINGLE_CHECKBOX_LOG_TAG, "SETOU CONTENTS p 3");

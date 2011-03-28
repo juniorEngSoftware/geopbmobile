@@ -14,21 +14,21 @@ import android.widget.LinearLayout;
 
 public class FormActivity extends Activity{
 
+	private static final String FORM_ACTIVITY_LOG_TAG = "Form Activity CLASS";
+	
 	@Override
 	public void onCreate (Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.form);
-		Log.e("FormActivity", "ENTROU NO FormActivity");
 		
 		ArrayList<Feature> xmlInfo = this.getIntent().getParcelableArrayListExtra("features");
-		Log.e("FormActivity", "size: " + String.valueOf(xmlInfo.size()) );
+		Log.e(FORM_ACTIVITY_LOG_TAG, "size: " + String.valueOf(xmlInfo.size()) );
 		
 		
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.form_layout);
 
 		setFormContent(linearLayout, inflater, xmlInfo);
-		
 		
 		Button button = (Button) inflater.inflate(R.layout.button, null);
 		button.setText("ENVIAR");
@@ -42,7 +42,7 @@ public class FormActivity extends Activity{
 		for (Feature feature : xmlInfo) {
 			formManager.addFeature(feature, inflater);	
 			
-			Log.e("FormActivity", feature.getName());
+			Log.e(FORM_ACTIVITY_LOG_TAG, feature.getName());
 			
 		}
 	}

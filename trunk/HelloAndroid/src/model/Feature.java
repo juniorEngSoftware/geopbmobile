@@ -90,7 +90,6 @@ public class Feature implements Parcelable {
 				default:
 					return new Feature(in);
 			}
-			
 	
 		}
 
