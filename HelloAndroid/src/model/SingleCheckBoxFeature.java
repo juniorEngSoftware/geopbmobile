@@ -65,23 +65,13 @@ public class SingleCheckBoxFeature extends Feature{
 	
 	@Override
 	public View setUpView(View inflate, LayoutInflater inflater){
-//		Spinner spinner = (Spinner) inflate;
-//		Log.e(SINGLE_CHECKBOX_LOG_TAG, "==========");
-//		
-//		ArrayAdapter adapter = new ArrayAdapter(inflater.getContext(), android.R.layout.simple_spinner_item, listToArray(optionList));
-//	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//	    spinner.setAdapter(adapter);
-		RadioGroup radioGroup = (RadioGroup) inflate;
-		Log.e(SINGLE_CHECKBOX_LOG_TAG, "setuP OPTIONS COMO BUTTONS");
+		Spinner spinner = (Spinner) inflate;
+		Log.e(SINGLE_CHECKBOX_LOG_TAG, "==========");
 		
-		for (Option option : optionList) {
-			RadioButton radioButton = new RadioButton(radioGroup.getContext());
-			radioButton.setText(option.getName());
-			radioGroup.addView(radioButton);
-		}
-		((RadioButton)radioGroup.getChildAt(0)).setChecked(true);
-		return radioGroup;
-//	    return spinner;
+		ArrayAdapter adapter = new ArrayAdapter(inflater.getContext(), android.R.layout.simple_spinner_item, listToArray(optionList));
+	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	    spinner.setAdapter(adapter);
+	    return spinner;
 	}
 			
 	private String[] listToArray(List<Option> list){
