@@ -2,7 +2,9 @@ package model;
 
 import android.app.Activity;
 import android.os.Parcel;
+import android.text.InputFilter;
 import android.text.InputType;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

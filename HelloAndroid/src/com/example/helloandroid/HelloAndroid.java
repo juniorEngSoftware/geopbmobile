@@ -69,8 +69,8 @@ public class HelloAndroid extends Activity {
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER){
 //					xmlURL = editText.getText().toString();
-//					xmlURL = "http://dl.dropbox.com/u/8923123/novosCheckBox.xml";
-					xmlURL = "http://dl.dropbox.com/u/8510487/features.xml";
+					xmlURL = "http://dl.dropbox.com/u/8923123/novosCheckBox.xml";
+//					xmlURL = "http://dl.dropbox.com/u/8510487/features.xml";
 					downloadFile();
 					return true;
 				}
