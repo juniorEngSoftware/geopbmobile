@@ -59,9 +59,9 @@ public class MultipleCheckBoxFeature extends Feature {
 	}
 	
 	
-	@Override
-	public View setUpView(View inflate, LayoutInflater inflater){
-		LinearLayout linearLayout = (LinearLayout) inflate;
+	@Override //FIXME
+	public View setUpView(View rawFeatureView, LayoutInflater inflater){
+		LinearLayout linearLayout = (LinearLayout) rawFeatureView;
 		
 		Log.e(MULTIPLE_CHECKBOX_LOG_TAG, "setuP OPTIONS COMO CHECKBOXS");
 		

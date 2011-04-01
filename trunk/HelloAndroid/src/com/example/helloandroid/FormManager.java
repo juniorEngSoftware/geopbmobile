@@ -25,12 +25,12 @@ public class FormManager {
 	public void addFeature(Feature feature, LayoutInflater inflater) {
 		setTextView(feature, inflater);//set the feature title
 		
-		View inflate = inflater.inflate(feature.getType(), null);
-		View setView = feature.setUpView(inflate, inflater);
+		View rawFeatureView = inflater.inflate(feature.getType(), null);
+		View setFeatureView = feature.setUpView(rawFeatureView, inflater);
 		
 		Log.e(FORM_MANAGER_LOG_TAG, "SETOU VIEW" );
-		if(setView != null) 
-			layout.addView(setView);
+		if(setFeatureView != null) 
+			layout.addView(setFeatureView);
 	}
 
 	private void setTextView(Feature feature, LayoutInflater inflater) {

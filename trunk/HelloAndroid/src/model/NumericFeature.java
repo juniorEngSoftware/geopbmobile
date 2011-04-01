@@ -41,8 +41,8 @@ public class NumericFeature extends TextFeature{
 	}
 
 	@Override
-	public View setUpView(View inflate, LayoutInflater inflater){
-		EditText editText = (EditText) inflate;
+	public View setUpView(View rawFeatureView, LayoutInflater inflater){
+		EditText editText = (EditText) rawFeatureView;
 		editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 		
 		return editText;

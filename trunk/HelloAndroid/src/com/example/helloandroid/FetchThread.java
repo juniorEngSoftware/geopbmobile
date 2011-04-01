@@ -44,18 +44,17 @@ public class FetchThread extends Thread{
 				
             bundle.putParcelableArrayList("features", featureList);
 //            bundle.putParcelable("features", (Parcelable) outraLista);
-            bundle.putString("erro", this.OK_MESSAGE);
+            bundle.putString("erro", OK_MESSAGE);
             
 			inputStream.close();		  
         }catch (MalformedURLException e) {
-        	bundle.putString("erro", this.URL_ERROR_MESSAGE);
+        	bundle.putString("erro", URL_ERROR_MESSAGE);
 		}
         catch (IOException e) {
-        	bundle.putString("erro", this.HTTP_ERROR_MESSAGE);
+        	bundle.putString("erro", HTTP_ERROR_MESSAGE);
         }finally{
         	msg.setData(bundle);        	
         }
-        
         
 		messageHandler.sendMessage(msg);
 

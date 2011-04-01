@@ -16,6 +16,7 @@ public class Feature implements Parcelable {
 	private static final int NUMERIC_FEATURE_DESCRIPTION = 2;
 	private static final int SINGLE_CHECK_BOX_FEATURE_DESCRIPTION = 3;
 	private static final int MULTIPLE_CHECK_BOX_FEATURE_DESCRIPTION = 4;
+	private static final int GPS_FEATURE_DESCRIPTION = 5;
 	
 	private static final String FEATURE_LOG_TAG = "FEATURE CLASS";
 	
@@ -27,7 +28,6 @@ public class Feature implements Parcelable {
 	public Feature(String name) {
 		this.name = name;
 	}
-
 
 	public Feature(Parcel in) {
 		readFromParcel(in);
@@ -87,6 +87,8 @@ public class Feature implements Parcelable {
 					return new SingleCheckBoxFeature(in);
 				case MULTIPLE_CHECK_BOX_FEATURE_DESCRIPTION:
 					return new MultipleCheckBoxFeature(in);
+				case GPS_FEATURE_DESCRIPTION:
+					return new GPSFeature(in);
 				default:
 					return new Feature(in);
 			}
