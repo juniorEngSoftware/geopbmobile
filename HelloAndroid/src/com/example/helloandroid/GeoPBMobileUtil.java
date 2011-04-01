@@ -13,19 +13,6 @@ import android.util.Log;
 
 public class GeoPBMobileUtil {
 
-	/*
-	 * public static List<Placemark> getPlacemarks(Kml ourKml) { List<Placemark>
-	 * resultList = new LinkedList<Placemark>();
-	 * 
-	 * Document document = (Document) ourKml.getFeature();
-	 * 
-	 * List<Feature> list = document.getFeature();
-	 * 
-	 * for (Feature feature : list) { Placemark placemark = (Placemark) feature;
-	 * resultList.add(placemark); }
-	 * 
-	 * return resultList; }
-	 */
 
 	public static InputStream openHttpConnection(String urlString) throws MalformedURLException, IOException {
 

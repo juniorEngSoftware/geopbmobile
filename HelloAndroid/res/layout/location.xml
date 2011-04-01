@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/GPS"	
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	
+	<Button
+		android:id="@+id/gps_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/gps_button"/>
+	<Button
+		android:id="@+id/map_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/gps_button"
+        android:layout_alignTop="@id/gps_button"
+		android:text="@string/map_button"/>
+		
+	<TextView 
+		android:id="@+id/gps_text"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/gps_button"
+       	android:layout_alignParentLeft="true"/>
+		
+</RelativeLayout>

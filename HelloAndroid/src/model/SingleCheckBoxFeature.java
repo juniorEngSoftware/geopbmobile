@@ -59,13 +59,12 @@ public class SingleCheckBoxFeature extends Feature{
 	
 	@Override
 	public int getType() {
-//		return R.layout.singlecheckbox;
 		return R.layout.selectbox;
 	}
 	
 	@Override
-	public View setUpView(View inflate, LayoutInflater inflater){
-		Spinner spinner = (Spinner) inflate;
+	public View setUpView(View rawFeatureView, LayoutInflater inflater){
+		Spinner spinner = (Spinner) rawFeatureView;
 		Log.e(SINGLE_CHECKBOX_LOG_TAG, "==========");
 		
 		ArrayAdapter adapter = new ArrayAdapter(inflater.getContext(), android.R.layout.simple_spinner_item, listToArray(optionList));

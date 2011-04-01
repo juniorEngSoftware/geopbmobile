@@ -4,5 +4,8 @@
     <string name="app_name">GeoPB Mobile</string>
     <string name="sendRequest_button">Enviar Requisição</string>
     <string name="cancel_button">Cancelar</string>
-    <string name="form_name">Formulario</string>
+    <string name="form_name">Formulário</string>
+    <string name="gps_button">Acessar GPS</string>
+    <string name="map_button">Acessar Mapa</string>
+    <string name="location_button">Recuperar Localização</string>
 </resources>

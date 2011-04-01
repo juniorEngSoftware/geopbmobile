@@ -56,8 +56,8 @@ public class TextFeature extends Feature{
 	}
 	
 	@Override
-	public View setUpView(View inflate, LayoutInflater inflater){
-		EditText editText = (EditText) inflate;
+	public View setUpView(View rawFeatureView, LayoutInflater inflater){
+		EditText editText = (EditText) rawFeatureView;
 		
 		Log.e(TEXT_FEATURE_LOG_TAG, "limite de texto: " + getConstraint());
 		
