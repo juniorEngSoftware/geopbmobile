@@ -8,4 +8,9 @@
     <string name="gps_button">Acessar GPS</string>
     <string name="map_button">Acessar Mapa</string>
     <string name="location_button">Recuperar Localização</string>
+    <string name="map_instruction">Clique S para SateliteView, M para MapView. 
+    								Dois cliques para setar localizacao
+    </string>
+    <string name="satellite_option">Visao Satelite</string>
+    <string name="map_option">Visao Mapa</string>
 </resources>
