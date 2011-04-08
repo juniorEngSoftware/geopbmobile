@@ -28,7 +28,6 @@ public class FormActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.form);
 		
-	
 		xmlInfo = this.getIntent().getParcelableArrayListExtra("features");
 		Log.e(FORM_ACTIVITY_LOG_TAG, "size: " + String.valueOf(xmlInfo.size()) );
 		
@@ -62,7 +61,7 @@ public class FormActivity extends Activity{
 			
 			Log.e(FORM_ACTIVITY_LOG_TAG, "CHAMOU GPSActivity");
 			
-//			call activity for Result
+//			set gpsButtonEvent and call activity for Result
 			Button gpsButton = (Button) findViewById(R.id.gps_button);
 			gpsButton.setOnClickListener(new OnClickListener() {
 				@Override
@@ -73,6 +72,16 @@ public class FormActivity extends Activity{
 				}
 			});
 			
+//			set ButtonEventcall activity for Result
+			Button mapButton = (Button) findViewById(R.id.map_button);
+			mapButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent mapIntent = new Intent(FormActivity.this, GMapsActivity.class);
+					startActivityForResult(mapIntent, REQUEST_CODE);
+					
+				}
+			});
 			break;
 
 		default:
@@ -112,8 +121,6 @@ public class FormActivity extends Activity{
 		for (Feature feature : xmlInfo) {
 			outState.putString(feature.getName(), feature.toString());
 		}
-		
-		
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {

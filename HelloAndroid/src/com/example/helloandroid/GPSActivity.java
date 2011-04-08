@@ -50,8 +50,6 @@ public class GPSActivity extends Activity {
 					Log.e(GPS_ACTIVITY_LOG_TAG, "providerName IGUAL A NULL");
 				}
 				
-				
-				
 				if (providerName != null && locationManager.isProviderEnabled(providerName)) {
 					// Provider is enabled
 					locationManager.requestLocationUpdates(providerName,
@@ -67,11 +65,11 @@ public class GPSActivity extends Activity {
 			}
 
 			private void setLocationCriteria(Criteria locationCritera) {
-				locationCritera.setAccuracy(Criteria.ACCURACY_COARSE);
+				locationCritera.setAccuracy(Criteria.ACCURACY_FINE);
 				locationCritera.setAltitudeRequired(false);
 				locationCritera.setBearingRequired(false);
 				locationCritera.setCostAllowed(true);
-				locationCritera.setPowerRequirement(Criteria.NO_REQUIREMENT);
+				locationCritera.setPowerRequirement(Criteria.POWER_LOW);
 
 			}
 		});
@@ -98,8 +96,8 @@ public class GPSActivity extends Activity {
 	
 	@Override
 	protected void onStop() {
-		super.onStop();
 		locationManager.removeUpdates(this.locationListener);
+		super.onStop();
 	};
 	
 	@Override

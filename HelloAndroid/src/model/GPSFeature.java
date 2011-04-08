@@ -50,46 +50,9 @@ public class GPSFeature extends Feature{
 		gpsButton = (Button) gpsRelativeLayout.getChildAt(0);
 		mapButton = (Button) gpsRelativeLayout.getChildAt(1);
 		
-		setGPSButtonEvent(gpsRelativeLayout, inflater);
-		
-		
 		return gpsRelativeLayout;
 	}
 	
-	private void setGPSButtonEvent(final RelativeLayout gpsRelativeLayout, final LayoutInflater inflater) {
-		gpsButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View viewParam) {
-//            	Intent intent = new Intent(inflater.getContext(), GPSActivity.class);
-//            	inflater.startActivity(intent);
-            	
-            	
-            	
-//            	gpsText = (TextView) gpsRelativeLayout.getChildAt(2);
-//            	gpsText.setText("Procurando Localizacao...");
-//            	gpsButton.setEnabled(false);
-//            	
-//                locationManager = (LocationManager) inflater.getContext().getSystemService(Context.LOCATION_SERVICE);
-//                try {
-//                	List<String> providers = locationManager.getAllProviders();
-//           	    } catch (Throwable e) {
-//           	    	Log.e(GPS_LOG_TAG, "exceçao ao listar provedores");
-//            	}
-            	
-            	
-            	
-            	
-//                LocationListener locationListener = new MyLocationListener(locationManager, gpsButton);
-//                
-//                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-//                gpsText.setText(locationListener.toString());
-                
-            }
-
-
-		
-	});
-	}
-
 	@Override
 	public int describeContents() {
 		Log.e(GPS_LOG_TAG, "SETOU CONTENTS p 5");

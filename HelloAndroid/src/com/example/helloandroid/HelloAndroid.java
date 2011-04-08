@@ -47,6 +47,10 @@ public class HelloAndroid extends Activity {
 		setXMLRequestButtonEvent();
 	}
 
+	@Override
+	public void finish(){
+		super.finish();
+	}
 	private void setXMLRequestButtonEvent() {
 	
 		final Button startButton = (Button) findViewById(R.id.sendRequest_button);
@@ -55,7 +59,8 @@ public class HelloAndroid extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				xmlURL = editText.getText().toString();
+				xmlURL = "http://dl.dropbox.com/u/8510487/features2.xml";
+//				xmlURL = editText.getText().toString();
 				downloadFile();
 				
 			}
@@ -87,7 +92,6 @@ public class HelloAndroid extends Activity {
 		
 	
 	private Handler messageHandler = new Handler() {
-		
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			
@@ -107,7 +111,6 @@ public class HelloAndroid extends Activity {
 			else{
 				showAlertDialog("ERRO", (String) msg.getData().get("erro"));
 			}
-
 		}
 	};
 	
