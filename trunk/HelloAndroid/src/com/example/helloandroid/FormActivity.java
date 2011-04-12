@@ -12,13 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class FormActivity extends Activity{
 
 	private static final String FORM_ACTIVITY_LOG_TAG = "Form Activity CLASS";
-	protected static final int REQUEST_CODE = 10;
+	protected static final int MAP_CODE = 10;
+	protected static final int GPS_CODE = 11;
+	
 	private FormManager formManager;
 	
 	ArrayList<Feature> xmlInfo;
@@ -31,23 +34,20 @@ public class FormActivity extends Activity{
 		xmlInfo = this.getIntent().getParcelableArrayListExtra("features");
 		Log.e(FORM_ACTIVITY_LOG_TAG, "size: " + String.valueOf(xmlInfo.size()) );
 		
-		
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.form_layout);
+		formManager = new FormManager(inflater, linearLayout);
 
-		setFormContent(linearLayout, inflater, xmlInfo);
-		
-		Button button = (Button) inflater.inflate(R.layout.button, null);
-		button.setText("ENVIAR");
-		linearLayout.addView(button);
+		setFormContent();
+			
+		formManager.setSendFormButton();
 		
 	}
 
-	private void setFormContent(LinearLayout linearLayout, LayoutInflater inflater, ArrayList<Feature> xmlInfo) {
-		formManager = new FormManager(linearLayout);
-		
+
+	private void setFormContent() {
 		for (Feature feature : xmlInfo) {
-			formManager.addFeature(feature, inflater);	
+			formManager.addFeature(feature);	
 			
 			Log.e(FORM_ACTIVITY_LOG_TAG, feature.getName());
 			
@@ -67,8 +67,7 @@ public class FormActivity extends Activity{
 				@Override
 				public void onClick(View v) {
 					Intent gpsIntent = new Intent(FormActivity.this, GPSActivity.class);
-					startActivityForResult(gpsIntent, REQUEST_CODE);
-					
+					startActivityForResult(gpsIntent, GPS_CODE);
 				}
 			});
 			
@@ -78,8 +77,7 @@ public class FormActivity extends Activity{
 				@Override
 				public void onClick(View v) {
 					Intent mapIntent = new Intent(FormActivity.this, GMapsActivity.class);
-					startActivityForResult(mapIntent, REQUEST_CODE);
-					
+					startActivityForResult(mapIntent, MAP_CODE);
 				}
 			});
 			break;
@@ -114,18 +112,26 @@ public class FormActivity extends Activity{
 	
 	private void saveState() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	private void saveState(Bundle outState) {
-		for (Feature feature : xmlInfo) {
-			outState.putString(feature.getName(), feature.toString());
-		}
+//		for (Feature feature : xmlInfo) {
+//			outState.putString(feature.getName(), feature.toString());
+//		}
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
-			Log.e(FORM_ACTIVITY_LOG_TAG, "VOLTOU P FORM ACTIVITY");
-		}
+		 switch(requestCode) {
+	      case MAP_CODE: 
+	            if (resultCode == RESULT_OK) {
+	                EditText latEditText = (EditText) findViewById(R.id.latitude);
+	                EditText longEditText = (EditText) findViewById(R.id.longitude);
+	                latEditText.setText(String.valueOf(data.getExtras().getDouble("latitude")));
+	                longEditText.setText(String.valueOf(data.getExtras().getDouble("longitude")));
+	                break;
+	            }
+	      default:
+				break;
+			}
 	}
 }
