@@ -7,13 +7,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
 import android.os.Parcel;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.TextView.BufferType;
 
 import com.example.helloandroid.FormActivity;
 import com.example.helloandroid.GPSActivity;
@@ -26,8 +29,6 @@ public class GPSFeature extends Feature{
 	
 	private Button gpsButton;
 	private Button mapButton;
-	private TextView gpsText;
-	private LocationManager locationManager;
 	private String content;
 	
 	public GPSFeature() {
@@ -46,9 +47,12 @@ public class GPSFeature extends Feature{
 	@Override
 	public View setUpView(View inflate, LayoutInflater inflater){
 		RelativeLayout gpsRelativeLayout = (RelativeLayout) inflate;
+
+		EditText latEditText = (EditText) gpsRelativeLayout.getChildAt(0);
+		EditText longEditText = (EditText) gpsRelativeLayout.getChildAt(1);
 		
-		gpsButton = (Button) gpsRelativeLayout.getChildAt(0);
-		mapButton = (Button) gpsRelativeLayout.getChildAt(1);
+		latEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+		longEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL); 
 		
 		return gpsRelativeLayout;
 	}
