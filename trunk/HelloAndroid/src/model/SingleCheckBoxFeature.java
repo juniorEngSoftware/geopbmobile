@@ -78,6 +78,7 @@ public class SingleCheckBoxFeature extends Feature{
 		}
 		return arraySpinner;
 	}
+	
 	@Override
 	public int describeContents() {
 		Log.e(SINGLE_CHECKBOX_LOG_TAG, "SETOU CONTENTS p 3");

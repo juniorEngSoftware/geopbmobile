@@ -1,8 +1,15 @@
 package com.example.helloandroid;
 
+import java.io.File;
+
 import model.Feature;
+import android.content.ContentValues;
 import android.content.Context;
-import android.text.Layout;
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.provider.MediaStore.Images;
+import android.provider.MediaStore.Images.Media;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +21,12 @@ public class FormManager {
 
 	private static final String FORM_MANAGER_LOG_TAG = "Form Manager CLASS";
 	
+	private Context context;
 	private LayoutInflater inflater;
 	private LinearLayout layout;
 
 	public FormManager(LayoutInflater inflater, LinearLayout linearLayout) {
+//		this.inflater = LayoutInflater.from(context);;
 		this.inflater = inflater;
 		this.layout = linearLayout;
 	}
@@ -46,9 +55,6 @@ public class FormManager {
 		layout.addView(button);
 	}
 
-	public void setCoordinates() {
-		
-		
-	}
+
 
 }

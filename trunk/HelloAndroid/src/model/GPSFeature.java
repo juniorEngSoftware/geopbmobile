@@ -27,12 +27,9 @@ public class GPSFeature extends Feature{
 
 	private static final String GPS_LOG_TAG = "GPSFeature CLASS";
 	
-	private Button gpsButton;
-	private Button mapButton;
 	private String content;
 	
 	public GPSFeature() {
-		
 	}
 	
 	public GPSFeature(Parcel in) {

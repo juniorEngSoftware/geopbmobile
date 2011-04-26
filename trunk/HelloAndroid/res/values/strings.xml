@@ -5,10 +5,13 @@
     <string name="sendRequest_button">Enviar Requisição</string>
     <string name="cancel_button">Cancelar</string>
     <string name="form_name">Formulário</string>
+    <string name="file_explorer_name">Escolha um Arquivo</string>
     <string name="gps_button">Acessar GPS</string>
     <string name="map_button">Acessar Mapa</string>
+    <string name="camera_button">Acessar Camera</string>
+    <string name="file_button">Acessar Sistema de Arquivos</string>
     <string name="location_button">Recuperar Localização</string>
-    <string name="map_instruction">Clique S para SateliteView, M para MapView. 
+    <string name="map_instruction">Clique em MENU para alterar tipo de visao. 
     								Dois cliques para setar localizacao
     </string>
     <string name="satellite_option">Visao Satelite</string>
