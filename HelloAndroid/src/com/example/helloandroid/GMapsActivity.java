@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
@@ -23,8 +22,7 @@ import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 
-public class GMapsActivity extends MapActivity implements OnGestureListener,
-		OnDoubleTapListener {
+public class GMapsActivity extends MapActivity implements OnGestureListener, OnDoubleTapListener {
 
 	private static final String GMAPS_ACTIVITY_LOG_TAG = "GMaps Activity CLASS";
 	private static final int DEFAULT_ZOOM = 15;
@@ -35,7 +33,6 @@ public class GMapsActivity extends MapActivity implements OnGestureListener,
 
 	private List<Overlay> mapOverlays;
 	private CustomItemizedOverlay itemizedOverlay;
-	private View view;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -60,7 +57,8 @@ public class GMapsActivity extends MapActivity implements OnGestureListener,
 		mapView.setBuiltInZoomControls(true);
 		mapView.displayZoomControls(true);
 		mapView.setSatellite(false);
-
+		//Getting the list of overlays
+		mapOverlays = mapView.getOverlays();
 		// Getting the MapController to fine tune settings
 		mapController = mapView.getController();
 		mapController.setZoom(DEFAULT_ZOOM);
@@ -68,7 +66,7 @@ public class GMapsActivity extends MapActivity implements OnGestureListener,
 
 	private void initialiseMapLocationOverlay() {
 		myLocationOverlay = new MyLocationOverlay(this, mapView);
-		mapOverlays = mapView.getOverlays();
+		mapOverlays.clear();
 
 		mapOverlays.add(myLocationOverlay);
 		myLocationOverlay.enableCompass();
@@ -109,37 +107,27 @@ public class GMapsActivity extends MapActivity implements OnGestureListener,
 	}
 
 	public void setReturnIntent() {
-		Log.e(GMAPS_ACTIVITY_LOG_TAG, "entrou no click");
-		if (itemizedOverlay.getMapOverlays().size() == 0) {
-			setResult(RESULT_CANCELED);
-
-		} else {
+		Intent returnIntent = new Intent();
+		
+		if (itemizedOverlay.getMapOverlays().size() != 0) {
 			OverlayItem overlay = itemizedOverlay.getItem(0);
 
-			Intent returnIntent = new Intent();
-			if (overlay != null) {
-				returnIntent.putExtra("latitude", overlay.getPoint().getLatitudeE6() / 1E6);
-				returnIntent.putExtra("longitude", overlay.getPoint().getLongitudeE6() / 1E6);
-
-				Log.e(GMAPS_ACTIVITY_LOG_TAG, String.valueOf(returnIntent
-						.getDoubleExtra("latitude", 0.0)));
-				Log.e(GMAPS_ACTIVITY_LOG_TAG, String.valueOf(returnIntent
-						.getDoubleExtra("longitude", 0.0)));
-
-			} else {
-				MyLocationOverlay locationOverlay = (MyLocationOverlay) mapOverlays.get(0);
-
-				returnIntent.putExtra("latitude", locationOverlay.getLastFix()
-						.getLatitude());
-				returnIntent.putExtra("longitude", locationOverlay.getLastFix()
-						.getLongitude());
-
+			returnIntent.putExtra("latitude", overlay.getPoint().getLatitudeE6() / 1E6);
+			returnIntent.putExtra("longitude", overlay.getPoint().getLongitudeE6() / 1E6);
+		} else {
+			MyLocationOverlay locationOverlay = (MyLocationOverlay) mapOverlays.get(0);
+			if(locationOverlay.getLastFix() != null) {
+				returnIntent.putExtra("latitude", locationOverlay.getLastFix().getLatitude());
+				returnIntent.putExtra("longitude", locationOverlay.getLastFix().getLongitude());
+				
 				Log.e(GMAPS_ACTIVITY_LOG_TAG, "BLZ");
+			} else{
+				setResult(RESULT_CANCELED);
+				Log.e(GMAPS_ACTIVITY_LOG_TAG, "SETOU COMO CANCELADO");
+				return;
 			}
-
-			setResult(RESULT_OK, returnIntent);
-
 		}
+		setResult(RESULT_OK, returnIntent);
 	}
 
 	@Override
@@ -170,17 +158,15 @@ public class GMapsActivity extends MapActivity implements OnGestureListener,
 		if (this.myLocationOverlay.getLastFix() != null) {
 			mapOverlays.clear();
 
-			GeoPoint point = mapView.getProjection().fromPixels((int) e.getX(),
-					(int) e.getY());
+			GeoPoint point = mapView.getProjection().fromPixels((int) e.getX(),	(int) e.getY());
 			OverlayItem overlayitem = new OverlayItem(point, "Nova Posição",
-					"lat: " + point.getLatitudeE6() / 1E6 + " \n" + "long: "
-							+ point.getLongitudeE6() / 1E6);
+					"lat: " + point.getLatitudeE6() / 1E6 + " \n" +
+					"long: "+ point.getLongitudeE6() / 1E6);
 
 			itemizedOverlay.addOverlay(overlayitem);
 			mapOverlays.add(itemizedOverlay);
 		} else {
-			Toast.makeText(this, "Procurando localização atual..",
-					Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "Procurando localização atual...", Toast.LENGTH_LONG).show();
 		}
 
 		return true;
@@ -205,8 +191,7 @@ public class GMapsActivity extends MapActivity implements OnGestureListener,
 	}
 
 	@Override
-	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-			float velocityY) {
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 		return false;
 	}
 
@@ -215,8 +200,7 @@ public class GMapsActivity extends MapActivity implements OnGestureListener,
 	}
 
 	@Override
-	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
-			float distanceY) {
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
 		return false;
 	}
 

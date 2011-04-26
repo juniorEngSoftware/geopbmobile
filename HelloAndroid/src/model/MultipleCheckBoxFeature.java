@@ -6,9 +6,14 @@ import android.os.Parcel;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
+import android.widget.SimpleExpandableListAdapter;
 
+import com.example.helloandroid.MyExpandableListAdapter;
 import com.example.helloandroid.R;
 
 public class MultipleCheckBoxFeature extends Feature {
@@ -61,17 +66,37 @@ public class MultipleCheckBoxFeature extends Feature {
 	
 	@Override //FIXME
 	public View setUpView(View rawFeatureView, LayoutInflater inflater){
-		LinearLayout linearLayout = (LinearLayout) rawFeatureView;
+//		LinearLayout linearLayout = (LinearLayout) rawFeatureView;
+		ExpandableListView expandableListView = (ExpandableListView) rawFeatureView;
 		
-		Log.e(MULTIPLE_CHECKBOX_LOG_TAG, "setuP OPTIONS COMO CHECKBOXS");
+		ArrayList<String> groupNames = new ArrayList<String>();
+        groupNames.add( "Opções" );
+        ArrayList<ArrayList<Option>> options = new ArrayList<ArrayList<Option>>();
+        options.add((ArrayList<Option>) optionList);
+//		ExpandableListAdapter adapter = new MyExpandableListAdapter(context, groupNames, null);
+        CheckBox checkBox = (CheckBox) inflater.inflate(R.layout.checkbox, null);
+        expandableListView.addView(checkBox);
+//		expandableListView.setAdapter(adapter);
 		
-		for (Option option : optionList) {
-			CheckBox checkBox = (CheckBox) inflater.inflate(R.layout.checkbox, null);
-			checkBox.setText(option.getName());
-			linearLayout.addView(checkBox);
-		}
-		return linearLayout;
+		
+		return expandableListView;
+//		Log.e(MULTIPLE_CHECKBOX_LOG_TAG, "setuP OPTIONS COMO CHECKBOXS");
+//		for (Option option : optionList) {
+//			CheckBox checkBox = (CheckBox) inflater.inflate(R.layout.checkbox, null);
+//			checkBox.setText(option.getName());
+//			linearLayout.addView(checkBox);
+//		}
+//		return linearLayout;
 	}
+	
+	private String[] listToArray(List<Option> list){
+		 String[] array = new String[list.size()];
+		 for (int i = 0; i < array.length; i++) {
+			array[i] = list.get(i).getName();
+		}
+		return array;
+	}
+	
 	
 	
 	@Override

@@ -22,12 +22,15 @@ public class GPSActivity extends Activity {
 	private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 100; /* in Meters */
 	private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000 * 60 * 2; /* two minutes in Milliseconds */
 
+	
 	private LocationManager locationManager;
 
 	private Button retrieveLocationButton;
 	private TextView retrieveLocationText;
-	private String message;
 
+	private double latitude;
+	private double longitude;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,7 +45,7 @@ public class GPSActivity extends Activity {
 			public void onClick(View v) {
 				locationManager = (LocationManager) GPSActivity.this.getSystemService(Context.LOCATION_SERVICE);
 				Criteria locationCritera = new Criteria();
-				setLocationCriteria(locationCritera);
+				GPSActivity.this.setLocationCriteria(locationCritera);
 
 				String providerName = locationManager.getBestProvider(locationCritera, true);
 
@@ -63,31 +66,34 @@ public class GPSActivity extends Activity {
 					GPSActivity.this.startActivity(myIntent);
 				}
 			}
-
-			private void setLocationCriteria(Criteria locationCritera) {
-				locationCritera.setAccuracy(Criteria.ACCURACY_FINE);
-				locationCritera.setAltitudeRequired(false);
-				locationCritera.setBearingRequired(false);
-				locationCritera.setCostAllowed(true);
-				locationCritera.setPowerRequirement(Criteria.POWER_LOW);
-
-			}
 		});
-
 	}
 
-	public void onClick(View view) {
-		finish();
+
+	private void setLocationCriteria(Criteria locationCritera) {
+		locationCritera.setAccuracy(Criteria.ACCURACY_FINE);
+		locationCritera.setAltitudeRequired(false);
+		locationCritera.setBearingRequired(false);
+		locationCritera.setCostAllowed(true);
+		locationCritera.setPowerRequirement(Criteria.POWER_LOW);
+
 	}
 
 	@Override
 	public void finish() {
+		setReturnIntent();
+		locationManager.removeUpdates(this.locationListener);
 		super.finish();
-		Intent data = new Intent();
-		data.putExtra("message", "LOCALIZACAO SETADO COM SUCESSO");
-		setResult(RESULT_OK, data);
+		
 	}
 	
+	private void setReturnIntent() {
+		Intent returnIntent= new Intent();
+		returnIntent.putExtra("latitude", getLatitude());
+		returnIntent.putExtra("longitude", getLongitude());
+		setResult(RESULT_OK, returnIntent);		
+	}
+
 	@Override
 	protected void onPause() {
 		super.onPause();
@@ -123,11 +129,30 @@ public class GPSActivity extends Activity {
 	};
 	
 	public void gpsLocationReceived(Location location) {
+		setLatitude(location.getLatitude());
+		setLongitude(location.getLongitude());
 		String message = String.format(
-				"Localizacao atual eh: \n Longitude: %1$s \n Latitude: %2$s",
-				location.getLongitude(), location.getLatitude());
+				"Localizacao atual eh: \n Latitude: %1$s \n Longitude: %2$s",
+				getLatitude(), getLongitude());
 		retrieveLocationText.setText(message);
 		
+	}
+
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
 	}
 	
 //	

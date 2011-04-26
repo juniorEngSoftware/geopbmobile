@@ -52,14 +52,13 @@ public class HelloAndroid extends Activity {
 		super.finish();
 	}
 	private void setXMLRequestButtonEvent() {
-	
 		final Button startButton = (Button) findViewById(R.id.sendRequest_button);
 		final EditText editText =  (EditText) findViewById(R.id.edit_url_text);
 		startButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				xmlURL = "http://dl.dropbox.com/u/8510487/features2.xml";
+				xmlURL = "http://dl.dropbox.com/u/8510487/novosCheckBox.xml";
 //				xmlURL = editText.getText().toString();
 				downloadFile();
 				
@@ -75,7 +74,7 @@ public class HelloAndroid extends Activity {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER){
 //					xmlURL = editText.getText().toString();
 //					xmlURL = "http://dl.dropbox.com/u/8923123/novosCheckBox.xml";
-					xmlURL = "http://dl.dropbox.com/u/8510487/features2.xml";
+					xmlURL = "http://dl.dropbox.com/u/8510487/features4.xml";
 					downloadFile();
 					return true;
 				}

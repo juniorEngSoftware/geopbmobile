@@ -9,12 +9,12 @@
 		android:id="@+id/intro_text"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/hello" />
+		android:text="@string/hello"/>
 
 	<EditText
 		android:id="@+id/edit_url_text"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"/>
 
 	<Button
 		android:id="@+id/sendRequest_button"
