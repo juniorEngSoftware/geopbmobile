@@ -1,22 +1,22 @@
 package com.example.helloandroid;
 
-import java.io.IOException;
-import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import model.Feature;
+import model.MultipleCheckBoxFeature;
+import model.Option;
 
 import org.xmlpull.v1.XmlSerializer;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Images.Media;
 import android.util.Log;
-import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,9 +30,10 @@ public class FormManager {
 
 	private static final String FORM_MANAGER_LOG_TAG = "Form Manager CLASS";
 	
-	protected static final int MAP_CODE = 10;
-	protected static final int CAMERA_CODE = 11;
-	protected static final int FILE_EXPLORER_CODE = 12;
+//	protected static final int MAP_CODE = 10;
+//	protected static final int CAMERA_CODE = 11;
+//	protected static final int FILE_EXPLORER_CODE = 12;
+//	protected static final int MULTIPLE_CHOICE_CODE = 13;
 	
 	private FormActivity formActivity;
 	private LayoutInflater inflater;
@@ -53,6 +54,9 @@ public class FormManager {
 		for (Feature feature : xmlInfo) {
 			addOneFeature(feature);
 			
+			if(feature.getType() == R.layout.multiplecheckbox) {
+				setMultipleChoiceButtonEvent(((MultipleCheckBoxFeature) feature).getOptionList());
+			}
 			if(feature.getType() == R.layout.location) {
 				setGpsButtonsEvent();
 				setMapButtonEvent();
@@ -61,8 +65,11 @@ public class FormManager {
 				setCameraButtonsEvent();
 				setFileBrowserButtonEvent();
 			}
+			
 		}
 	}
+
+	
 
 	private void addOneFeature(Feature feature) {
 		setTextView(feature);//set the feature title
@@ -129,13 +136,25 @@ public class FormManager {
 	//*************************************************
 	//set especific button event methods
 	//*************************************************
+	private void setMultipleChoiceButtonEvent(final List<Option> optionList) {
+		Button mutilpleChoiceButton = (Button) formActivity.findViewById(R.id.multipleChoice_button);
+		mutilpleChoiceButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent multipleChoiceIntent = new Intent(formActivity, MultipleChoiceActivity.class);
+				multipleChoiceIntent.putStringArrayListExtra("optionsName",	GeoPBMobileUtil.arrayListToString(optionList));
+				formActivity.startActivityForResult(multipleChoiceIntent, GeoPBMobileUtil.MULTIPLE_CHOICE_CODE);
+			}
+		});
+		
+	}
 	private void setGpsButtonsEvent() {
 		Button gpsButton = (Button) formActivity.findViewById(R.id.gps_button);
 		gpsButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent gpsIntent = new Intent(formActivity, GPSActivity.class);
-				formActivity.startActivityForResult(gpsIntent, MAP_CODE);
+				formActivity.startActivityForResult(gpsIntent, GeoPBMobileUtil.MAP_CODE);
 			}
 		});
 	}
@@ -146,7 +165,7 @@ public class FormManager {
 			@Override
 			public void onClick(View v) {
 				Intent mapIntent = new Intent(formActivity, GMapsActivity.class);
-				formActivity.startActivityForResult(mapIntent, MAP_CODE);
+				formActivity.startActivityForResult(mapIntent, GeoPBMobileUtil.MAP_CODE);
 			}
 		});
 	}
@@ -172,7 +191,7 @@ public class FormManager {
 				intent.setAction(Intent.ACTION_GET_CONTENT); 
 				intent.addCategory(Intent.CATEGORY_OPENABLE);
 				intent.putExtra("android.intent.extra.LOCAL_ONLY", true);
-				formActivity.startActivityForResult(Intent.createChooser(intent,"Escolha um Arquivo"), FILE_EXPLORER_CODE);
+				formActivity.startActivityForResult(Intent.createChooser(intent,"Escolha um Arquivo"), GeoPBMobileUtil.FILE_EXPLORER_CODE);
 			}
 		});
 	}
@@ -209,7 +228,7 @@ public class FormManager {
 		cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 		cameraIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
 		
-		formActivity.startActivityForResult(cameraIntent, CAMERA_CODE);
+		formActivity.startActivityForResult(cameraIntent, GeoPBMobileUtil.CAMERA_CODE);
 		
     }
 

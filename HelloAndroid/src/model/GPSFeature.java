@@ -42,8 +42,8 @@ public class GPSFeature extends Feature{
 	}
 	
 	@Override
-	public View setUpView(View inflate, LayoutInflater inflater){
-		RelativeLayout gpsRelativeLayout = (RelativeLayout) inflate;
+	public View setUpView(View rawFeatureView, LayoutInflater inflater){
+		RelativeLayout gpsRelativeLayout = (RelativeLayout) rawFeatureView;
 
 		EditText latEditText = (EditText) gpsRelativeLayout.getChildAt(0);
 		EditText longEditText = (EditText) gpsRelativeLayout.getChildAt(1);
