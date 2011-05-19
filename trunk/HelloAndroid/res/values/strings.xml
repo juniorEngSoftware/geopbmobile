@@ -5,6 +5,7 @@
     <string name="sendRequest_button">Enviar Requisição</string>
     <string name="cancel_button">Cancelar</string>
     <string name="form_name">Formulário</string>
+    <string name="options_button">Escolher suas Opções</string>
     <string name="file_explorer_name">Escolha um Arquivo</string>
     <string name="gps_button">Acessar GPS</string>
     <string name="map_button">Acessar Mapa</string>

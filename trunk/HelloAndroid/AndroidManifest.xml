@@ -15,9 +15,13 @@
         <activity android:name=".FormActivity"
                   android:label="@string/form_name">     
         </activity>
+        <activity android:name=".MultipleChoiceActivity"
+                  android:label="@string/options_button">     
+        </activity>
         <activity android:name=".GPSActivity"
                   android:label="GPS">     
         </activity>
+        
         <activity android:name=".GMapsActivity"
                   android:label="GoogleMaps">     
         </activity>

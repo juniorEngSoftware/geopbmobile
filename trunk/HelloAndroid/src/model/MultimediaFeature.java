@@ -28,8 +28,8 @@ public class MultimediaFeature extends Feature{
 		return R.layout.multimedia;
 	}
 	
-	public View setUpView(View inflate, LayoutInflater inflater){
-		RelativeLayout multimediaRelativeLayout = (RelativeLayout) inflate;
+	public View setUpView(View rawFeatureView, LayoutInflater inflater){
+		RelativeLayout multimediaRelativeLayout = (RelativeLayout) rawFeatureView;
 
 		TextView pathText = (TextView) multimediaRelativeLayout.getChildAt(2);
 		pathText.setText("Nenhum arquivo adicionado");

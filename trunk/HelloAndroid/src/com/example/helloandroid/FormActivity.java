@@ -20,9 +20,9 @@ import android.widget.Toast;
 public class FormActivity extends Activity{
 
 	private static final String FORM_ACTIVITY_LOG_TAG = "Form Activity CLASS";
-	protected static final int MAP_CODE = 10;
-	protected static final int CAMERA_CODE = 11;
-	protected static final int FILE_EXPLORER_CODE = 12;
+//	protected static final int MAP_CODE = 10;
+//	protected static final int CAMERA_CODE = 11;
+//	protected static final int FILE_EXPLORER_CODE = 12;
 	
 	private FormManager formManager;
 	private ArrayList<Feature> xmlInfo;
@@ -79,7 +79,14 @@ public class FormActivity extends Activity{
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		 switch(requestCode) {
-	      case MAP_CODE: 
+		 
+		 case GeoPBMobileUtil.MULTIPLE_CHOICE_CODE:
+	    	  Log.e(FORM_ACTIVITY_LOG_TAG, "MULTIPLE CHECK BOX !!!!!");
+	    	  if (resultCode == RESULT_OK) { 
+	    	    	
+	    	  }
+	    	  break;
+	      case GeoPBMobileUtil.MAP_CODE: 
 	            if (resultCode == RESULT_OK) {
 	                EditText latEditText = (EditText) findViewById(R.id.latitude);
 	                EditText longEditText = (EditText) findViewById(R.id.longitude);
@@ -87,7 +94,7 @@ public class FormActivity extends Activity{
 	                longEditText.setText(String.valueOf(data.getExtras().getDouble("longitude")));
 	            }
 	            break;
-	      case CAMERA_CODE:
+	      case GeoPBMobileUtil.CAMERA_CODE:
 	    	  if (resultCode == RESULT_OK) {
 	    		  //use imageUri here to access the image
 	    		  String selectedFilePath = getPath(formManager.getImageUri());
@@ -101,7 +108,7 @@ public class FormActivity extends Activity{
    		      }
 
 	    	  break;	
-	      case FILE_EXPLORER_CODE:
+	      case GeoPBMobileUtil.FILE_EXPLORER_CODE:
 	    	  Log.e(FORM_ACTIVITY_LOG_TAG, "SELECIONOU ARQUIVO");
 	    	  if (resultCode == RESULT_OK) { 
 	    	    	Uri selectedFile = data.getData();

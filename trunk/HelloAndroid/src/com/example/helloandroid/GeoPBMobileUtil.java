@@ -7,12 +7,20 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Option;
 
 import android.os.Bundle;
 import android.util.Log;
 
 public class GeoPBMobileUtil {
-
+	
+	public static final int MAP_CODE = 10;
+	public static final int CAMERA_CODE = 11;
+	public static final int FILE_EXPLORER_CODE = 12;
+	public static final int MULTIPLE_CHOICE_CODE = 13;
 
 	public static InputStream openHttpConnection(String urlString) throws MalformedURLException, IOException {
 
@@ -60,6 +68,16 @@ public class GeoPBMobileUtil {
 		
 		return text;
 
+	}
+
+	public static ArrayList<String> arrayListToString(List<Option> optionList) {
+		ArrayList<String> optionsName = new ArrayList<String>();
+		for (Option option : optionList) {
+			optionsName.add(option.getName());
+		}
+		return optionsName;
+		
+		
 	}
 	
 	

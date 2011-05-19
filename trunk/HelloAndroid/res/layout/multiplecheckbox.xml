@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ExpandableListView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/list"
-	android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
-</ExpandableListView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/choices_layout"	
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	
+	<Button
+		android:id="@+id/multipleChoice_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/options_button"/>
+		
+	<TextView 
+		android:id="@+id/options_text"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"/>
+
+</LinearLayout>
