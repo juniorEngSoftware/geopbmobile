@@ -6,12 +6,14 @@ import android.os.Parcelable;
 public class Option implements Parcelable{
 
 	private String name;
+	private boolean state;
 	
 	
 	public Option() {
 		
 	}
 	public Option(Parcel in) {
+		setState(false);
 		readFromParcel(in);
 	}
 
@@ -63,5 +65,14 @@ public class Option implements Parcelable{
                 return new Option[size];
             }
         };
+
+
+	public boolean getState() {
+		return state;
+	}
+	public void setState(boolean state) {
+		this.state = state;
+	}
+	
 	
 }

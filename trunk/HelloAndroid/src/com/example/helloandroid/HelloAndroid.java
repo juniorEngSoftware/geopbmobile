@@ -37,7 +37,7 @@ public class HelloAndroid extends Activity {
 	
 	/** Called when the activity is first created. */
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {	
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
@@ -58,10 +58,9 @@ public class HelloAndroid extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				xmlURL = "http://dl.dropbox.com/u/8510487/novosCheckBox.xml";
+				xmlURL = "http://dl.dropbox.com/u/8510487/features.xml";
 //				xmlURL = editText.getText().toString();
 				downloadFile();
-				
 			}
 		});	
 	}
@@ -74,7 +73,7 @@ public class HelloAndroid extends Activity {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER){
 //					xmlURL = editText.getText().toString();
 //					xmlURL = "http://dl.dropbox.com/u/8923123/novosCheckBox.xml";
-					xmlURL = "http://dl.dropbox.com/u/8510487/features4.xml";
+					xmlURL = "http://dl.dropbox.com/u/8510487/features2.xml";
 					downloadFile();
 					return true;
 				}
