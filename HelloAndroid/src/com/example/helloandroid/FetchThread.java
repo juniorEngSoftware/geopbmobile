@@ -43,7 +43,6 @@ public class FetchThread extends Thread{
 			}
 				
             bundle.putParcelableArrayList("features", featureList);
-//            bundle.putParcelable("features", (Parcelable) outraLista);
             bundle.putString("erro", OK_MESSAGE);
             
 			inputStream.close();		  

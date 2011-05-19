@@ -6,12 +6,9 @@ import android.os.Parcel;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.LinearLayout;
-import android.widget.SimpleExpandableListAdapter;
+import android.widget.ExpandableListView.OnChildClickListener;
 
 import com.example.helloandroid.MyExpandableListAdapter;
 import com.example.helloandroid.R;
@@ -66,17 +63,26 @@ public class MultipleCheckBoxFeature extends Feature {
 	
 	@Override //FIXME
 	public View setUpView(View rawFeatureView, LayoutInflater inflater){
-//		LinearLayout linearLayout = (LinearLayout) rawFeatureView;
 		ExpandableListView expandableListView = (ExpandableListView) rawFeatureView;
+		expandableListView.setOnChildClickListener(new OnChildClickListener() {
+			
+			@Override
+			public boolean onChildClick(ExpandableListView parent, 
+					View v, int groupPosition, int childPosition, long id) {
+				Log.d( MULTIPLE_CHECKBOX_LOG_TAG, "onChildClick: "+childPosition );
+		        CheckBox cb = (CheckBox)v.findViewById( R.id.check1 );
+		        if( cb != null )
+		            cb.toggle();
+				return false;
+			}
+		});
 		
 		ArrayList<String> groupNames = new ArrayList<String>();
         groupNames.add( "Opções" );
         ArrayList<ArrayList<Option>> options = new ArrayList<ArrayList<Option>>();
         options.add((ArrayList<Option>) optionList);
-//		ExpandableListAdapter adapter = new MyExpandableListAdapter(context, groupNames, null);
-        CheckBox checkBox = (CheckBox) inflater.inflate(R.layout.checkbox, null);
-        expandableListView.addView(checkBox);
-//		expandableListView.setAdapter(adapter);
+		MyExpandableListAdapter adapter = new MyExpandableListAdapter(inflater.getContext(), groupNames, options);
+		expandableListView.setAdapter(adapter);
 		
 		
 		return expandableListView;
