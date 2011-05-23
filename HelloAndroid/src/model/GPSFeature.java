@@ -27,13 +27,47 @@ public class GPSFeature extends Feature{
 
 	private static final String GPS_LOG_TAG = "GPSFeature CLASS";
 	
-	private String content;
+	private String latitude;
+	private String longitude;
 	
 	public GPSFeature() {
 	}
 	
 	public GPSFeature(Parcel in) {
 		super.readFromParcel(in);
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+	@Override
+    public String getContent() {
+		if (getCoordiantes() == null)
+			return "";
+		return getCoordiantes();
+    }
+	
+	private String getCoordiantes() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Latitude: ");
+		stringBuilder.append(getLatitude());
+		stringBuilder.append("Longitude: ");
+		stringBuilder.append(getLongitude());
+		
+		return stringBuilder.toString();
+		
 	}
 
 	@Override
@@ -59,4 +93,5 @@ public class GPSFeature extends Feature{
 		Log.e(GPS_LOG_TAG, "SETOU CONTENTS p 5");
 		return 5;
 	}
+
 }

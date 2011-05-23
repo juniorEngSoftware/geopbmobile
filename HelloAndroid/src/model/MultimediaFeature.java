@@ -15,6 +15,7 @@ public class MultimediaFeature extends Feature{
 
 	private static final String MULTIMEDIA_LOG_TAG = "Multimedia CLASS";
 	private String content;
+	private String filePath;
 	
 	public MultimediaFeature() {
 	}
@@ -22,6 +23,22 @@ public class MultimediaFeature extends Feature{
 	public MultimediaFeature(Parcel in) {
 		super.readFromParcel(in);
 	}
+	
+	
+	public void setFilePath(String selectedFilePath) {
+		filePath = selectedFilePath;
+		
+	}
+	public String getFilePath() {
+		return filePath;
+		
+	}
+	@Override
+    public String getContent() {
+		if (getFilePath() == null)
+			return "";
+		return getFilePath();
+    }
 	
 	@Override
 	public int getType() {
@@ -42,4 +59,6 @@ public class MultimediaFeature extends Feature{
 		Log.e(MULTIMEDIA_LOG_TAG, "SETOU CONTENTS p 6");
 		return 6;
 	}
+
+	
 }
