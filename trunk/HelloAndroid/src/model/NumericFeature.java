@@ -15,6 +15,7 @@ public class NumericFeature extends TextFeature{
 	private static final String NUMERIC_FEATURE_LOG_TAG = "NUMERIC FEATURE CLASS";
 	
 	private String content;
+	private String text;
 //	private double minValue;
 //	private double maxValue;
 
@@ -32,13 +33,6 @@ public class NumericFeature extends TextFeature{
 //		this.maxValue = in.readDouble();
 	}
 
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
 
 	@Override
 	public View setUpView(View rawFeatureView, LayoutInflater inflater){
@@ -47,6 +41,11 @@ public class NumericFeature extends TextFeature{
 		
 		return editText;
 	}
+	
+	  @Override
+      public String toString() {
+              return "Name: " + super.getName() + "\n" + "Content: " + this.text + "\n" ;
+      }
 	
 	@Override
 	public int describeContents() {

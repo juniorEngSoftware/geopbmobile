@@ -20,13 +20,10 @@ import android.widget.Toast;
 public class FormActivity extends Activity{
 
 	private static final String FORM_ACTIVITY_LOG_TAG = "Form Activity CLASS";
-//	protected static final int MAP_CODE = 10;
-//	protected static final int CAMERA_CODE = 11;
-//	protected static final int FILE_EXPLORER_CODE = 12;
 	
 	private FormManager formManager;
 	private ArrayList<Feature> xmlInfo;
-	private LinearLayout linearLayout;
+//	private LinearLayout linearLayout;
 	
 	@Override
 	public void onCreate (Bundle savedInstanceState){
@@ -35,31 +32,29 @@ public class FormActivity extends Activity{
 		
 		xmlInfo = this.getIntent().getParcelableArrayListExtra("features");
 		
-		linearLayout = (LinearLayout) findViewById(R.id.form_layout);
+		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.form_layout);
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
-		formManager = new FormManager(this, linearLayout, inflater);
+		//set form
+		formManager = new FormManager(this, linearLayout, inflater, xmlInfo);
 		formManager.addFeatures(xmlInfo);
-		
-//			 Log.e(FORM_ACTIVITY_LOG_TAG, "SEND FORM BUTTON");
-//			formManager.addSendFormButton(xmlInfo);
+		formManager.addSendFormButton(xmlInfo);
 	}
 
 
-	@Override
-	protected void onSaveInstanceState(Bundle outState) {
-		saveState(outState);
-		super.onSaveInstanceState(outState);
-	}
+//	@Override
+//	protected void onSaveInstanceState(Bundle outState) {
+//		saveState(outState);
+//		super.onSaveInstanceState(outState);
+//	}
 	
-	@Override
-	protected void onRestoreInstanceState(Bundle savedState) {
-		super.onRestoreInstanceState(savedState);
-	}
+//	@Override
+//	protected void onRestoreInstanceState(Bundle savedState) {
+//		super.onRestoreInstanceState(savedState);
+//	}
 
 	@Override
 	protected void onPause() {
-		saveState();
 		super.onPause();
 	}
 	
@@ -68,14 +63,14 @@ public class FormActivity extends Activity{
 		super.onResume();
 	}
 	
-	private void saveState() {
-	}
-
-	private void saveState(Bundle outState) {
+//	private void saveState() {
+//	}
+//
+//	private void saveState(Bundle outState) {
 //		for (Feature feature : xmlInfo) {
 //			outState.putString(feature.getName(), feature.toString());
 //		}
-	}
+//	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		 switch(requestCode) {
@@ -83,17 +78,35 @@ public class FormActivity extends Activity{
 		 case GeoPBMobileUtil.MULTIPLE_CHOICE_CODE:
 	    	  Log.e(FORM_ACTIVITY_LOG_TAG, "MULTIPLE CHECK BOX !!!!!");
 	    	  if (resultCode == RESULT_OK) { 
-	    	    	
+	    		  ArrayList<String> selectedChoices = data.getExtras().getStringArrayList("choices");
+	    		  int numberOfChoices = selectedChoices.size();
+	    		  String choices = selectedChoices.toString();
+	    		  formManager.setMultipleChoicesResults(selectedChoices);
+	    		  
+	    		  TextView optionsText = (TextView) findViewById(R.id.options_text);
+	    		  if (numberOfChoices > 0) {
+	    			  optionsText.setText(numberOfChoices + " foram escolhidas. " + choices);
+	    			  Log.e(FORM_ACTIVITY_LOG_TAG, choices );
+	    		  } else {
+	    			  optionsText.setText("Nenhuma opção foi escolhida");
+	    		  }
 	    	  }
 	    	  break;
+	    	  
 	      case GeoPBMobileUtil.MAP_CODE: 
 	            if (resultCode == RESULT_OK) {
-	                EditText latEditText = (EditText) findViewById(R.id.latitude);
+	            	String latitude = String.valueOf(data.getExtras().getDouble("latitude"));
+	            	String longitude = String.valueOf(data.getExtras().getDouble("longitude"));
+
+	            	EditText latEditText = (EditText) findViewById(R.id.latitude);
 	                EditText longEditText = (EditText) findViewById(R.id.longitude);
-	                latEditText.setText(String.valueOf(data.getExtras().getDouble("latitude")));
-	                longEditText.setText(String.valueOf(data.getExtras().getDouble("longitude")));
+	                latEditText.setText(latitude);
+	                longEditText.setText(longitude);
+	                
+	                formManager.setCoordinates(latitude, longitude);
 	            }
 	            break;
+	            
 	      case GeoPBMobileUtil.CAMERA_CODE:
 	    	  if (resultCode == RESULT_OK) {
 	    		  //use imageUri here to access the image
@@ -101,6 +114,8 @@ public class FormActivity extends Activity{
 	    		  
 	    		  TextView filePathText = (TextView) findViewById(R.id.file_text);
 	    		  filePathText.setText(selectedFilePath);
+	    		  
+	    		  formManager.setFilePath(selectedFilePath);
    		      } else if (resultCode == RESULT_CANCELED) {
    		    	  Toast.makeText(this, "Foto não foi tirada", Toast.LENGTH_SHORT).show();
    		      } else {
@@ -116,6 +131,8 @@ public class FormActivity extends Activity{
 	    	    	
 	    	    	TextView filePathText = (TextView) findViewById(R.id.file_text);
 	    	        filePathText.setText(selectedFilePath);
+	    	        
+	    	        formManager.setFilePath(selectedFilePath);
 	    	  }
 	    	  break;
 	      default:

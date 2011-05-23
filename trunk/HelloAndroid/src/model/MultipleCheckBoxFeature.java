@@ -18,7 +18,7 @@ public class MultipleCheckBoxFeature extends Feature {
 
 	private static final String MULTIPLE_CHECKBOX_LOG_TAG = "MultipleCheckBoxFeature CLASS";
 	private List<Option> optionList;
-	
+	private List<String> checkedOptions;
 	
 	public MultipleCheckBoxFeature() {
 		optionList = new ArrayList<Option>();
@@ -51,6 +51,19 @@ public class MultipleCheckBoxFeature extends Feature {
 		this.optionList = optionList;
 	}
 
+	public void setCheckedOptions(List<String> checkedOptions) {
+		this.checkedOptions = checkedOptions;
+	}
+
+	public List<String> getCheckedOptions() {
+		return checkedOptions;
+	}
+	
+	@Override
+    public String getContent() {
+		return getCheckedOptions().toString();
+    }
+	
 	@Override
 	public String toString() {
 		return "Multiple Check Box: " + this.name + "\n" + "Options: " + this.optionList.toString() + "\n";
@@ -60,7 +73,7 @@ public class MultipleCheckBoxFeature extends Feature {
 	public int getType() {
 		return R.layout.multiplecheckbox;
 	}
-	
+		
 	
 	@Override //FIXME
 	public View setUpView(View rawFeatureView, LayoutInflater inflater){
@@ -102,4 +115,5 @@ public class MultipleCheckBoxFeature extends Feature {
 		Log.e(MULTIPLE_CHECKBOX_LOG_TAG, "writeToParcel na subclasse");
 		dest.writeList(optionList);
 	}
-}
+
+	}

@@ -6,6 +6,7 @@ import model.Option;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -13,9 +14,8 @@ public class MultipleChoiceActivity extends Activity {
 	
 	private static final String MULTIPLE_CHOICE_LOG_TAG = "Multiple choice CLASS";
 
-//	protected CharSequence[] colours = { "Red", "Green", "Blue", "Yellow", "Orange", "Purple" };
 	private ArrayList<String> optionList = new ArrayList<String>();
-	protected ArrayList<CharSequence> selectedOptions = new ArrayList<CharSequence>();
+	protected ArrayList<String> selectedOptions = new ArrayList<String>();
 
 	/** Called when the activity is first created. */
 	@Override
@@ -39,6 +39,16 @@ public class MultipleChoiceActivity extends Activity {
 //		}
 //	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+	
 	protected void onChangeSelectedColours() {
 		StringBuilder stringBuilder = new StringBuilder();
 
@@ -92,11 +102,24 @@ public class MultipleChoiceActivity extends Activity {
 			switch( clicked )
 			{
 				case DialogInterface.BUTTON_POSITIVE:
-					
+					finish();
 					break;
 			}
 		}
 	}
+	
+	@Override
+	public void finish() {
+		setReturnIntent();
+		super.finish();
+		
+	}
+	private void setReturnIntent() {
+		Intent returnIntent= new Intent();
+		returnIntent.putStringArrayListExtra("choices", selectedOptions);
+		setResult(RESULT_OK, returnIntent);	
+	}
+
 	public void setOptionList(ArrayList<String> optionsNames) {
 		this.optionList = optionsNames;
 	}

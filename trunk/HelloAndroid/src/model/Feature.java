@@ -50,6 +50,10 @@ public class Feature implements Parcelable {
 	public int getType() {
 		return -1;
 	}
+	
+	public String getContent(){
+		return "";
+	}
 
 	public View setUpView(View inflate, LayoutInflater inflater) {
 		return null;

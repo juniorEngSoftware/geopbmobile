@@ -1,49 +1,60 @@
 package com.example.helloandroid;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import model.Feature;
+import model.GPSFeature;
+import model.MultimediaFeature;
 import model.MultipleCheckBoxFeature;
 import model.Option;
+import model.SingleCheckBoxFeature;
+import model.TextFeature;
 
 import org.xmlpull.v1.XmlSerializer;
 
 import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Parcelable;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Images.Media;
 import android.util.Log;
+import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FormManager {
 
 	private static final String FORM_MANAGER_LOG_TAG = "Form Manager CLASS";
 	
-//	protected static final int MAP_CODE = 10;
-//	protected static final int CAMERA_CODE = 11;
-//	protected static final int FILE_EXPLORER_CODE = 12;
-//	protected static final int MULTIPLE_CHOICE_CODE = 13;
-	
 	private FormActivity formActivity;
 	private LayoutInflater inflater;
 	private LinearLayout formLayout;
+	ArrayList<Feature> xmlInfo;
 	private Uri imageUri;
+	
+	private HashMap<String, ArrayList<String>> formResults;
 
-	public FormManager(FormActivity formActivity, LinearLayout linearLayout, LayoutInflater inflater) {
+	public FormManager(FormActivity formActivity, LinearLayout linearLayout, LayoutInflater inflater, ArrayList<Feature> xmlInfo) {
 		this.formActivity = formActivity;
 		this.inflater = inflater;
 		this.formLayout = linearLayout;
+		this.xmlInfo = xmlInfo;
+		
+//		setFormResults(new HashMap<String, ArrayList<String>>());
 	}
 	
 	public Uri getImageUri() {
@@ -110,28 +121,154 @@ public class FormManager {
         
 		Button button = (Button) inflater.inflate(R.layout.button, null);
 		button.setText("ENVIAR");
-//		setSendFormButtonEvent(button, writer.toString());
+		setSendFormButtonEvent(button);
 		formLayout.addView(button);
 	}
 	
-	private XmlSerializer getViewContent(Feature feature, int i, XmlSerializer serializer)  {
-		switch (feature.getType()) {
-		case R.layout.edittext:
-			Log.e(FORM_MANAGER_LOG_TAG, "i: " +i);
-			EditText editText = (EditText) formLayout.getChildAt(i);
-			Log.e(FORM_MANAGER_LOG_TAG, "2222222222");
-			CharSequence text = editText.getText();
-			Log.e(FORM_MANAGER_LOG_TAG, "3333333333");
-//			serializer.startTag("", "Campo de Texto");
-//			Log.e(FORM_MANAGER_LOG_TAG, "444444444444");
-//			serializer.attribute("", "Valor", (String) text);
-//			return serializer.endTag("", "Campo de Texto");
-		default:
-			break;
-		}
-		return null;
+	
+	private void setSendFormButtonEvent(Button sendFormButton) {
+		sendFormButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				for (int i = 0; i < formLayout.getChildCount(); i++) {
+					Log.e(FORM_MANAGER_LOG_TAG, formLayout.getChildAt(i).getClass().toString());
+				}
+				
+				collectFormResults();
+				String data = writeXmlFromForm();
+				Log.e(FORM_MANAGER_LOG_TAG, "???????????  " + data);
+				Log.e(FORM_MANAGER_LOG_TAG, "???????????  " + GeoPBMobileUtil.FILE_DIR);
+				GeoPBMobileUtil.createXmlFile(data);
+			}
+
+		});
+	}
+	
+	
+
+	
+	private String writeXmlFromForm() {
+		XmlSerializer serializer = Xml.newSerializer();
+	    StringWriter writer = new StringWriter();
+	    try {
+	        serializer.setOutput(writer);
+	        serializer.startDocument("UTF-8", true);
+	        serializer.startTag("", "form");
+	        serializer.attribute("", "numberOfFeatures", String.valueOf(xmlInfo.size()));
+	        for (Feature feature: xmlInfo){
+	            serializer.startTag("", "feature");
+	            serializer.attribute("", "type", feature.getClass().toString());
+	            serializer.startTag("", "enunciation");
+	            serializer.text(feature.getName());
+	            serializer.endTag("", "enunciation");
+	            serializer.startTag("", "content");
+	            serializer.text(feature.getContent());
+	            serializer.endTag("", "content");
+	            serializer.endTag("", "feature");
+	        }
+	        serializer.endTag("", "form");
+	        serializer.endDocument();
+	        return writer.toString();
+	    } catch (Exception e) {
+	        throw new RuntimeException(e);
+	    } 
 		
 	}
+	
+	protected void collectFormResults() {
+		int j = 0;
+		for (int i = 0; i < xmlInfo.size(); i++) {
+			Log.e(FORM_MANAGER_LOG_TAG, "i: " + i);
+			j = getViewContent(xmlInfo.get(i), j);
+		}
+//		for (int i = 0; i < xmlInfo.size(); i++) {
+//			Log.e(FORM_MANAGER_LOG_TAG, xmlInfo.get(i).getContent() );
+//		}
+		
+//			serializer = getViewContent(xmlInfo.get(i), i, serializer);
+//			Log.e(FORM_MANAGER_LOG_TAG, "ENTROU NO FOR DO SENDBUTTON");
+//			break;
+//		}
+		
+	}
+	
+	//*************************************************
+	// methods to get formfeatures contents
+	//*************************************************
+	private int getViewContent(Feature feature,  int j)  {
+		Log.e(FORM_MANAGER_LOG_TAG, "j: " + j);
+		
+		if (feature instanceof TextFeature) {
+			EditText editText = (EditText) formLayout.getChildAt(j+1);
+			CharSequence text = editText.getText();
+			((TextFeature)feature).setText( text.toString());
+			
+			return j+=2;
+		}	
+		if ( feature instanceof SingleCheckBoxFeature) {
+			Spinner spinner = (Spinner) formLayout.getChildAt(j+1);
+			String selectedItem = (String) spinner.getSelectedItem();
+			((SingleCheckBoxFeature)feature).setSelectedItem(selectedItem);
+			return j++;
+		}
+		j++;
+		
+		Log.e(FORM_MANAGER_LOG_TAG, "DEPOIS j: " + j);
+		return j;
+		
+	}
+	
+	public void setMultipleChoicesResults(ArrayList<String> stringArrayList) {
+		for (int i = 0; i < xmlInfo.size(); i++) {
+			if (xmlInfo.get(i) instanceof MultipleCheckBoxFeature)
+				((MultipleCheckBoxFeature) xmlInfo.get(i)).setCheckedOptions(stringArrayList);
+		}
+	}
+	public void setCoordinates(String latitude, String longitude) {
+		for (int i = 0; i < xmlInfo.size(); i++) {
+			if (xmlInfo.get(i) instanceof GPSFeature) {
+				((GPSFeature) xmlInfo.get(i)).setLatitude(latitude);
+				((GPSFeature) xmlInfo.get(i)).setLongitude(longitude);
+			}
+		}
+	}
+	public void setFilePath(String selectedFilePath) {
+		for (int i = 0; i < xmlInfo.size(); i++) {
+			if (xmlInfo.get(i) instanceof MultimediaFeature) {
+				((MultimediaFeature) xmlInfo.get(i)).setFilePath(selectedFilePath);
+				
+			}
+		}
+		
+	}
+
+//	private XmlSerializer getViewContent(Feature feature, int i)  {
+//		switch (feature.getType()) {
+//		case R.layout.edittext:
+//			Log.e(FORM_MANAGER_LOG_TAG, "i: " +i);
+//			EditText editText = (EditText) formLayout.getChildAt(i);
+//			
+//			formResults.put("", value);
+//			
+//			Log.e(FORM_MANAGER_LOG_TAG, "2222222222");
+//			CharSequence text = editText.getText();
+//			Log.e(FORM_MANAGER_LOG_TAG, "3333333333");
+//		default:
+//			break;
+//		}
+//		return null;
+//		
+//	}
+
+//	private HashMap<String,ArrayList<String>> getFormResults() {
+//		return formResults;
+//		
+//	}
+//	public void setFormResults(HashMap<String, ArrayList<String>> formResults) {
+//		this.formResults = formResults;
+//	}
+
+	
 
 	//*************************************************
 	//set especific button event methods
@@ -196,21 +333,7 @@ public class FormManager {
 		});
 	}
 	
-	private void setSendFormButtonEvent(Button sendFormButton, final String string) {
-		sendFormButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-//				creatResultXmlForm();
-				Toast.makeText(formActivity, string, Toast.LENGTH_LONG).show();
-			}
-
-			private void creatResultXmlForm() {
-				for (int i = 0; i < formLayout.getChildCount(); i++) {
-				}
-			}
-		});
-	}
-	
+	//FIXME criar classe CameraMAnager
 	private void startCameraActivity() {
 		String fileName = "testphoto.jpg";
 		
@@ -231,5 +354,11 @@ public class FormManager {
 		formActivity.startActivityForResult(cameraIntent, GeoPBMobileUtil.CAMERA_CODE);
 		
     }
+
+	
+
+	
+
+	
 
 }

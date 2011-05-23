@@ -1,5 +1,7 @@
 package com.example.helloandroid;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -21,6 +23,9 @@ public class GeoPBMobileUtil {
 	public static final int CAMERA_CODE = 11;
 	public static final int FILE_EXPLORER_CODE = 12;
 	public static final int MULTIPLE_CHOICE_CODE = 13;
+	
+	public static final String FILE_SEPARATOR = System.getProperty("file.separator");
+	public static final String FILE_DIR = System.getProperty("user.dir") + FILE_SEPARATOR;
 
 	public static InputStream openHttpConnection(String urlString) throws MalformedURLException, IOException {
 
@@ -78,6 +83,24 @@ public class GeoPBMobileUtil {
 		return optionsName;
 		
 		
+	}
+	
+	public static void createXmlFile(String data) {
+		
+		File file = new File("C:\\output.xml");
+		FileWriter fileWriter;
+		try {
+			fileWriter = new FileWriter(file);
+			fileWriter.write(data);	
+			fileWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			
+		}
+		
+//		FileUtils.writeStringToFile(file, data);
 	}
 	
 	
