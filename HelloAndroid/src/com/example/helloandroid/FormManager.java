@@ -46,7 +46,6 @@ public class FormManager {
 	ArrayList<Feature> xmlInfo;
 	private Uri imageUri;
 	
-	private HashMap<String, ArrayList<String>> formResults;
 
 	public FormManager(FormActivity formActivity, LinearLayout linearLayout, LayoutInflater inflater, ArrayList<Feature> xmlInfo) {
 		this.formActivity = formActivity;
@@ -54,7 +53,6 @@ public class FormManager {
 		this.formLayout = linearLayout;
 		this.xmlInfo = xmlInfo;
 		
-//		setFormResults(new HashMap<String, ArrayList<String>>());
 	}
 	
 	public Uri getImageUri() {
@@ -76,7 +74,6 @@ public class FormManager {
 				setCameraButtonsEvent();
 				setFileBrowserButtonEvent();
 			}
-			
 		}
 	}
 
@@ -101,24 +98,6 @@ public class FormManager {
 	}
 	
 	public void addSendFormButton(ArrayList<Feature> xmlInfo){
-//		XmlSerializer serializer = Xml.newSerializer();
-//		StringWriter writer = new StringWriter();
-//		try {
-//			serializer.setOutput(writer);
-//			serializer.startDocument("UTF-8", true);
-//			
-//			for (int i = 0; i < xmlInfo.size(); i++) {
-//				serializer = getViewContent(xmlInfo.get(i), i, serializer);
-//				Log.e(FORM_MANAGER_LOG_TAG, "ENTROU NO FOR DO SENDBUTTON");
-//				break;
-//			}
-//			serializer.endDocument();
-//			
-//		} catch (Exception e) {
-//			Log.e(FORM_MANAGER_LOG_TAG, "exceçao miseraaaaaaaaa");
-//			Log.e(FORM_MANAGER_LOG_TAG, e.getMessage());
-//		}
-        
 		Button button = (Button) inflater.inflate(R.layout.button, null);
 		button.setText("ENVIAR");
 		setSendFormButtonEvent(button);
@@ -144,15 +123,13 @@ public class FormManager {
 		});
 	}
 	
-	
-
-	
 	private String writeXmlFromForm() {
 		XmlSerializer serializer = Xml.newSerializer();
 	    StringWriter writer = new StringWriter();
 	    try {
 	        serializer.setOutput(writer);
 	        serializer.startDocument("UTF-8", true);
+	        serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 	        serializer.startTag("", "form");
 	        serializer.attribute("", "numberOfFeatures", String.valueOf(xmlInfo.size()));
 	        for (Feature feature: xmlInfo){
@@ -181,15 +158,6 @@ public class FormManager {
 			Log.e(FORM_MANAGER_LOG_TAG, "i: " + i);
 			j = getViewContent(xmlInfo.get(i), j);
 		}
-//		for (int i = 0; i < xmlInfo.size(); i++) {
-//			Log.e(FORM_MANAGER_LOG_TAG, xmlInfo.get(i).getContent() );
-//		}
-		
-//			serializer = getViewContent(xmlInfo.get(i), i, serializer);
-//			Log.e(FORM_MANAGER_LOG_TAG, "ENTROU NO FOR DO SENDBUTTON");
-//			break;
-//		}
-		
 	}
 	
 	//*************************************************
@@ -242,33 +210,6 @@ public class FormManager {
 		
 	}
 
-//	private XmlSerializer getViewContent(Feature feature, int i)  {
-//		switch (feature.getType()) {
-//		case R.layout.edittext:
-//			Log.e(FORM_MANAGER_LOG_TAG, "i: " +i);
-//			EditText editText = (EditText) formLayout.getChildAt(i);
-//			
-//			formResults.put("", value);
-//			
-//			Log.e(FORM_MANAGER_LOG_TAG, "2222222222");
-//			CharSequence text = editText.getText();
-//			Log.e(FORM_MANAGER_LOG_TAG, "3333333333");
-//		default:
-//			break;
-//		}
-//		return null;
-//		
-//	}
-
-//	private HashMap<String,ArrayList<String>> getFormResults() {
-//		return formResults;
-//		
-//	}
-//	public void setFormResults(HashMap<String, ArrayList<String>> formResults) {
-//		this.formResults = formResults;
-//	}
-
-	
 
 	//*************************************************
 	//set especific button event methods

@@ -1,5 +1,6 @@
 package model;
 
+import Utils.GeoPBMobileStrings;
 import android.os.Parcel;
 import android.text.InputType;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.helloandroid.GeoPBMobileUtil;
 import com.example.helloandroid.R;
 
 public class MultimediaFeature extends Feature{
@@ -36,8 +38,13 @@ public class MultimediaFeature extends Feature{
 	@Override
     public String getContent() {
 		if (getFilePath() == null)
-			return "";
-		return getFilePath();
+			return GeoPBMobileStrings.EMPTY_CONTENT;
+		String encodedString = GeoPBMobileUtil.convertFiletoBase64(getFilePath());
+		if (encodedString == null)
+			return GeoPBMobileStrings.ERROR_CONTENT;
+		
+		return encodedString;
+		
     }
 	
 	@Override

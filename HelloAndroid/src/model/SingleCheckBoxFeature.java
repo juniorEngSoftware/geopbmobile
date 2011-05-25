@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import Utils.GeoPBMobileStrings;
 import android.os.Parcel;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -64,7 +65,7 @@ public class SingleCheckBoxFeature extends Feature {
 	@Override
     public String getContent() {
 		if(getSelectedItem() == null)
-			return "";
+			return GeoPBMobileStrings.EMPTY_CONTENT;;
 		return getSelectedItem();
     }
 	

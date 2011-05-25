@@ -1,6 +1,7 @@
 package com.example.helloandroid;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,22 +13,24 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.codec.binary.Base64;
+
 import model.Option;
 
-import android.os.Bundle;
-import android.util.Log;
-
 public class GeoPBMobileUtil {
-	
+
 	public static final int MAP_CODE = 10;
 	public static final int CAMERA_CODE = 11;
 	public static final int FILE_EXPLORER_CODE = 12;
 	public static final int MULTIPLE_CHOICE_CODE = 13;
-	
-	public static final String FILE_SEPARATOR = System.getProperty("file.separator");
-	public static final String FILE_DIR = System.getProperty("user.dir") + FILE_SEPARATOR;
 
-	public static InputStream openHttpConnection(String urlString) throws MalformedURLException, IOException {
+	public static final String FILE_SEPARATOR = System
+			.getProperty("file.separator");
+	public static final String FILE_DIR = System.getProperty("user.dir")
+			+ FILE_SEPARATOR;
+
+	public static InputStream openHttpConnection(String urlString)
+			throws MalformedURLException, IOException {
 
 		InputStream input = null;
 		int resCode = -1;
@@ -50,13 +53,12 @@ public class GeoPBMobileUtil {
 			throw new MalformedURLException("URL errada ou mal formatada");
 		}
 		input = httpConn.getInputStream();
-		
-		
+
 		return input;
 	}
 
 	public static String getData(InputStream inputStream) throws IOException {
-		
+
 		int BUFFER_SIZE = 2000;
 		InputStreamReader isr = new InputStreamReader(inputStream);
 		int charRead;
@@ -70,7 +72,7 @@ public class GeoPBMobileUtil {
 			inputBuffer = new char[BUFFER_SIZE];
 		}
 		isr.close();
-		
+
 		return text;
 
 	}
@@ -81,27 +83,73 @@ public class GeoPBMobileUtil {
 			optionsName.add(option.getName());
 		}
 		return optionsName;
-		
-		
+
 	}
-	
+
 	public static void createXmlFile(String data) {
-		
-		File file = new File("C:\\output.xml");
-		FileWriter fileWriter;
+
+		File file = new File("/sdcard/output.xml");
 		try {
+			file.createNewFile();
+			FileWriter fileWriter;
 			fileWriter = new FileWriter(file);
-			fileWriter.write(data);	
+			fileWriter.write(data);
 			fileWriter.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
-			
 		}
-		
-//		FileUtils.writeStringToFile(file, data);
+		// FileUtils.writeStringToFile(file, data);
 	}
-	
-	
+
+	public static String convertFiletoBase64(String filePath) {
+		try {
+			File file = new File(filePath);
+			byte[] encoded = Base64.encodeBase64(getBytesFromFile(file));
+			String encodedString = new String(encoded);
+			return encodedString;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+
+	// Returns the contents of the file in a byte array.
+	public static byte[] getBytesFromFile(File file) throws IOException {
+		InputStream is = new FileInputStream(file);
+
+		// Get the size of the file
+		long length = file.length();
+
+		// You cannot create an array using a long type.
+		// It needs to be an int type.
+		// Before converting to an int type, check
+		// to ensure that file is not larger than Integer.MAX_VALUE.
+		if (length > Integer.MAX_VALUE) {
+			// File is too large
+		}
+
+		// Create the byte array to hold the data
+		byte[] bytes = new byte[(int) length];
+
+		// Read in the bytes
+		int offset = 0;
+		int numRead = 0;
+		while (offset < bytes.length
+				&& (numRead = is.read(bytes, offset, bytes.length - offset)) >= 0) {
+			offset += numRead;
+		}
+
+		// Ensure all the bytes have been read in
+		if (offset < bytes.length) {
+			throw new IOException("Could not completely read file "
+					+ file.getName());
+		}
+
+		// Close the input stream and return bytes
+		is.close();
+		return bytes;
+	}
+
 }

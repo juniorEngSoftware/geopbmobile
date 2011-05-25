@@ -1,5 +1,6 @@
 package model;
 
+import Utils.GeoPBMobileStrings;
 import android.os.Parcel;
 import android.text.InputFilter;
 import android.util.Log;
@@ -41,7 +42,7 @@ public class TextFeature extends Feature {
 	@Override
 	public String getContent() {
 		if(getText() == null)
-			return "";
+			return GeoPBMobileStrings.EMPTY_CONTENT;
 		return getText();
 	}
 
