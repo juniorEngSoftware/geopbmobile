@@ -3,6 +3,7 @@ package model;
 
 import java.util.List;
 
+import Utils.GeoPBMobileStrings;
 import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
@@ -55,17 +56,19 @@ public class GPSFeature extends Feature{
 	@Override
     public String getContent() {
 		if (getCoordiantes() == null)
-			return "";
+			return GeoPBMobileStrings.EMPTY_CONTENT;
 		return getCoordiantes();
     }
 	
 	private String getCoordiantes() {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("Latitude: ");
+//		stringBuilder.append("Latitude: ");
 		stringBuilder.append(getLatitude());
-		stringBuilder.append("Longitude: ");
+		stringBuilder.append(",");
+//		stringBuilder.append("Longitude: ");
 		stringBuilder.append(getLongitude());
-		
+		if (getLatitude() == null || getLongitude() == null)
+			return null;
 		return stringBuilder.toString();
 		
 	}

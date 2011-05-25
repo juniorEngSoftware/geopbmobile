@@ -2,6 +2,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import Utils.GeoPBMobileStrings;
 import android.os.Parcel;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -61,6 +62,9 @@ public class MultipleCheckBoxFeature extends Feature {
 	
 	@Override
     public String getContent() {
+		if (getCheckedOptions() == null) {
+			return GeoPBMobileStrings.EMPTY_CONTENT;
+		}
 		return getCheckedOptions().toString();
     }
 	
