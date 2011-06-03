@@ -13,9 +13,18 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.codec.binary.Base64;
-
 import model.Option;
+
+import org.apache.commons.codec.binary.Base64;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
 
 public class GeoPBMobileUtil {
 
@@ -150,6 +159,30 @@ public class GeoPBMobileUtil {
 		// Close the input stream and return bytes
 		is.close();
 		return bytes;
+	}
+
+	public static String sendFile(String xmlData, String link) {
+		// Create a new HttpClient and Post Header  
+        HttpClient httpclient = new DefaultHttpClient();  
+        HttpPost httppost = new HttpPost(link);
+        httppost.setHeader("Content-Type","application/soap+xml;charset=UTF-8");
+
+        try {  
+            // Add your data  
+        	StringEntity se = new StringEntity(xmlData, HTTP.UTF_8);
+        	se.setContentType("text/xml");  
+        	httppost.setEntity(se);  
+
+        	HttpResponse httpResponse = httpclient.execute(httppost);
+        	HttpEntity resEntity = httpResponse.getEntity();
+            return EntityUtils.toString(resEntity);
+        } catch (ClientProtocolException e) {  
+            // TODO Auto-generated catch block  
+        } catch (IOException e) {  
+            // TODO Auto-generated catch block  
+        }
+		return "";  
+		
 	}
 
 }
