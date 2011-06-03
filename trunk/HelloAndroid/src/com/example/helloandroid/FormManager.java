@@ -35,10 +35,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FormManager {
 
 	private static final String FORM_MANAGER_LOG_TAG = "Form Manager CLASS";
+	
+	private String link;
 	
 	private FormActivity formActivity;
 	private LayoutInflater inflater;
@@ -59,8 +62,22 @@ public class FormManager {
 		return this.imageUri;
 	}
 	
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setConfiguration(Feature feature) {
+		setLink(feature.getName());
+		Log.e(FORM_MANAGER_LOG_TAG, "GET LINKKKKKKKKKKK " + getLink());
+	}
+
 	public void addFeatures(ArrayList<Feature> xmlInfo) {
-		for (Feature feature : xmlInfo) {
+		for (int i = 1; i < xmlInfo.size(); i++) {
+			Feature feature = xmlInfo.get(i);
 			addOneFeature(feature);
 			
 			if(feature.getType() == R.layout.multiplecheckbox) {
@@ -76,8 +93,6 @@ public class FormManager {
 			}
 		}
 	}
-
-	
 
 	private void addOneFeature(Feature feature) {
 		setTextView(feature);//set the feature title
@@ -118,6 +133,12 @@ public class FormManager {
 				Log.e(FORM_MANAGER_LOG_TAG, "???????????  " + data);
 				Log.e(FORM_MANAGER_LOG_TAG, "???????????  " + GeoPBMobileUtil.FILE_DIR);
 				GeoPBMobileUtil.createXmlFile(data);
+				if (!GeoPBMobileUtil.sendFile(data, getLink()).equals("") ){
+					Toast.makeText(formActivity, "Formulario enviado com sucesso", Toast.LENGTH_LONG).show();
+				} else {
+					Toast.makeText(formActivity, "Erro ao enviar Formulario", Toast.LENGTH_LONG).show();
+				}
+				
 			}
 
 		});
@@ -295,11 +316,5 @@ public class FormManager {
 		formActivity.startActivityForResult(cameraIntent, GeoPBMobileUtil.CAMERA_CODE);
 		
     }
-
-	
-
-	
-
-	
 
 }

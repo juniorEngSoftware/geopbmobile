@@ -37,6 +37,7 @@ public class FormActivity extends Activity{
 		
 		//set form
 		formManager = new FormManager(this, linearLayout, inflater, xmlInfo);
+		formManager.setConfiguration(xmlInfo.get(0));
 		formManager.addFeatures(xmlInfo);
 		formManager.addSendFormButton(xmlInfo);
 	}
