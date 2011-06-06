@@ -48,7 +48,6 @@ public class TextFeature extends Feature {
 
 	private String getText() {
 		return text;
-
 	}
 
 	public void setText(String text) {

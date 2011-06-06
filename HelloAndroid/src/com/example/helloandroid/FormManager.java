@@ -316,5 +316,4 @@ public class FormManager {
 		formActivity.startActivityForResult(cameraIntent, GeoPBMobileUtil.CAMERA_CODE);
 		
     }
-
 }
