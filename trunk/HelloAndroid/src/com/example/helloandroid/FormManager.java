@@ -18,6 +18,7 @@ import model.TextFeature;
 
 import org.xmlpull.v1.XmlSerializer;
 
+import Utils.GeoPBMobileUtil;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
@@ -138,7 +139,6 @@ public class FormManager {
 				} else {
 					Toast.makeText(formActivity, "Erro ao enviar Formulario", Toast.LENGTH_LONG).show();
 				}
-				
 			}
 
 		});
@@ -152,13 +152,20 @@ public class FormManager {
 	        serializer.startDocument("UTF-8", true);
 	        serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 	        serializer.startTag("", "form");
-	        serializer.attribute("", "numberOfFeatures", String.valueOf(xmlInfo.size()));
-	        for (Feature feature: xmlInfo){
-	            serializer.startTag("", "feature");
+	        serializer.attribute("", "numberOfFeatures", String.valueOf(xmlInfo.size() - 1));
+	        for (int i = 1; i < xmlInfo.size(); i++) {
+				Feature feature = xmlInfo.get(i);
+				serializer.startTag("", "feature");
 	            serializer.attribute("", "type", feature.getClass().toString());
 	            serializer.startTag("", "enunciation");
 	            serializer.text(feature.getName());
 	            serializer.endTag("", "enunciation");
+	            //create another tag to save file's name and type
+	            if(feature instanceof MultimediaFeature) {
+	            	serializer.startTag("", "filename");
+		            serializer.text( ((MultimediaFeature) feature).getFileName() );
+		            serializer.endTag("", "filename");
+	            }
 	            serializer.startTag("", "content");
 	            serializer.text(feature.getContent());
 	            serializer.endTag("", "content");
@@ -175,7 +182,7 @@ public class FormManager {
 	
 	protected void collectFormResults() {
 		int j = 0;
-		for (int i = 0; i < xmlInfo.size(); i++) {
+		for (int i = 1; i < xmlInfo.size(); i++) {
 			Log.e(FORM_MANAGER_LOG_TAG, "i: " + i);
 			j = getViewContent(xmlInfo.get(i), j);
 		}
@@ -188,6 +195,8 @@ public class FormManager {
 		Log.e(FORM_MANAGER_LOG_TAG, "j: " + j);
 		
 		if (feature instanceof TextFeature) {
+			View childAt2 = formLayout.getChildAt(j+1);
+			Log.e(FORM_MANAGER_LOG_TAG, "j: " + childAt2.getClass().toString());
 			EditText editText = (EditText) formLayout.getChildAt(j+1);
 			CharSequence text = editText.getText();
 			((TextFeature)feature).setText( text.toString());

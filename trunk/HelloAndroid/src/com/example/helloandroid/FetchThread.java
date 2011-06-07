@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 import model.Feature;
+import Utils.GeoPBMobileUtil;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -38,9 +39,6 @@ public class FetchThread extends Thread{
         	inputStream = GeoPBMobileUtil.openHttpConnection(xmlURL);
           
 			ArrayList<Feature> featureList = (ArrayList<Feature>) xstream.fromXML(inputStream);
-            for (int i = 0; i < featureList.size(); i++) {
-            	Log.e("===FETCH===", featureList.get(i).toString());
-			}
 				
             bundle.putParcelableArrayList("features", featureList);
             bundle.putString("erro", OK_MESSAGE);
