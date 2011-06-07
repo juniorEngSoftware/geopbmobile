@@ -43,7 +43,6 @@ public class HelloAndroid extends Activity {
 		
 		Log.e(MAIN_LOG_TAG, "on create ========================");
 		
-		setXMLRequestKeyEvent();
 		setXMLRequestButtonEvent();
 	}
 
@@ -58,29 +57,13 @@ public class HelloAndroid extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				xmlURL = "http://dl.dropbox.com/u/8510487/features.xml";
+				xmlURL = "http://dl.dropbox.com/u/8510487/features2.xml";
 //				xmlURL = editText.getText().toString();
 				downloadFile();
 			}
 		});	
 	}
 
-	private void setXMLRequestKeyEvent() {
-		final EditText editText = (EditText) findViewById(R.id.edit_url_text);
-		editText.setOnKeyListener(new OnKeyListener() {
-			@Override
-			public boolean onKey(View v, int keyCode, KeyEvent event) {
-				if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER){
-//					xmlURL = editText.getText().toString();
-//					xmlURL = "http://dl.dropbox.com/u/8923123/novosCheckBox.xml";
-					xmlURL = "http://dl.dropbox.com/u/8510487/features2.xml";
-					downloadFile();
-					return true;
-				}
-				return false;					
-			}
-		});
-	}
 	
 	private void downloadFile(){
 		progressDialog = ProgressDialog.show(this, "", PROGRESS_MESSAGE);
@@ -99,9 +82,6 @@ public class HelloAndroid extends Activity {
 				Intent intent = new Intent(HelloAndroid.this, FormActivity.class);
 				
 				ArrayList<Feature> parcelableArrayList = msg.getData().getParcelableArrayList("features");
-//				for (Feature feature: parcelableArrayList) {
-//					Log.e(MAIN_LOG_TAG, feature.toString());
-//				}
 				
 				intent.putParcelableArrayListExtra("features",  msg.getData().getParcelableArrayList("features"));
 				startActivity(intent);				

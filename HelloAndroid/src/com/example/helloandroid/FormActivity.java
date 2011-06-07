@@ -3,6 +3,7 @@ package com.example.helloandroid;
 import java.util.ArrayList;
 
 import model.Feature;
+import Utils.GeoPBMobileUtil;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

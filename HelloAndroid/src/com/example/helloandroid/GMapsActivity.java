@@ -70,12 +70,12 @@ public class GMapsActivity extends MapActivity implements OnGestureListener, OnD
 
 		mapOverlays.add(myLocationOverlay);
 		myLocationOverlay.enableCompass();
-		myLocationOverlay.enableMyLocation();
-		myLocationOverlay.runOnFirstFix(new Runnable() {
-			public void run() {
-				mapController.animateTo(myLocationOverlay.getMyLocation());
-			}
-		});
+//		myLocationOverlay.enableMyLocation();
+//		myLocationOverlay.runOnFirstFix(new Runnable() {
+//			public void run() {
+//				mapController.animateTo(myLocationOverlay.getMyLocation());
+//			}
+//		});
 		mapView.invalidate();
 	}
 
@@ -155,19 +155,15 @@ public class GMapsActivity extends MapActivity implements OnGestureListener, OnD
 	@Override
 	public boolean onDoubleTap(MotionEvent e) {
 		// get the point clicked and setup a overlay for that point
-		if (this.myLocationOverlay.getLastFix() != null) {
-			mapOverlays.clear();
+		mapOverlays.clear();
 
-			GeoPoint point = mapView.getProjection().fromPixels((int) e.getX(),	(int) e.getY());
-			OverlayItem overlayitem = new OverlayItem(point, "Nova Posição",
-					"lat: " + point.getLatitudeE6() / 1E6 + " \n" +
-					"long: "+ point.getLongitudeE6() / 1E6);
+		GeoPoint point = mapView.getProjection().fromPixels((int) e.getX(),	(int) e.getY());
+		OverlayItem overlayitem = new OverlayItem(point, "Nova Posição",
+				"lat: " + point.getLatitudeE6() / 1E6 + " \n" +
+				"long: "+ point.getLongitudeE6() / 1E6);
 
-			itemizedOverlay.addOverlay(overlayitem);
-			mapOverlays.add(itemizedOverlay);
-		} else {
-			Toast.makeText(this, "Procurando localização atual...", Toast.LENGTH_LONG).show();
-		}
+		itemizedOverlay.addOverlay(overlayitem);
+		mapOverlays.add(itemizedOverlay);
 
 		return true;
 	}
